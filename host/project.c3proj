@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 32702,
-	"name": "EthicalRTDGame_Host",
+	"name": "EthicalRTD_Host",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
