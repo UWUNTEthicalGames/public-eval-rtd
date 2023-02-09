@@ -136,19 +136,11 @@
 					}
 				},
 				{
-					"callFunction": "SendDataToAllPeers",
-					"sid": 465531052185653,
-					"parameters": [
-						"\"level_start\"",
-						"\"Level\""
-					]
-				},
-				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 932862682053102,
+					"sid": 260582978777387,
 					"parameters": {
-						"layout": "Level"
+						"layout": "LevelChooser"
 					}
 				}
 			],
@@ -164,7 +156,7 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
-						"object-clicked": "StartButton"
+						"object-clicked": "Button"
 					}
 				}
 			],
@@ -184,7 +176,7 @@
 					"objectClass": "Touch",
 					"sid": 629824961616592,
 					"parameters": {
-						"object": "StartButton"
+						"object": "Button"
 					}
 				}
 			],

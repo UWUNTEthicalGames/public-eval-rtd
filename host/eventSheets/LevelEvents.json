@@ -31,6 +31,22 @@
 					],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "You'll often want to tell the peer devices which layout to start."
+						},
+						{
+							"callFunction": "SendDataToAllPeers",
+							"sid": 667125733535163,
+							"parameters": [
+								"\"go_to_peer_layout\"",
+								"\"Level\""
+							]
+						},
+						{
+							"type": "comment",
+							"text": "You're free to start gameplay below."
+						},
+						{
 							"id": "start-timer",
 							"objectClass": "TimerText",
 							"sid": 165306032953810,
@@ -83,12 +99,20 @@
 					],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "Setting timer just to clean up the text, sometimes the timer can get fractional or negative."
+						},
+						{
 							"id": "set-text",
 							"objectClass": "TimerText",
 							"sid": 950016801472115,
 							"parameters": {
 								"text": "0"
 							}
+						},
+						{
+							"type": "comment",
+							"text": "Request results from the player. We could have designed to voluntarily send the results, but this ensures that everyone gets the request at the same time."
 						},
 						{
 							"callFunction": "RequestDataFromAllPeers",

@@ -84,7 +84,7 @@
 			"PlayerInfoJSON",
 			"AJAX",
 			"MessagingJSON",
-			"StartButton",
+			"Button",
 			"Mouse",
 			"TimerText",
 			"ResultsText",
@@ -102,7 +102,8 @@
 		"items": [
 			"GameLobby",
 			"ErrorMenu",
-			"Level"
+			"Level_AlphaCharCount",
+			"LevelChooser"
 		],
 		"subfolders": []
 	},
@@ -113,7 +114,8 @@
 			"ConfigurationSettings",
 			"ErrorMenuEvents",
 			"LevelEvents",
-			"NetworkingEvents"
+			"NetworkingEvents",
+			"LevelChooserEvents"
 		],
 		"subfolders": []
 	},

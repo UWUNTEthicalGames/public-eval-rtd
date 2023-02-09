@@ -1,0 +1,38 @@
+{
+	"name": "LevelChooserEvents",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 587347506954601,
+					"parameters": {
+						"object": "Button"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SendDataToAllPeers",
+					"sid": 841930946648126,
+					"parameters": [
+						"\"level_start\"",
+						"Button.levelTarget"
+					]
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 662976408908344,
+					"parameters": {
+						"layout": "Button.levelTarget"
+					}
+				}
+			],
+			"sid": 162199367851195
+		}
+	],
+	"sid": 262269994047994
+}

@@ -96,11 +96,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 929430123813482,
+							"sid": 818586376470474,
 							"parameters": {
 								"first-value": "type",
 								"comparison": 0,
-								"second-value": "\"level_start\""
+								"second-value": "\"go_to_peer_layout\""
 							}
 						}
 					],
@@ -178,7 +178,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 798110906173751,
+							"sid": 255659953715813,
 							"parameters": {
 								"first-value": "type",
 								"comparison": 0,
@@ -197,10 +197,10 @@
 						},
 						{
 							"callFunction": "SendDataToHost",
-							"sid": 489708556909447,
+							"sid": 143415876522410,
 							"parameters": [
 								"\"level_results\"",
-								"str(len(LevelTextInput.Text))"
+								"LevelTextInput.Text"
 							]
 						}
 					],

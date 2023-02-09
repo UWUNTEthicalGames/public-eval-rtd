@@ -180,9 +180,9 @@
 						{
 							"id": "append-text",
 							"objectClass": "ResultsText",
-							"sid": 618508070686526,
+							"sid": 849766004462005,
 							"parameters": {
-								"text": "from_alias&\": \"&message&newline"
+								"text": "from_alias&\": \"&str(len(message))&newline"
 							}
 						}
 					],

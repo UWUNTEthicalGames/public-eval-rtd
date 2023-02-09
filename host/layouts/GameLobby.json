@@ -265,7 +265,7 @@
 					}
 				},
 				{
-					"type": "StartButton",
+					"type": "Button",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -274,7 +274,9 @@
 						"live-preview": false
 					},
 					"uid": 15,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"levelTarget": "LevelChooser"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 1585,

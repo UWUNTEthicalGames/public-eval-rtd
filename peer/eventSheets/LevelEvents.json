@@ -127,6 +127,19 @@
 				}
 			],
 			"sid": 597189956047426
+		},
+		{
+			"functionName": "GetRequestedData",
+			"functionDescription": "Returns the data associated to the request message",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 559309677716234
 		}
 	],
 	"sid": 764329943902637

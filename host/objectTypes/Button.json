@@ -1,9 +1,17 @@
 {
-	"name": "StartButton",
+	"name": "Button",
 	"plugin-id": "Sprite",
 	"sid": 335962931415492,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "levelTarget",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 328340341211528
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
