@@ -1,0 +1,513 @@
+{
+	"name": "JackboxTemplateEvents",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "WARNING: No need to edit anything beyond this point unless you are interested in changing advanced multiplayer functionality or data storage. You are welcome to edit at your own risk!"
+		},
+		{
+			"eventType": "variable",
+			"name": "ROOM_CODE",
+			"type": "string",
+			"initialValue": "[Will be set in code]",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 402448210119268
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_ALIAS",
+			"type": "string",
+			"initialValue": "[Will be set in code]",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 126777962040345
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Initialization",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "InitializeGame",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-array",
+							"objectClass": "GameDataJSON",
+							"sid": 557164374768268,
+							"parameters": {
+								"path": "\"roles\"",
+								"size": "0"
+							}
+						},
+						{
+							"id": "set-array",
+							"objectClass": "GameDataJSON",
+							"sid": 324119005375696,
+							"parameters": {
+								"path": "\"outstandingRequests\"",
+								"size": "0"
+							}
+						}
+					],
+					"sid": 628598483529273
+				}
+			],
+			"sid": 211121013017522
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Networking",
+			"description": "Functionality for multiplayer networking.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "InitializeMultiplayer",
+					"functionDescription": "Connects to server, logs in, and starts new multiplayer room with random room code.",
+					"functionCategory": "Networking",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": true,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 632418122388208,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "supports-multiplayer",
+									"objectClass": "Multiplayer",
+									"sid": 923824835141716
+								}
+							],
+							"actions": [
+								{
+									"type": "script",
+									"script": "console.log(\"Connecting to server...\")"
+								},
+								{
+									"id": "connect",
+									"objectClass": "Multiplayer",
+									"sid": 169959347732502,
+									"parameters": {
+										"server": "\"wss://multiplayer.scirra.com\""
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 384897603442116,
+									"parameters": {
+										"tag": "\"multiplayer_initialized\""
+									}
+								}
+							],
+							"sid": 641075766243215
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 722812306191425
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 833869211499980,
+									"parameters": {
+										"layout": "ErrorMenu"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "ErrorText",
+									"sid": 164798534094982,
+									"parameters": {
+										"text": "\"Your device does not support multiplayer. Please use another device.\""
+									}
+								}
+							],
+							"sid": 613131286521618
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-connected",
+							"objectClass": "Multiplayer",
+							"sid": 918652115454514
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "console.log(\"Connected, logging into server...\")"
+						},
+						{
+							"id": "log-in",
+							"objectClass": "Multiplayer",
+							"sid": 725037589163078,
+							"parameters": {
+								"alias": "PLAYER_ALIAS"
+							}
+						}
+					],
+					"sid": 730661416060034
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-logged-in",
+							"objectClass": "Multiplayer",
+							"sid": 348851638301318
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "console.log(\"Logged in, connecting to room...\");"
+						},
+						{
+							"id": "join-room",
+							"objectClass": "Multiplayer",
+							"sid": 896731589510605,
+							"parameters": {
+								"game": "GAME_NAME",
+								"instance": "GAME_INSTANCE_NAME",
+								"room": "ROOM_CODE",
+								"max-peers": "0"
+							}
+						}
+					],
+					"sid": 996980156827496
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-joined-room",
+							"objectClass": "Multiplayer",
+							"sid": 558677038724376
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "console.log(\"Joined room \" + runtime.globalVars.ROOM_CODE + \".\")"
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 793517715988277,
+							"parameters": {
+								"tag": "\"multiplayer_initialized\""
+							}
+						}
+					],
+					"sid": 884088011040175
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-error",
+							"objectClass": "Multiplayer",
+							"sid": 106212973663715
+						}
+					],
+					"actions": [
+						{
+							"type": "script",
+							"script": "console.log(\"Multiplayer networking error.\")"
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 430055712685743,
+							"parameters": {
+								"layout": "ErrorMenu"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ErrorText",
+							"sid": 683536792909374,
+							"parameters": {
+								"text": "\"Server recieved an error message: \"&newline&Multiplayer.ErrorMessage"
+							}
+						}
+					],
+					"sid": 943666803972692
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-peer-message",
+							"objectClass": "Multiplayer",
+							"sid": 403279398451179
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 443300828987965,
+							"parameters": {
+								"type": "log",
+								"message": "\"Recieved message (tag=\"&Multiplayer.Tag&\", message=\"&Multiplayer.Message&\") from alias=\"&Multiplayer.FromAlias"
+							}
+						}
+					],
+					"sid": 511549757323638,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 601005495984127,
+									"parameters": {
+										"first-value": "Multiplayer.Tag",
+										"comparison": 0,
+										"second-value": "\"__request_data\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "OnReceiveRequest",
+									"sid": 598002105288637,
+									"parameters": [
+										"Multiplayer.Message",
+										"Multiplayer.FromAlias"
+									]
+								}
+							],
+							"sid": 998029078628839
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 923290045829704
+								}
+							],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 246042388104364,
+									"parameters": {
+										"type": "log",
+										"message": "\"If present, removing outstandingRequest for \"&Multiplayer.PeerAlias&\", \"&Multiplayer.Tag"
+									}
+								}
+							],
+							"sid": 927278193794227,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "GameDataJSON",
+											"sid": 933124886971706,
+											"parameters": {
+												"path": "\"outstandingRequests\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 161111183653963,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 633405903672369,
+													"parameters": {
+														"first-value": "GameDataJSON.CurrentValue",
+														"comparison": 0,
+														"second-value": "Multiplayer.Tag"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "remove-values",
+													"objectClass": "GameDataJSON",
+													"sid": 846754372967124,
+													"parameters": {
+														"count": "1",
+														"path": "\"outstandingRequests\"",
+														"index": "int(GameDataJSON.CurrentValue)"
+													}
+												}
+											],
+											"sid": 591830903596830
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "OnReceiveData",
+											"sid": 208958760633266,
+											"parameters": [
+												"Multiplayer.Tag",
+												"Multiplayer.Message",
+												"Multiplayer.FromAlias"
+											]
+										}
+									],
+									"sid": 284655665019027
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "RequestDataFromHost",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "Tag for request, should be unique by data type",
+							"sid": 638700206090166
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 719350601638551,
+							"parameters": {
+								"type": "log",
+								"message": "\"Sent message (tag=__request_data, message=\"&type&\") to host\""
+							}
+						},
+						{
+							"id": "send-message",
+							"objectClass": "Multiplayer",
+							"sid": 838870880747490,
+							"parameters": {
+								"peer-id": "\"\"",
+								"tag": "\"__request_data\"",
+								"message": "type",
+								"mode": "reliable-unordered"
+							}
+						},
+						{
+							"callFunction": "OnSendRequest",
+							"sid": 779196249389408,
+							"parameters": [
+								"type",
+								"\"\""
+							]
+						}
+					],
+					"sid": 150241565312421
+				},
+				{
+					"functionName": "SendDataToHost",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 199110162484876
+						},
+						{
+							"name": "message",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 316345031546368
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 845491867239013,
+							"parameters": {
+								"type": "log",
+								"message": "\"Sent message (tag=\"&type&\", message=\"&message&\") to host\""
+							}
+						},
+						{
+							"id": "send-message",
+							"objectClass": "Multiplayer",
+							"sid": 511397632505635,
+							"parameters": {
+								"peer-id": "\"\"",
+								"tag": "type",
+								"message": "message",
+								"mode": "reliable-unordered"
+							}
+						},
+						{
+							"callFunction": "OnSendData",
+							"sid": 289174630733433,
+							"parameters": [
+								"type",
+								"message",
+								"\"\""
+							]
+						}
+					],
+					"sid": 962433139287381
+				}
+			],
+			"sid": 235440365724972
+		}
+	],
+	"sid": 419596889089472
+}

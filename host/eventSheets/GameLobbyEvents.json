@@ -1,0 +1,201 @@
+{
+	"name": "GameLobbyEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ConfigurationSettings"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "NetworkingEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 305747993422350
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Initialize game and multiplayer process with this instance as host"
+				},
+				{
+					"callFunction": "InitializeGame",
+					"sid": 770737237838900
+				},
+				{
+					"callFunction": "InitializeMultiplayer",
+					"sid": 847634073947340
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 864055240649451
+				},
+				{
+					"id": "set-text",
+					"objectClass": "RoomCodeText",
+					"sid": 395206577323732,
+					"parameters": {
+						"text": "ROOM_CODE"
+					}
+				}
+			],
+			"sid": 481350352778619
+		},
+		{
+			"functionName": "RefreshPlayerListDisplay",
+			"functionDescription": "Functionality to update the display of the list of players, called whenever player list changes.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Functionality to update the display of the count and list of players, called whenever player list changes (e.g., set text of textbox containing player list)."
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PlayerCountText",
+					"sid": 251641067063389,
+					"parameters": {
+						"text": "NUM_PLAYERS"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PlayerListText",
+					"sid": 986798382945736,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 657573474437934,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "GameDataJSON",
+							"sid": 601748899285068,
+							"parameters": {
+								"path": "\"playerList\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "append-text",
+							"objectClass": "PlayerListText",
+							"sid": 213062251371327,
+							"parameters": {
+								"text": "GameDataJSON.CurrentValue&newline"
+							}
+						}
+					],
+					"sid": 662252262293889
+				}
+			]
+		},
+		{
+			"functionName": "StartGame",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Starts level upon pressing start button. Optionally, can check to make sure all __connection_data results are returned for all logged in players. (Note: No visual indicators as of now.)"
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 505219658983899,
+					"parameters": {
+						"type": "log",
+						"message": "\"On press of start button, there were the following outstanding start data: \"&GameDataJSON.GetAsCompactString(\"outstandingResults.__connection_data\")&\"  (\"&GameDataJSON.ArraySize(\"outstandingResults.__connection_data\")&\")\""
+					}
+				},
+				{
+					"callFunction": "SendDataToAllPeers",
+					"sid": 465531052185653,
+					"parameters": [
+						"\"level_start\"",
+						"\"Level\""
+					]
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 932862682053102,
+					"parameters": {
+						"layout": "Level"
+					}
+				}
+			],
+			"sid": 768132577469095
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 754294279479894,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "StartButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "StartGame",
+					"sid": 230088070312401
+				}
+			],
+			"sid": 177418278210606
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 629824961616592,
+					"parameters": {
+						"object": "StartButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "StartGame",
+					"sid": 594827100273485
+				}
+			],
+			"sid": 886365062366881
+		}
+	],
+	"sid": 579820060356929
+}

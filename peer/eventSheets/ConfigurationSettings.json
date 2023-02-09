@@ -1,0 +1,36 @@
+{
+	"name": "ConfigurationSettings",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "GAME_NAME",
+			"type": "string",
+			"initialValue": "UWUNTEthicalGames-examplegame",
+			"comment": "Game name used for multiplayer. This must be globally unique, so use a prefix like \"UWUNTEthicalGames-\" plus project name.",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 587617333285935
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_INSTANCE_NAME",
+			"type": "string",
+			"initialValue": "default",
+			"comment": "Game instance name used for multiplayer. Can often be left as \"default\".",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 745229574369046
+		},
+		{
+			"eventType": "variable",
+			"name": "NUM_ROOM_CODE_CHARACTERS",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "Number of characters in room code. Limited to 3 or 4 (for profanity checks).",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 236549404220573
+		}
+	],
+	"sid": 876497359904556
+}

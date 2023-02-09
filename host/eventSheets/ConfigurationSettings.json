@@ -1,0 +1,50 @@
+{
+	"name": "ConfigurationSettings",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "These settings should be edited to make the template work for your game. This file should only include constant variables and functions so that it can be safely copied to multiple layouts."
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_NAME",
+			"type": "string",
+			"initialValue": "UWUNTEthicalGames-examplegame",
+			"comment": "Game name used for multiplayer. This must be globally unique, so use a prefix like \"UWUNTEthicalGames-\" plus project name.",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 623347043934518
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_INSTANCE_NAME",
+			"type": "string",
+			"initialValue": "default",
+			"comment": "Game instance name used for multiplayer. Can often be left as \"default\".",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 299819849547603
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_PEERS_PER_LOBBY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Maximum number of peers per lobby (including host). Set 0 for unlimited.",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 785663167513791
+		},
+		{
+			"eventType": "variable",
+			"name": "NUM_ROOM_CODE_CHARACTERS",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "Number of characters in room code. Limited to 3 or 4 (for profanity checks).",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 254095324876773
+		}
+	],
+	"sid": 620857875252548
+}

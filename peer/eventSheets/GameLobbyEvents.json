@@ -1,0 +1,152 @@
+{
+	"name": "GameLobbyEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ConfigurationSettings"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "NetworkingEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 971577456301751
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "InitializeGame",
+					"sid": 598151991098664
+				},
+				{
+					"id": "set-max-length",
+					"objectClass": "RoomCodeInput",
+					"sid": 773084634109323,
+					"parameters": {
+						"max-length": "NUM_ROOM_CODE_CHARACTERS"
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "RoomCodeInput",
+					"sid": 316493794446765,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"32px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "NameInput",
+					"sid": 893579302473199,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"32px\""
+					}
+				}
+			],
+			"sid": 459888658543785
+		},
+		{
+			"functionName": "ConnectButtonPressed",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 243516109802395,
+					"parameters": {
+						"variable": "ROOM_CODE",
+						"value": "RoomCodeInput.Text"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 439371010056051,
+					"parameters": {
+						"variable": "PLAYER_ALIAS",
+						"value": "NameInput.Text"
+					}
+				},
+				{
+					"callFunction": "InitializeMultiplayer",
+					"sid": 476778632592312
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 138045110545498
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 208823271206877,
+					"parameters": {
+						"layout": "GameWait"
+					}
+				}
+			],
+			"sid": 795534884261570
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 715908396873255,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ConnectButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ConnectButtonPressed",
+					"sid": 539645909011801
+				}
+			],
+			"sid": 131104914829518
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 864480063220201,
+					"parameters": {
+						"object": "StartGameButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ConnectButtonPressed",
+					"sid": 342647591387546
+				}
+			],
+			"sid": 741775431698694
+		}
+	],
+	"sid": 286805993586172
+}

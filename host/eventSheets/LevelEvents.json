@@ -1,0 +1,108 @@
+{
+	"name": "LevelEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ConfigurationSettings"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "NetworkingEvents"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gameplay (Level)",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 985840856290509
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "TimerText",
+							"sid": 165306032953810,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "10.0",
+								"type": "once",
+								"tag": "\"level-timer\""
+							}
+						}
+					],
+					"sid": 178571794491353
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 721943727874002,
+							"parameters": {
+								"interval-seconds": "0.25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "TimerText",
+							"sid": 788144830950188,
+							"parameters": {
+								"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
+							}
+						}
+					],
+					"sid": 284700479708622
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "TimerText",
+							"sid": 760098197069928,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"level-timer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "TimerText",
+							"sid": 950016801472115,
+							"parameters": {
+								"text": "0"
+							}
+						},
+						{
+							"callFunction": "RequestDataFromAllPeers",
+							"sid": 998060808222318,
+							"parameters": [
+								"\"level_results\""
+							]
+						}
+					],
+					"sid": 910369868873364
+				}
+			],
+			"sid": 148002741366705
+		}
+	],
+	"sid": 740432742886503
+}

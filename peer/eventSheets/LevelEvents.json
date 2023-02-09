@@ -1,0 +1,133 @@
+{
+	"name": "LevelEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ConfigurationSettings"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "NetworkingEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 143934150969672
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "TimerText",
+					"sid": 460736872947144,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "10.0",
+						"type": "once",
+						"tag": "\"level-timer\""
+					}
+				}
+			],
+			"sid": 878741679209755
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 556368786640569,
+					"parameters": {
+						"interval-seconds": "0.25"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TimerText",
+					"sid": 928114345911331,
+					"parameters": {
+						"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
+					}
+				}
+			],
+			"sid": 354817748340836
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "TimerText",
+					"sid": 638883507160548,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"level-timer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TimerText",
+					"sid": 599560786984299,
+					"parameters": {
+						"text": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LevelTextInput",
+					"sid": 370261751126098,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "RemoveGameElements",
+					"sid": 433062082320071
+				}
+			],
+			"sid": 956362826005395
+		},
+		{
+			"functionName": "RemoveGameElements",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "TimerText",
+					"sid": 829594145061785,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LevelTextInput",
+					"sid": 664911796735737,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 597189956047426
+		}
+	],
+	"sid": 764329943902637
+}

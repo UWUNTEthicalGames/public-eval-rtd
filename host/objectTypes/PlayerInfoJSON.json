@@ -1,0 +1,15 @@
+{
+	"name": "PlayerInfoJSON",
+	"plugin-id": "Json",
+	"sid": 820561332099453,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "alias",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 241280325794489
+		}
+	]
+}
