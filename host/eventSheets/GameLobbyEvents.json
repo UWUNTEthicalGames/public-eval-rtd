@@ -3,15 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "ConfigurationSettings"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "JackboxTemplateEvents"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "NetworkingEvents"
 		},
 		{
 			"eventType": "block",
@@ -145,28 +137,6 @@
 				}
 			],
 			"sid": 768132577469095
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 754294279479894,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "Button"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "StartGame",
-					"sid": 230088070312401
-				}
-			],
-			"sid": 177418278210606
 		},
 		{
 			"eventType": "block",

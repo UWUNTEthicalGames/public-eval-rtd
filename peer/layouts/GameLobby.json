@@ -273,6 +273,12 @@
 			"properties": {},
 			"uid": 19,
 			"instanceVariables": {}
+		},
+		{
+			"type": "RequestDataParser",
+			"properties": {},
+			"uid": 20,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

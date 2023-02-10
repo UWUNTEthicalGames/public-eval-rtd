@@ -1,5 +1,5 @@
 {
-	"name": "Level",
+	"name": "Level_GenericTyping",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -39,7 +39,7 @@
 					"world": {
 						"x": 72,
 						"y": 133,
-						"width": 293,
+						"width": 327,
 						"height": 225,
 						"originX": 0,
 						"originY": 0,
@@ -168,5 +168,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "LevelEvents"
+	"eventSheet": "TypingLevelEvents"
 }

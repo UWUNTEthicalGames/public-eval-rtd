@@ -1,17 +1,9 @@
 {
-	"name": "LevelEvents",
+	"name": "Level_AlphaCharCountEvents",
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "ConfigurationSettings"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "JackboxTemplateEvents"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "NetworkingEvents"
 		},
 		{
 			"eventType": "group",
@@ -36,10 +28,10 @@
 						},
 						{
 							"callFunction": "SendDataToAllPeers",
-							"sid": 667125733535163,
+							"sid": 763352068451697,
 							"parameters": [
 								"\"go_to_peer_layout\"",
-								"\"Level\""
+								"\"Level_GenericTyping\""
 							]
 						},
 						{
@@ -115,10 +107,17 @@
 							"text": "Request results from the player. We could have designed to voluntarily send the results, but this ensures that everyone gets the request at the same time."
 						},
 						{
-							"callFunction": "RequestDataFromAllPeers",
+							"callFunction": "SendRequestToAllPeers",
 							"sid": 998060808222318,
 							"parameters": [
 								"\"level_results\""
+							]
+						},
+						{
+							"callFunction": "SendRequestToAllPeers",
+							"sid": 230160745866766,
+							"parameters": [
+								"\"end_level\""
 							]
 						}
 					],

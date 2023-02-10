@@ -3,16 +3,8 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "ConfigurationSettings"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "JackboxTemplateEvents"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "NetworkingEvents"
 		}
 	],
-	"sid": 697274805352907
+	"sid": 860457223108632
 }

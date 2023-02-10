@@ -86,7 +86,8 @@
 			"Browser",
 			"Touch",
 			"GameDataJSON",
-			"MessagingJSON"
+			"MessagingJSON",
+			"RequestDataParser"
 		],
 		"subfolders": []
 	},
@@ -101,19 +102,16 @@
 			"GameLobby",
 			"ErrorMenu",
 			"GameWait",
-			"Level"
+			"Level_GenericTyping"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
 			"GameLobbyEvents",
-			"ConfigurationSettings",
-			"ErrorMenuEvents",
 			"JackboxTemplateEvents",
-			"GameWaitEvents",
-			"LevelEvents",
-			"NetworkingEvents"
+			"TypingLevelEvents",
+			"GameWaitEvents"
 		],
 		"subfolders": []
 	},

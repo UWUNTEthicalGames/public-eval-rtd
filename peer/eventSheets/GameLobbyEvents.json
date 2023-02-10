@@ -3,15 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "ConfigurationSettings"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "JackboxTemplateEvents"
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "NetworkingEvents"
 		},
 		{
 			"eventType": "block",

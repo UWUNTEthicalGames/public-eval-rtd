@@ -88,7 +88,8 @@
 			"Mouse",
 			"TimerText",
 			"ResultsText",
-			"Touch"
+			"Touch",
+			"RequestDataParser"
 		],
 		"subfolders": []
 	},
@@ -111,10 +112,7 @@
 		"items": [
 			"GameLobbyEvents",
 			"JackboxTemplateEvents",
-			"ConfigurationSettings",
-			"ErrorMenuEvents",
-			"LevelEvents",
-			"NetworkingEvents",
+			"Level_AlphaCharCountEvents",
 			"LevelChooserEvents"
 		],
 		"subfolders": []

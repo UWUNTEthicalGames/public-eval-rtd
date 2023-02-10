@@ -2,14 +2,44 @@
 	"name": "JackboxTemplateEvents",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "GAME_NAME",
+			"type": "string",
+			"initialValue": "EthicalRTDGame-UWUNT",
+			"comment": "Game name used for multiplayer. This must be globally unique, so use a prefix like \"UWUNTEthicalGames-\" plus project name.",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 450518487355573
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_INSTANCE_NAME",
+			"type": "string",
+			"initialValue": "default",
+			"comment": "Game instance name used for multiplayer. Can often be left as \"default\".",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 657901785082622
+		},
+		{
+			"eventType": "variable",
+			"name": "NUM_ROOM_CODE_CHARACTERS",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "Number of characters in room code. Limited to 3 or 4 (for profanity checks).",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 532568676749381
+		},
+		{
 			"eventType": "comment",
-			"text": "WARNING: No need to edit anything beyond this point unless you are interested in changing advanced multiplayer functionality or data storage. You are welcome to edit at your own risk!"
+			"text": "WARNING: No need to edit anything beyond this point unless you are interested in changing advanced multiplayer functionality or data storage. Edit at your own risk!"
 		},
 		{
 			"eventType": "variable",
 			"name": "ROOM_CODE",
 			"type": "string",
-			"initialValue": "[Will be set in code]",
+			"initialValue": "",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -19,11 +49,31 @@
 			"eventType": "variable",
 			"name": "PLAYER_ALIAS",
 			"type": "string",
-			"initialValue": "[Will be set in code]",
+			"initialValue": "",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 126777962040345
+		},
+		{
+			"eventType": "variable",
+			"name": "REQUEST_TAG",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 954817126488164
+		},
+		{
+			"eventType": "variable",
+			"name": "REQUEST_FROM_ALIAS",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 673511086366145
 		},
 		{
 			"eventType": "group",
@@ -55,10 +105,18 @@
 						{
 							"id": "set-array",
 							"objectClass": "GameDataJSON",
-							"sid": 324119005375696,
+							"sid": 635888153786917,
 							"parameters": {
-								"path": "\"outstandingRequests\"",
+								"path": "\"receivedRequests\"",
 								"size": "0"
+							}
+						},
+						{
+							"id": "set-object",
+							"objectClass": "GameDataJSON",
+							"sid": 362645613428295,
+							"parameters": {
+								"path": "\"receivedData\""
 							}
 						}
 					],
@@ -301,11 +359,15 @@
 							"actions": [
 								{
 									"callFunction": "OnReceiveRequest",
-									"sid": 598002105288637,
+									"sid": 782228320190384,
 									"parameters": [
 										"Multiplayer.Message",
 										"Multiplayer.FromAlias"
 									]
+								},
+								{
+									"callFunction": "refreshRequestVariables",
+									"sid": 760199736253805
 								}
 							],
 							"sid": 998029078628839
@@ -321,79 +383,246 @@
 							],
 							"actions": [
 								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 246042388104364,
+									"callFunction": "OnReceiveData",
+									"sid": 548922160205936,
+									"parameters": [
+										"Multiplayer.Tag",
+										"Multiplayer.Message",
+										"Multiplayer.FromAlias"
+									]
+								}
+							],
+							"sid": 927278193794227
+						}
+					]
+				},
+				{
+					"functionName": "OnReceiveData",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 177896762741403
+						},
+						{
+							"name": "message",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 980066365628597
+						},
+						{
+							"name": "from_alias",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 797045631904694
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 445953480990555,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 512292224335174,
 									"parameters": {
-										"type": "log",
-										"message": "\"If present, removing outstandingRequest for \"&Multiplayer.PeerAlias&\", \"&Multiplayer.Tag"
+										"first-value": "type",
+										"comparison": 0,
+										"second-value": "\"__player_data\""
 									}
 								}
 							],
-							"sid": 927278193794227,
+							"actions": [
+								{
+									"id": "parse",
+									"objectClass": "MessagingJSON",
+									"sid": 608140268721203,
+									"parameters": {
+										"data": "message"
+									}
+								}
+							],
+							"sid": 794346579197558,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "for-each",
-											"objectClass": "GameDataJSON",
-											"sid": 933124886971706,
+											"objectClass": "MessagingJSON",
+											"sid": 467353462192236,
 											"parameters": {
-												"path": "\"outstandingRequests\""
+												"path": "\"roles\""
 											}
 										}
 									],
-									"actions": [],
-									"sid": 161111183653963,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 633405903672369,
-													"parameters": {
-														"first-value": "GameDataJSON.CurrentValue",
-														"comparison": 0,
-														"second-value": "Multiplayer.Tag"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "remove-values",
-													"objectClass": "GameDataJSON",
-													"sid": 846754372967124,
-													"parameters": {
-														"count": "1",
-														"path": "\"outstandingRequests\"",
-														"index": "int(GameDataJSON.CurrentValue)"
-													}
-												}
-											],
-											"sid": 591830903596830
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
 									"actions": [
 										{
-											"callFunction": "OnReceiveData",
-											"sid": 208958760633266,
-											"parameters": [
-												"Multiplayer.Tag",
-												"Multiplayer.Message",
-												"Multiplayer.FromAlias"
-											]
+											"id": "push-value",
+											"objectClass": "GameDataJSON",
+											"sid": 238626368090919,
+											"parameters": {
+												"where": "back",
+												"path": "\"roles\"",
+												"value": "MessagingJSON.CurrentValue"
+											}
 										}
 									],
-									"sid": 284655665019027
+									"sid": 259827676390939
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 463837995684233,
+									"parameters": {
+										"first-value": "type",
+										"comparison": 0,
+										"second-value": "\"go_to_peer_layout\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 817941918779990,
+									"parameters": {
+										"layout": "message"
+									}
+								}
+							],
+							"sid": 976408453920310
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 435154266939726
+								}
+							],
+							"actions": [
+								{
+									"id": "set-object",
+									"objectClass": "GameDataJSON",
+									"sid": 466040089496094,
+									"parameters": {
+										"path": "\"receivedData.\"&from_alias&\".\"&type"
+									}
+								},
+								{
+									"id": "set-value",
+									"objectClass": "GameDataJSON",
+									"sid": 440938959914461,
+									"parameters": {
+										"path": "\"receivedData.\"&from_alias&\".\"&type",
+										"value": "message"
+									}
+								}
+							],
+							"sid": 615970627143775
+						}
+					]
+				},
+				{
+					"functionName": "OnReceiveRequest",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 196094033533634
+						},
+						{
+							"name": "from_alias",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 156782849140271
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 463499038267310,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 498128265030318,
+									"parameters": {
+										"first-value": "type",
+										"comparison": 0,
+										"second-value": "\"__connection_data\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SendDataToHost",
+									"sid": 483497576921532,
+									"parameters": [
+										"\"__connection_data\"",
+										"\"{\"\"status\"\": \"\"ready_to_start\"\"}\""
+									]
+								}
+							],
+							"sid": 911686196030682
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 185638137052525
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Treat as public, send to request list"
+								},
+								{
+									"id": "push-value",
+									"objectClass": "GameDataJSON",
+									"sid": 503619628521267,
+									"parameters": {
+										"where": "back",
+										"path": "\"receivedRequests\"",
+										"value": "str(\"{\"\"type\"\":\"\"\"&type&\"\"\",\"\"from_alias\"\":\"\"\"&from_alias&\"\"\"}\")"
+									}
+								}
+							],
+							"sid": 808415297774513
 						}
 					]
 				},
@@ -435,14 +664,6 @@
 								"message": "type",
 								"mode": "reliable-unordered"
 							}
-						},
-						{
-							"callFunction": "OnSendRequest",
-							"sid": 779196249389408,
-							"parameters": [
-								"type",
-								"\"\""
-							]
 						}
 					],
 					"sid": 150241565312421
@@ -492,21 +713,123 @@
 								"message": "message",
 								"mode": "reliable-unordered"
 							}
-						},
-						{
-							"callFunction": "OnSendData",
-							"sid": 289174630733433,
-							"parameters": [
-								"type",
-								"message",
-								"\"\""
-							]
 						}
 					],
 					"sid": 962433139287381
 				}
 			],
 			"sid": 235440365724972
+		},
+		{
+			"functionName": "closeRequest",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "pop-value",
+					"objectClass": "GameDataJSON",
+					"sid": 920668841104950,
+					"parameters": {
+						"where": "front",
+						"path": "\"receivedRequests\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 170606016708205,
+					"parameters": {
+						"variable": "REQUEST_TAG",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 858631185561844,
+					"parameters": {
+						"variable": "REQUEST_FROM_ALIAS",
+						"value": "\"\""
+					}
+				},
+				{
+					"callFunction": "refreshRequestVariables",
+					"sid": 187244289761365
+				}
+			],
+			"sid": 629863062501581
+		},
+		{
+			"functionName": "refreshRequestVariables",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 283749648648137,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "GameDataJSON",
+							"sid": 583157959035974,
+							"parameters": {
+								"path": "\"receivedRequests.0\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "parse",
+							"objectClass": "RequestDataParser",
+							"sid": 165487640389205,
+							"parameters": {
+								"data": "GameDataJSON.Get(\"receivedRequests.0\")"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 547037695754289,
+							"parameters": {
+								"type": "log",
+								"message": "\"Setting variables for received request: \"&RequestDataParser.ToCompactString&\", tag (\"&RequestDataParser.Type(\"type\")&\"): \"&RequestDataParser.Get(\"type\")&\", from_alias (\"&RequestDataParser.Type(\"from_alias\")&\"): \"&RequestDataParser.Get(\"from_alias\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 963487515618638,
+							"parameters": {
+								"variable": "REQUEST_TAG",
+								"value": "RequestDataParser.Get(\"type\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 944450075677411,
+							"parameters": {
+								"variable": "REQUEST_FROM_ALIAS",
+								"value": "RequestDataParser.Get(\"from_alias\")"
+							}
+						}
+					],
+					"sid": 660011489836823
+				}
+			]
 		}
 	],
 	"sid": 419596889089472
