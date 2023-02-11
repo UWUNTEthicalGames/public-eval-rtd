@@ -3,33 +3,13 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "GAME_NAME",
-			"type": "string",
-			"initialValue": "EthicalRTDGame-UWUNT",
-			"comment": "Game name used for multiplayer. This must be globally unique, so use a prefix like \"UWUNTEthicalGames-\" plus project name.",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 333554221688864
-		},
-		{
-			"eventType": "variable",
-			"name": "GAME_INSTANCE_NAME",
-			"type": "string",
-			"initialValue": "default",
-			"comment": "Game instance name used for multiplayer. Can often be left as \"default\".",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 667452763458912
-		},
-		{
-			"eventType": "variable",
 			"name": "MAX_PEERS_PER_LOBBY",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "Maximum number of peers per lobby (including host). Set 0 for unlimited.",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 971387891435923
+			"sid": 319942795830060
 		},
 		{
 			"eventType": "variable",
@@ -44,6 +24,26 @@
 		{
 			"eventType": "comment",
 			"text": "WARNING: No need to edit anything beyond this point unless you are interested in changing advanced multiplayer functionality or data storage. Edit at your own risk!"
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_NAME",
+			"type": "string",
+			"initialValue": "EthicalRTDGame-UWUNT",
+			"comment": "Game name used for multiplayer. This must be globally unique, so use a prefix like \"UWUNTEthicalGames-\" plus project name.",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 484765507368982
+		},
+		{
+			"eventType": "variable",
+			"name": "GAME_INSTANCE_NAME",
+			"type": "string",
+			"initialValue": "default",
+			"comment": "Game instance name used for multiplayer. Can often be left as \"default\".",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 669882084292497
 		},
 		{
 			"eventType": "variable",

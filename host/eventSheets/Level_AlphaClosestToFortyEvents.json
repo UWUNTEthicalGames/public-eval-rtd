@@ -1,5 +1,5 @@
 {
-	"name": "Level_AlphaCharCountEvents",
+	"name": "Level_AlphaClosestToFortyEvents",
 	"events": [
 		{
 			"eventType": "include",
@@ -11,7 +11,7 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 892551444213727
+					"sid": 560873562049861
 				}
 			],
 			"actions": [
@@ -21,7 +21,7 @@
 				},
 				{
 					"callFunction": "SendDataToAllPeers",
-					"sid": 636230234229040,
+					"sid": 465991059482511,
 					"parameters": [
 						"\"go_to_peer_layout\"",
 						"\"Level_GenericTyping\""
@@ -34,16 +34,25 @@
 				{
 					"id": "start-timer",
 					"objectClass": "TimerText",
-					"sid": 212756480723531,
+					"sid": 751316774233034,
 					"behaviorType": "Timer",
 					"parameters": {
 						"duration": "10.0",
 						"type": "once",
 						"tag": "\"level-timer\""
 					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 129986183028962,
+					"parameters": {
+						"type": "log",
+						"message": "\"Starting layout for closest to 40 level\""
+					}
 				}
 			],
-			"sid": 976603227568846
+			"sid": 368920485631343
 		},
 		{
 			"eventType": "block",
@@ -51,7 +60,7 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 229830542716721,
+					"sid": 782948144178166,
 					"parameters": {
 						"interval-seconds": "0.25"
 					}
@@ -61,13 +70,13 @@
 				{
 					"id": "set-text",
 					"objectClass": "TimerText",
-					"sid": 987173707675553,
+					"sid": 374336866155690,
 					"parameters": {
 						"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
 					}
 				}
 			],
-			"sid": 830634602132976
+			"sid": 274637774063074
 		},
 		{
 			"eventType": "block",
@@ -75,7 +84,7 @@
 				{
 					"id": "on-timer",
 					"objectClass": "TimerText",
-					"sid": 464843167642224,
+					"sid": 734384137266926,
 					"behaviorType": "Timer",
 					"parameters": {
 						"tag": "\"level-timer\""
@@ -90,7 +99,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "TimerText",
-					"sid": 445149200425679,
+					"sid": 515677881193891,
 					"parameters": {
 						"text": "0"
 					}
@@ -101,14 +110,14 @@
 				},
 				{
 					"callFunction": "SendRequestToAllPeers",
-					"sid": 684959631704049,
+					"sid": 824029180696657,
 					"parameters": [
 						"\"level_results\""
 					]
 				},
 				{
 					"callFunction": "SendRequestToAllPeers",
-					"sid": 960074449474681,
+					"sid": 862930019955000,
 					"parameters": [
 						"\"end_level\""
 					]
@@ -116,24 +125,24 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 902375802516650,
+					"sid": 308661379810137,
 					"parameters": {
 						"seconds": "5"
 					}
 				},
 				{
 					"callFunction": "ApplyFunctionToAllReceivedData",
-					"sid": 682894701587401,
+					"sid": 493775033979569,
 					"parameters": [
 						"\"level_results\"",
-						"\"DoPlayerCountResults\""
+						"\"DoPlayerCountFromFortyResults\""
 					]
 				}
 			],
-			"sid": 644388221105945
+			"sid": 362123190577942
 		},
 		{
-			"functionName": "DoPlayerCountResults",
+			"functionName": "DoPlayerCountFromFortyResults",
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
@@ -145,14 +154,14 @@
 					"type": "string",
 					"initialValue": "",
 					"comment": "",
-					"sid": 262522766745300
+					"sid": 516872218787897
 				},
 				{
 					"name": "data",
 					"type": "string",
 					"initialValue": "",
 					"comment": "",
-					"sid": 244864838139303
+					"sid": 810302703433511
 				}
 			],
 			"eventType": "function-block",
@@ -161,14 +170,14 @@
 				{
 					"id": "append-text",
 					"objectClass": "ResultsText",
-					"sid": 438446553068544,
+					"sid": 352633261635236,
 					"parameters": {
-						"text": "player_alias&\": \"&len(data)"
+						"text": "player_alias&\": \"&abs(40 - len(data))&\" (distance from 40)\""
 					}
 				}
 			],
-			"sid": 148166275517028
+			"sid": 885043594180291
 		}
 	],
-	"sid": 740432742886503
+	"sid": 479883169577126
 }

@@ -102,7 +102,7 @@
 						"text": "",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 24,
+						"size": 32,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -170,6 +170,49 @@
 						"y": 467,
 						"width": 268,
 						"height": 50,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Goal: Type as many characters as possible!",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 32,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 33,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 872,
+						"y": 107,
+						"width": 962,
+						"height": 121,
 						"originX": 0,
 						"originY": 0,
 						"color": [

@@ -104,7 +104,8 @@
 			"GameLobby",
 			"ErrorMenu",
 			"Level_AlphaCharCount",
-			"LevelChooser"
+			"LevelChooser",
+			"Level_AlphaClosestToForty"
 		],
 		"subfolders": []
 	},
@@ -113,7 +114,8 @@
 			"GameLobbyEvents",
 			"JackboxTemplateEvents",
 			"Level_AlphaCharCountEvents",
-			"LevelChooserEvents"
+			"LevelChooserEvents",
+			"Level_AlphaClosestToFortyEvents"
 		],
 		"subfolders": []
 	},
