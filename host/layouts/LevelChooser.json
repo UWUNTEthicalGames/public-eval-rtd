@@ -134,7 +134,7 @@
 					},
 					"uid": 27,
 					"instanceVariables": {
-						"levelTarget": "Level_AlphaCharCount"
+						"levelTarget": "Level_AlphaClosestToForty"
 					},
 					"behaviors": {},
 					"world": {
