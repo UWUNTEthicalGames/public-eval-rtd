@@ -41,10 +41,10 @@
 						{
 							"id": "start-timer",
 							"objectClass": "TimerText",
-							"sid": 165306032953810,
+							"sid": 181250984334315,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "10.0",
+								"duration": "2.0",
 								"type": "once",
 								"tag": "\"level-timer\""
 							}
@@ -119,12 +119,74 @@
 							"parameters": [
 								"\"end_level\""
 							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 684618192554905,
+							"parameters": {
+								"seconds": "5"
+							}
+						},
+						{
+							"callFunction": "ApplyFunctionToAllReceivedData",
+							"sid": 343466442909964,
+							"parameters": [
+								"\"level_results\"",
+								"\"DoPlayerCountResults\""
+							]
 						}
 					],
 					"sid": 910369868873364
 				}
 			],
 			"sid": 148002741366705
+		},
+		{
+			"functionName": "DoPlayerCountResults",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "player_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 262522766745300
+				},
+				{
+					"name": "data",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 244864838139303
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 679798129077866,
+					"parameters": {
+						"type": "log",
+						"message": "\"calling function\""
+					}
+				},
+				{
+					"id": "append-text",
+					"objectClass": "ResultsText",
+					"sid": 438446553068544,
+					"parameters": {
+						"text": "player_alias&\": \"&len(data)"
+					}
+				}
+			],
+			"sid": 148166275517028
 		}
 	],
 	"sid": 740432742886503

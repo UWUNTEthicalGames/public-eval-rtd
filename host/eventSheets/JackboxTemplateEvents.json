@@ -1516,66 +1516,64 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 145670189268690,
-									"parameters": {
-										"first-value": "type",
-										"comparison": 0,
-										"second-value": "\"level_results\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 368227220506846,
-									"parameters": {
-										"type": "log",
-										"message": "\"Got results for player \"&from_alias&\":  \"&message"
-									}
-								},
-								{
-									"id": "append-text",
-									"objectClass": "ResultsText",
-									"sid": 236415471891785,
-									"parameters": {
-										"text": "from_alias&\": \"&str(len(message))&newline"
-									}
-								}
-							],
-							"sid": 102223516572460
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 836585042057764
+									"sid": 279274156468627
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 102496910461568,
+							"children": [
 								{
-									"id": "set-object",
-									"objectClass": "GameDataJSON",
-									"sid": 657780938673791,
-									"parameters": {
-										"path": "\"receivedData.\"&from_alias&\".\"&type"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "GameDataJSON",
+											"sid": 341153907561721,
+											"parameters": {
+												"path": "\"receivedData.\"&type"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-object",
+											"objectClass": "GameDataJSON",
+											"sid": 171806926044067,
+											"parameters": {
+												"path": "\"receivedData.\"&type"
+											}
+										}
+									],
+									"sid": 346715178836154
 								},
 								{
-									"id": "set-value",
-									"objectClass": "GameDataJSON",
-									"sid": 298437454900806,
-									"parameters": {
-										"path": "\"receivedData.\"&from_alias&\".\"&type",
-										"value": "message"
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-object",
+											"objectClass": "GameDataJSON",
+											"sid": 275374825719294,
+											"parameters": {
+												"path": "\"receivedData.\"&type&\".\"&from_alias"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "GameDataJSON",
+											"sid": 141017739471272,
+											"parameters": {
+												"path": "\"receivedData.\"&type&\".\"&from_alias",
+												"value": "message"
+											}
+										}
+									],
+									"sid": 912377039123261
 								}
-							],
-							"sid": 664243720197038
+							]
 						}
 					]
 				}
@@ -1820,6 +1818,122 @@
 					"conditions": [],
 					"actions": [],
 					"sid": 724624857481784
+				}
+			]
+		},
+		{
+			"functionName": "ApplyFunctionToAllReceivedData",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "tag",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 577850807116037
+				},
+				{
+					"name": "function_name",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 766499734841490
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 350662206624677,
+					"parameters": {
+						"type": "log",
+						"message": "\"Attempting to call function \"&function_name&\" with message_type=\"&tag"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 344157355063198,
+					"parameters": {
+						"type": "log",
+						"message": "GameDataJSON.GetAsCompactString(\"receivedData\")"
+					}
+				}
+			],
+			"sid": 721073179731043,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "temp_player_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 941907402083009
+				},
+				{
+					"eventType": "variable",
+					"name": "temp_message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 569616147502850
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "GameDataJSON",
+							"sid": 246789044651082,
+							"parameters": {
+								"path": "\"receivedData.\"&tag"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 496995710973369,
+							"parameters": {
+								"variable": "temp_player_alias",
+								"value": "GameDataJSON.CurrentKey"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 225692207251803,
+							"parameters": {
+								"variable": "temp_message",
+								"value": "GameDataJSON.CurrentValue"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 724678147087804,
+							"parameters": {
+								"type": "log",
+								"message": "\"InsideApplyFunction, player_alias: \"&temp_player_alias&\", message: \"&temp_message"
+							}
+						},
+						{
+							"type": "script",
+							"script": "runtime.callFunction(localVars.function_name, localVars.temp_player_alias, localVars.temp_message)"
+						}
+					],
+					"sid": 126304522899736
 				}
 			]
 		}

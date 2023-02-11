@@ -520,26 +520,59 @@
 									"sid": 435154266939726
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 615970627143775,
+							"children": [
 								{
-									"id": "set-object",
-									"objectClass": "GameDataJSON",
-									"sid": 466040089496094,
-									"parameters": {
-										"path": "\"receivedData.\"&from_alias&\".\"&type"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "GameDataJSON",
+											"sid": 986174299126262,
+											"parameters": {
+												"path": "\"receivedData.\"&type"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-object",
+											"objectClass": "GameDataJSON",
+											"sid": 580297102610441,
+											"parameters": {
+												"path": "\"receivedData.\"&type"
+											}
+										}
+									],
+									"sid": 656664681161274
 								},
 								{
-									"id": "set-value",
-									"objectClass": "GameDataJSON",
-									"sid": 440938959914461,
-									"parameters": {
-										"path": "\"receivedData.\"&from_alias&\".\"&type",
-										"value": "message"
-									}
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-object",
+											"objectClass": "GameDataJSON",
+											"sid": 158371780215072,
+											"parameters": {
+												"path": "\"receivedData.\"&type&\".\"&from_alias"
+											}
+										},
+										{
+											"id": "set-value",
+											"objectClass": "GameDataJSON",
+											"sid": 797852913747106,
+											"parameters": {
+												"path": "\"receivedData.\"&type&\".\"&from_alias",
+												"value": "message"
+											}
+										}
+									],
+									"sid": 260592689231884
 								}
-							],
-							"sid": 615970627143775
+							]
 						}
 					]
 				},
