@@ -1,0 +1,131 @@
+{
+	"name": "Level_AlphaClosestToFortyEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gameplay (Level)2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 385884558579920
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "You'll often want to tell the peer devices which layout to start."
+						},
+						{
+							"callFunction": "SendDataToAllPeers",
+							"sid": 418690274520014,
+							"parameters": [
+								"\"go_to_peer_layout\"",
+								"\"Level_GenericTyping\""
+							]
+						},
+						{
+							"type": "comment",
+							"text": "You're free to start gameplay below."
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "TimerText",
+							"sid": 708739368624253,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "10.0",
+								"type": "once",
+								"tag": "\"level-timer\""
+							}
+						}
+					],
+					"sid": 979153761382661
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 192939040787851,
+							"parameters": {
+								"interval-seconds": "0.25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "TimerText",
+							"sid": 727636536874162,
+							"parameters": {
+								"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
+							}
+						}
+					],
+					"sid": 700017803524047
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "TimerText",
+							"sid": 334165404301411,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"level-timer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Setting timer just to clean up the text, sometimes the timer can get fractional or negative."
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TimerText",
+							"sid": 644051273973614,
+							"parameters": {
+								"text": "0"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Request results from the player. We could have designed to voluntarily send the results, but this ensures that everyone gets the request at the same time."
+						},
+						{
+							"callFunction": "SendRequestToAllPeers",
+							"sid": 693367423062184,
+							"parameters": [
+								"\"level_results\""
+							]
+						},
+						{
+							"callFunction": "SendRequestToAllPeers",
+							"sid": 539964211578230,
+							"parameters": [
+								"\"end_level\""
+							]
+						}
+					],
+					"sid": 371512735099253
+				}
+			],
+			"sid": 363506314822189
+		}
+	],
+	"sid": 479883169577126
+}
