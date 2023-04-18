@@ -2,29 +2,64 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 
-/* DEFAULT CODE
-runOnStartup(async runtime =>
-{
-	// Code to run on the loading screen.
-	// Note layouts, objects etc. are not yet available.
-	
-	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
-});
 
-async function OnBeforeProjectStart(runtime)
+// Import any other script files here
+import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'
+
+export function addDataAndPopulateChart() 
 {
 	// Code to run just before 'On start of layout' on
 	// the first layout. Loading has finished and initial
 	// instances are created and available to use here.
 	
-	runtime.addEventListener("tick", () => Tick(runtime));
-}
+	// runtime.addEventListener("tick", () => Tick(runtime));
+	
+	console.log("Project start, gettting data ready")
+	
+	const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+	const data = {
+	  labels: labels,
+	  datasets: [{
+		label: 'My First Dataset',
+		data: [65, 59, 80, 81, 56, 55, 40],
+		backgroundColor: [
+		  'rgba(255, 99, 132, 0.2)',
+		  'rgba(255, 159, 64, 0.2)',
+		  'rgba(255, 205, 86, 0.2)',
+		  'rgba(75, 192, 192, 0.2)',
+		  'rgba(54, 162, 235, 0.2)',
+		  'rgba(153, 102, 255, 0.2)',
+		  'rgba(201, 203, 207, 0.2)'
+		],
+		borderColor: [
+		  'rgb(255, 99, 132)',
+		  'rgb(255, 159, 64)',
+		  'rgb(255, 205, 86)',
+		  'rgb(75, 192, 192)',
+		  'rgb(54, 162, 235)',
+		  'rgb(153, 102, 255)',
+		  'rgb(201, 203, 207)'
+		],
+		borderWidth: 1
+	  }]
+	};
 
-function Tick(runtime)
-{
-	// Code to run every tick
+	new Chart("myChart", {
+	  type: "bar",
+	  data: data,
+	  options: {
+		legend: {
+			display: true
+		},
+		scales: { 
+			y: { 
+				beginAtZero: true
+			}
+		}
+	  }
+	});
+	
 }
-*/
 
 export function generateRandomRoomCode(characters) {
 	if (characters != 3 && characters != 4) {
@@ -53,3 +88,4 @@ export function generateUniqueRandomRoomCode(runtime, characters) {
 	}
 	runtime.globalVars.ROOM_CODE = proposed_room_code;
 }
+

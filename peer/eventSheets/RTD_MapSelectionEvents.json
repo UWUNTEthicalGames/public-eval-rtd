@@ -1,0 +1,10 @@
+{
+	"name": "RTD_MapSelectionEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		}
+	],
+	"sid": 335751246439773
+}

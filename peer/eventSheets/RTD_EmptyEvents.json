@@ -1,0 +1,10 @@
+{
+	"name": "RTD_EmptyEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		}
+	],
+	"sid": 547780950898243
+}
