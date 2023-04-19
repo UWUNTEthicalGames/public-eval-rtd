@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "HTMLElement",
+			"name": "HTML Element",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -89,7 +96,8 @@
 			"TimerText",
 			"ResultsText",
 			"Touch",
-			"RequestDataParser"
+			"RequestDataParser",
+			"HTMLElement"
 		],
 		"subfolders": []
 	},
@@ -104,7 +112,14 @@
 			"GameLobby",
 			"ErrorMenu",
 			"Level_AlphaCharCount",
-			"LevelChooser"
+			"LevelChooser",
+			"Level_AlphaClosestToForty",
+			"RTD_Instructions",
+			"RTD_BusinessInfo",
+			"RTD_Demographics",
+			"RTD_WatchCustomers",
+			"RTD_Score",
+			"RTD_Evaluation"
 		],
 		"subfolders": []
 	},
@@ -113,7 +128,14 @@
 			"GameLobbyEvents",
 			"JackboxTemplateEvents",
 			"Level_AlphaCharCountEvents",
-			"LevelChooserEvents"
+			"LevelChooserEvents",
+			"Level_AlphaClosestToFortyEvents",
+			"RTD_InstructionEvents",
+			"RTD_BusinessInfoEvents",
+			"RTD_DemographicsEvents",
+			"RTD_WatchCustomersEvents",
+			"RTD_ScoreEvents",
+			"RTD_EvaluationEvents"
 		],
 		"subfolders": []
 	},
@@ -304,5 +326,5 @@
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
-	"firstLayout": null
+	"firstLayout": "GameLobby"
 }

@@ -1,0 +1,71 @@
+{
+	"name": "RTD_ScoreEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 147596936523027
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "You'll often want to tell the peer devices which layout to start."
+				},
+				{
+					"callFunction": "SendDataToAllPeers",
+					"sid": 291149182778794,
+					"parameters": [
+						"\"go_to_peer_layout\"",
+						"\"RTD_Empty\""
+					]
+				},
+				{
+					"type": "comment",
+					"text": "You're free to start gameplay below."
+				}
+			],
+			"sid": 756963322517128
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 277936770126219,
+					"parameters": {
+						"object": "Button"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "SendDataToAllPeers",
+					"sid": 379220094985257,
+					"parameters": [
+						"\"level_start\"",
+						"Button.levelTarget"
+					]
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 371885374619765,
+					"parameters": {
+						"layout": "Button.levelTarget"
+					}
+				}
+			],
+			"sid": 279753485653744
+		}
+	],
+	"sid": 731117350919625
+}

@@ -1,0 +1,74 @@
+{
+	"name": "BuildingSprite",
+	"plugin-id": "Sprite",
+	"sid": 805881959138145,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.54,
+						"originY": 0.856,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4892952,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Info",
+								"x": 0.864,
+								"y": 0.188
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 252463792095069,
+				"name": "Bldg1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.54,
+						"originY": 0.856,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9877564,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Info",
+								"x": 0.864,
+								"y": 0.188
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 346740452854628,
+				"name": "Bldg2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

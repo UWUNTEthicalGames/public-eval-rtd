@@ -64,8 +64,29 @@
 		},
 		{
 			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Timer",
 			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -87,7 +108,13 @@
 			"Touch",
 			"GameDataJSON",
 			"MessagingJSON",
-			"RequestDataParser"
+			"RequestDataParser",
+			"BuildingSprite",
+			"InfoSprite",
+			"ArrowSprite",
+			"MapManager",
+			"PlayerSprite",
+			"Sprite"
 		],
 		"subfolders": []
 	},
@@ -102,7 +129,9 @@
 			"GameLobby",
 			"ErrorMenu",
 			"GameWait",
-			"Level_GenericTyping"
+			"Level_GenericTyping",
+			"RTD_Empty",
+			"RTD_MapSelection"
 		],
 		"subfolders": []
 	},
@@ -111,7 +140,9 @@
 			"GameLobbyEvents",
 			"JackboxTemplateEvents",
 			"TypingLevelEvents",
-			"GameWaitEvents"
+			"GameWaitEvents",
+			"RTD_EmptyEvents",
+			"RTD_MapSelectionEvents"
 		],
 		"subfolders": []
 	},
@@ -268,5 +299,5 @@
 	},
 	"viewportWidth": 480,
 	"viewportHeight": 854,
-	"firstLayout": null
+	"firstLayout": "RTD_MapSelection"
 }

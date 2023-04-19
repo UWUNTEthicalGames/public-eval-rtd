@@ -3,13 +3,27 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "NUM_ROOM_CODE_CHARACTERS",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "Number of characters in room code. Limited to 3 or 4 (for profanity checks).",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 135242006535936
+		},
+		{
+			"eventType": "comment",
+			"text": "WARNING: No need to edit anything beyond this point unless you are interested in changing advanced multiplayer functionality or data storage. Edit at your own risk!"
+		},
+		{
+			"eventType": "variable",
 			"name": "GAME_NAME",
 			"type": "string",
 			"initialValue": "EthicalRTDGame-UWUNT",
 			"comment": "Game name used for multiplayer. This must be globally unique, so use a prefix like \"UWUNTEthicalGames-\" plus project name.",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 450518487355573
+			"sid": 361148511020922
 		},
 		{
 			"eventType": "variable",
@@ -19,21 +33,7 @@
 			"comment": "Game instance name used for multiplayer. Can often be left as \"default\".",
 			"isStatic": false,
 			"isConstant": true,
-			"sid": 657901785082622
-		},
-		{
-			"eventType": "variable",
-			"name": "NUM_ROOM_CODE_CHARACTERS",
-			"type": "number",
-			"initialValue": "4",
-			"comment": "Number of characters in room code. Limited to 3 or 4 (for profanity checks).",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 532568676749381
-		},
-		{
-			"eventType": "comment",
-			"text": "WARNING: No need to edit anything beyond this point unless you are interested in changing advanced multiplayer functionality or data storage. Edit at your own risk!"
+			"sid": 275191049129737
 		},
 		{
 			"eventType": "variable",
