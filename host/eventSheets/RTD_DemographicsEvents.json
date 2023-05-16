@@ -20,6 +20,16 @@
 					"text": "You'll often want to tell the peer devices which layout to start."
 				},
 				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 839486325590121,
+					"parameters": {
+						"name": "\"OnReceiveDataFunctions\"",
+						"string": "\"RTD_Demographics\"",
+						"function": "ORD_RTD_Demographics"
+					}
+				},
+				{
 					"callFunction": "SendDataToAllPeers",
 					"sid": 356180971519720,
 					"parameters": [
@@ -34,26 +44,17 @@
 				{
 					"id": "start-timer",
 					"objectClass": "TimerText",
-					"sid": 359785211807507,
+					"sid": 582025528728115,
 					"behaviorType": "Timer",
 					"parameters": {
-						"duration": "10.0",
+						"duration": "30.0",
 						"type": "once",
 						"tag": "\"level-timer\""
 					}
 				},
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 860540065887003,
-					"parameters": {
-						"type": "log",
-						"message": "\"Starting demographics layout and timer\""
-					}
-				},
-				{
 					"type": "script",
-					"script": "addDataAndPopulateChart();"
+					"script": "addDataAndPopulateChart(\"loan_applications\");"
 				}
 			],
 			"sid": 490788545066952
@@ -74,9 +75,9 @@
 				{
 					"id": "set-text",
 					"objectClass": "TimerText",
-					"sid": 337735994609503,
+					"sid": 998748554765270,
 					"parameters": {
-						"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
+						"text": "30 - round(TimerText.Timer.CurrentTime(\"level-timer\"))&\" s\""
 					}
 				}
 			],
@@ -118,6 +119,129 @@
 				}
 			],
 			"sid": 649957600919535
+		},
+		{
+			"functionName": "ORD_RTD_Demographics",
+			"functionDescription": "Handles received data for this layout",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 883202322308062
+				},
+				{
+					"name": "message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 141121419407747
+				},
+				{
+					"name": "from_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 175509326897546
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 273899792122991,
+					"parameters": {
+						"type": "log",
+						"message": "\"Entering ORD_RTD_Demographics with parameters: \"&type&\", \"&message&\", \"&from_alias"
+					}
+				}
+			],
+			"sid": 717232344446961,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 678911806117100,
+							"parameters": {
+								"variable": "type",
+								"comparison": 0,
+								"value": "\"markSelected_add\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 675195909835409,
+							"parameters": {
+								"variable": "type",
+								"comparison": 0,
+								"value": "\"markSelected_remove\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Selection messages are just forwarded to players to show map correctly."
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 502663467811268,
+							"parameters": {
+								"type": "log",
+								"message": "\"Attempting to send selection message to other hosts\""
+							}
+						},
+						{
+							"callFunction": "SendDataToAllPeers",
+							"sid": 795064590244986,
+							"parameters": [
+								"type",
+								"message"
+							]
+						}
+					],
+					"sid": 741297782617836,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 780574575092138,
+							"parameters": {
+								"variable": "type",
+								"comparison": 0,
+								"value": "\"dataRatios_update\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Data ratios need to be aggregated and displayed by the host."
+						},
+						{
+							"type": "script",
+							"script": "registerDataRatiosAndWeight(localVars.message);\naddDataAndPopulateChart(\"loan_applications\");"
+						}
+					],
+					"sid": 331294275437928
+				}
+			]
 		}
 	],
 	"sid": 473333717313514

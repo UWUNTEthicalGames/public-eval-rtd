@@ -1,40 +1,29 @@
 {
-	"name": "PlayerSprite",
+	"name": "BuildingSprite",
 	"plugin-id": "Sprite",
-	"sid": 450607469412251,
+	"sid": 205550177979160,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 102204119824881
-		},
-		{
-			"behaviorId": "bound",
-			"name": "BoundToLayout",
-			"sid": 440853095727268
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 20,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 250,
+						"height": 250,
+						"originX": 0.56,
+						"originY": 0.808,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7962235,
+						"imageSpriteId": 5814810,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 274435093688205,
+				"sid": 166160019803492,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

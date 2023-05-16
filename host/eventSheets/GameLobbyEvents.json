@@ -39,6 +39,10 @@
 					"parameters": {
 						"text": "ROOM_CODE"
 					}
+				},
+				{
+					"type": "script",
+					"script": "initializeVisualizationDataRatios(\"loan_applications\");\n\n// registerDataRatiosAndWeight(\"01_2_1:1/1:1:1:1/1:9/1:1:1\");\n// registerDataRatiosAndWeight(\"03_1_1:2/3:1:1:1/1:1/1:1:5\");\n// registerDataRatiosAndWeight(\"01_-2_1:1/1:1:1:1/1:9/1:1:1\");"
 				}
 			],
 			"sid": 481350352778619

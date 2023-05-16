@@ -1,30 +1,36 @@
 {
-	"name": "Sprite",
+	"name": "CustomerSprite",
 	"plugin-id": "Sprite",
-	"sid": 189803550420299,
+	"sid": 445981458353204,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 954934794415615
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 100,
-						"height": 100,
+						"width": 25,
+						"height": 25,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6156500,
+						"imageSpriteId": 8700122,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 128542744157899,
-				"name": "Person1",
+				"sid": 953387613956492,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -34,20 +40,20 @@
 			{
 				"frames": [
 					{
-						"width": 100,
-						"height": 100,
+						"width": 25,
+						"height": 25,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3086444,
+						"imageSpriteId": 2373042,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 182362375571197,
-				"name": "Person2",
+				"sid": 459857462514140,
+				"name": "Animation 2",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -57,20 +63,43 @@
 			{
 				"frames": [
 					{
-						"width": 100,
-						"height": 100,
+						"width": 25,
+						"height": 25,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8170740,
+						"imageSpriteId": 1789459,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 677719641594895,
-				"name": "Person3",
+				"sid": 802898453046992,
+				"name": "Animation 3",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7412262,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 302975740866768,
+				"name": "Animation 4",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -71,6 +71,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
@@ -97,7 +104,10 @@
 			"ResultsText",
 			"Touch",
 			"RequestDataParser",
-			"HTMLElement"
+			"HTMLElement",
+			"BuildingSprite",
+			"CustomerSprite",
+			"InfoSprite"
 		],
 		"subfolders": []
 	},
@@ -156,6 +166,14 @@
 					"sid": 998238624844753,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "customer_data.js",
+					"type": "text/javascript",
+					"sid": 829835831599125,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],
@@ -252,6 +270,14 @@
 					"name": "game_info.json",
 					"type": "application/json",
 					"sid": 490078411750719,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "unbiased.csv",
+					"type": "text/csv",
+					"sid": 680463205170161,
 					"file-info": {
 						"purpose": "none"
 					}

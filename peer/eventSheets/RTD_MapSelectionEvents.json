@@ -4,6 +4,976 @@
 		{
 			"eventType": "include",
 			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 474546697811413
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "InfoSprite",
+					"sid": 685744477441810,
+					"parameters": {
+						"animation": "\"Empty\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "SelectableSprite",
+					"sid": 792186419186105,
+					"parameters": {
+						"instance-variable": "status",
+						"value": "\"idle\""
+					}
+				},
+				{
+					"id": "map-function",
+					"objectClass": "Functions",
+					"sid": 323547865816311,
+					"parameters": {
+						"name": "\"OnReceiveDataFunctions\"",
+						"string": "\"RTD_MapSelection\"",
+						"function": "ORD_RTD_MapSelectionEvents"
+					}
+				}
+			],
+			"sid": 489671479943327
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 638058127280666,
+					"parameters": {
+						"object": "ArrowSprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "PlayerSprite",
+					"sid": 378655579953068,
+					"parameters": {
+						"x": "PlayerSprite.X + (ArrowSprite.xMoveDirection * 10)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "PlayerSprite",
+					"sid": 345206196497402,
+					"parameters": {
+						"y": "PlayerSprite.Y + (ArrowSprite.yMoveDirection * 10)"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "ArrowSprite",
+					"sid": 877479400282574,
+					"parameters": {
+						"animation": "\"Pressed\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 710482270795858
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 968660524406280
+				}
+			],
+			"actions": [],
+			"sid": 266560379671394,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-overlapping-point",
+							"objectClass": "System",
+							"sid": 186605898075214,
+							"parameters": {
+								"object": "ArrowSprite",
+								"x": "Touch.AbsoluteX",
+								"y": "Touch.AbsoluteY"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ArrowSprite",
+							"sid": 444055211730267,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 772499710540271
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 874615050490213,
+					"parameters": {
+						"object": "SelectableSprite"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 283598768767637,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 266290879710488,
+							"parameters": {
+								"object": "InfoSprite",
+								"expression": "InfoSprite.UID = SelectableSprite.assignedInfoSpriteUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 210926818890040,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PersonSprite",
+									"sid": 322888926700318,
+									"parameters": {
+										"instance-variable": "status",
+										"comparison": 0,
+										"value": "\"idle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "SelectableSprite",
+									"sid": 620317251653833,
+									"parameters": {
+										"instance-variable": "status",
+										"value": "\"info\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "InfoSprite",
+									"sid": 288107739150605,
+									"parameters": {
+										"animation": "\"Information\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 133214051831193
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 313773043146680
+								}
+							],
+							"actions": [],
+							"sid": 272569019937017,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "PersonSprite",
+											"sid": 288501534907053,
+											"parameters": {
+												"instance-variable": "status",
+												"comparison": 0,
+												"value": "\"info\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "SelectableSprite",
+											"sid": 691633374563449,
+											"parameters": {
+												"instance-variable": "status",
+												"value": "\"idle\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "InfoSprite",
+											"sid": 773331567958066,
+											"parameters": {
+												"animation": "\"Empty\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 882812342493332
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-touched-object",
+					"objectClass": "Touch",
+					"sid": 650331936018189,
+					"parameters": {
+						"object": "SelectableSprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "SelectableSprite",
+					"sid": 174597936754723,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "1",
+						"type": "once",
+						"tag": "\"hold-timer\""
+					}
+				}
+			],
+			"sid": 272106692291909
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 555502768850483
+				},
+				{
+					"id": "is-touching-object",
+					"objectClass": "Touch",
+					"sid": 484070121038152,
+					"parameters": {
+						"object": "SelectableSprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-timer",
+					"objectClass": "SelectableSprite",
+					"sid": 134524033949937,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"hold-timer\""
+					}
+				}
+			],
+			"sid": 298666688460978
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "PersonSprite",
+					"sid": 564104950993559,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"hold-timer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 190958207605843,
+					"parameters": {
+						"type": "log",
+						"message": "\"Changing color for SelectableSprite.UID=\"&PersonSprite.UID"
+					}
+				}
+			],
+			"sid": 826076523463088,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 435539702268396,
+							"parameters": {
+								"object": "InfoSprite",
+								"expression": "InfoSprite.UID = PersonSprite.assignedInfoSpriteUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 766335022857401,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PersonSprite",
+									"sid": 836243695589140,
+									"parameters": {
+										"instance-variable": "status",
+										"comparison": 0,
+										"value": "\"idle\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PersonSprite",
+									"sid": 893803958204887,
+									"parameters": {
+										"instance-variable": "status",
+										"comparison": 0,
+										"value": "\"info\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "PersonSprite",
+									"sid": 522068978432078,
+									"parameters": {
+										"instance-variable": "status",
+										"value": "\"selected\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "InfoSprite",
+									"sid": 241312866991207,
+									"parameters": {
+										"animation": "\"SmallAd\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"callFunction": "SendDataToHost",
+									"sid": 679350933910813,
+									"parameters": [
+										"\"markSelected_add\"",
+										"str(PersonSprite.UID)"
+									]
+								},
+								{
+									"callFunction": "SendDataToHost",
+									"sid": 249969286361682,
+									"parameters": [
+										"\"dataRatios_update\"",
+										"PersonSprite.UID&\"_\"&PersonSprite.dataWeight&\"_\"&PersonSprite.dataRatios"
+									]
+								}
+							],
+							"sid": 373109496877291,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 871614576857570
+								}
+							],
+							"actions": [],
+							"sid": 388310176386399,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "PersonSprite",
+											"sid": 126409359488945,
+											"parameters": {
+												"instance-variable": "status",
+												"comparison": 0,
+												"value": "\"selected\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "PersonSprite",
+											"sid": 766320748636405,
+											"parameters": {
+												"instance-variable": "status",
+												"value": "\"idle\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "InfoSprite",
+											"sid": 130887977973426,
+											"parameters": {
+												"animation": "\"Empty\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"callFunction": "SendDataToHost",
+											"sid": 114856008389702,
+											"parameters": [
+												"\"markSelected_remove\"",
+												"str(PersonSprite.UID)"
+											]
+										},
+										{
+											"callFunction": "SendDataToHost",
+											"sid": 138442594248371,
+											"parameters": [
+												"\"dataRatios_update\"",
+												"PersonSprite.UID&\"_\"&PersonSprite.dataWeight*-1&\"_\"&PersonSprite.dataRatios"
+											]
+										}
+									],
+									"sid": 616038806779039
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "BuildingSprite",
+					"sid": 466508719241266,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"hold-timer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 519266296497480,
+					"parameters": {
+						"type": "log",
+						"message": "\"Changing color for SelectableSprite.UID=\"&BuildingSprite.UID"
+					}
+				}
+			],
+			"sid": 632115749985824,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 456874125041846,
+							"parameters": {
+								"object": "InfoSprite",
+								"expression": "InfoSprite.UID = BuildingSprite.assignedInfoSpriteUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 185991216895978,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "BuildingSprite",
+									"sid": 677938364607974,
+									"parameters": {
+										"instance-variable": "status",
+										"comparison": 0,
+										"value": "\"idle\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "BuildingSprite",
+									"sid": 462211058462999,
+									"parameters": {
+										"instance-variable": "status",
+										"comparison": 0,
+										"value": "\"info\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "BuildingSprite",
+									"sid": 915709402942377,
+									"parameters": {
+										"instance-variable": "status",
+										"value": "\"selected\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "InfoSprite",
+									"sid": 126052108884921,
+									"parameters": {
+										"animation": "\"BigAd\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"callFunction": "SendDataToHost",
+									"sid": 101851930961400,
+									"parameters": [
+										"\"markSelected_add\"",
+										"str(BuildingSprite.UID)"
+									]
+								},
+								{
+									"callFunction": "SendDataToHost",
+									"sid": 667358336522948,
+									"parameters": [
+										"\"dataRatios_update\"",
+										"BuildingSprite.UID&\"_\"&BuildingSprite.dataWeight&\"_\"&BuildingSprite.dataRatios"
+									]
+								}
+							],
+							"sid": 278583294036393,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 620069150074292
+								}
+							],
+							"actions": [],
+							"sid": 770417307598284,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "BuildingSprite",
+											"sid": 828781946970572,
+											"parameters": {
+												"instance-variable": "status",
+												"comparison": 0,
+												"value": "\"selected\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "BuildingSprite",
+											"sid": 665335188244976,
+											"parameters": {
+												"instance-variable": "status",
+												"value": "\"idle\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "InfoSprite",
+											"sid": 369070615361006,
+											"parameters": {
+												"animation": "\"Empty\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"callFunction": "SendDataToHost",
+											"sid": 163618904627249,
+											"parameters": [
+												"\"markSelected_remove\"",
+												"str(BuildingSprite.UID)"
+											]
+										},
+										{
+											"callFunction": "SendDataToHost",
+											"sid": 543923089719291,
+											"parameters": [
+												"\"dataRatios_update\"",
+												"BuildingSprite.UID&\"_\"&BuildingSprite.dataWeight*-1&\"_\"&BuildingSprite.dataRatios"
+											]
+										}
+									],
+									"sid": 135072204940877
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "ORD_RTD_MapSelectionEvents",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 600622294471448
+				},
+				{
+					"name": "message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 716702423102933
+				},
+				{
+					"name": "from_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 505090262647711
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 189975454144931,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 331072947823221,
+							"parameters": {
+								"variable": "type",
+								"comparison": 0,
+								"value": "\"markSelected_add\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 670024298924859,
+							"parameters": {
+								"type": "log",
+								"message": "\"Adding selection to person, UID=\"&message"
+							}
+						}
+					],
+					"sid": 295949692899459,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 835663701670751,
+									"parameters": {
+										"object": "BuildingSprite",
+										"expression": "BuildingSprite.UID",
+										"comparison": 0,
+										"value": "int(message)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "BuildingSprite",
+									"sid": 403302841269588,
+									"parameters": {
+										"instance-variable": "status",
+										"value": "\"selected\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 746327523554319,
+									"parameters": {
+										"type": "log",
+										"message": "\"UID: \"&BuildingSprite.UID"
+									}
+								}
+							],
+							"sid": 877556863987687,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 530674313241216,
+											"parameters": {
+												"object": "InfoSprite",
+												"expression": "InfoSprite.UID = BuildingSprite.assignedInfoSpriteUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "InfoSprite",
+											"sid": 547650727973772,
+											"parameters": {
+												"animation": "\"BigAd\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 622404262408373
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 429286379672144,
+							"parameters": {
+								"variable": "type",
+								"comparison": 0,
+								"value": "\"markSelected_add\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 474596546344902,
+							"parameters": {
+								"type": "log",
+								"message": "\"Adding selection to building, UID=\"&message"
+							}
+						}
+					],
+					"sid": 555573831217677,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 688092158174808,
+									"parameters": {
+										"object": "PersonSprite",
+										"expression": "PersonSprite.UID",
+										"comparison": 0,
+										"value": "int(message)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "PersonSprite",
+									"sid": 118703183583328,
+									"parameters": {
+										"instance-variable": "status",
+										"value": "\"selected\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 209716186734094,
+									"parameters": {
+										"type": "log",
+										"message": "\"UID: \"&PersonSprite.UID"
+									}
+								}
+							],
+							"sid": 234690868573689,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 258993570607346,
+											"parameters": {
+												"object": "InfoSprite",
+												"expression": "InfoSprite.UID = PersonSprite.assignedInfoSpriteUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "InfoSprite",
+											"sid": 331042175037721,
+											"parameters": {
+												"animation": "\"SmallAd\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 752604102751727
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 158148543332067,
+							"parameters": {
+								"variable": "type",
+								"comparison": 0,
+								"value": "\"markSelected_remove\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 285938016620591,
+							"parameters": {
+								"type": "log",
+								"message": "\"Removing selection from selectable, UID=\"&message"
+							}
+						}
+					],
+					"sid": 602791929274858,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 227613896309376,
+									"parameters": {
+										"object": "SelectableSprite",
+										"expression": "SelectableSprite.UID",
+										"comparison": 0,
+										"value": "int(message)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "SelectableSprite",
+									"sid": 263252583910865,
+									"parameters": {
+										"instance-variable": "status",
+										"value": "\"idle\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 393702435690745,
+									"parameters": {
+										"type": "log",
+										"message": "\"UID: \"&SelectableSprite.UID"
+									}
+								}
+							],
+							"sid": 491016119319052,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 494485266019611,
+											"parameters": {
+												"object": "InfoSprite",
+												"expression": "InfoSprite.UID = SelectableSprite.assignedInfoSpriteUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "InfoSprite",
+											"sid": 244191539493303,
+											"parameters": {
+												"animation": "\"Empty\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 909691265422645
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 335751246439773

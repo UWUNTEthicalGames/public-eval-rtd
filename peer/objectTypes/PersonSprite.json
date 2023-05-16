@@ -1,24 +1,9 @@
 {
-	"name": "ArrowSprite",
+	"name": "PersonSprite",
 	"plugin-id": "Sprite",
-	"sid": 752609804658189,
+	"sid": 189803550420299,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "xMoveDirection",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 122420285447058
-		},
-		{
-			"name": "yMoveDirection",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 491792048777141
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -26,20 +11,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 100,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9787808,
+						"imageSpriteId": 6156500,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 158240466626009,
-				"name": "Idle",
+				"sid": 128542744157899,
+				"name": "Person1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -49,20 +34,43 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 100,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 346116,
+						"imageSpriteId": 3086444,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 384796583344539,
-				"name": "Pressed",
+				"sid": 182362375571197,
+				"name": "Person2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8170740,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 677719641594895,
+				"name": "Person3",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

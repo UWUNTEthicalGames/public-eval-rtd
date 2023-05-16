@@ -64,13 +64,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "DragnDrop",
-			"name": "Drag & Drop",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
@@ -114,14 +107,16 @@
 			"ArrowSprite",
 			"MapManager",
 			"PlayerSprite",
-			"Sprite"
+			"PersonSprite"
 		],
 		"subfolders": []
 	},
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"SelectableSprite"
+		],
 		"subfolders": []
 	},
 	"layouts": {

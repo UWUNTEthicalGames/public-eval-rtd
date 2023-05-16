@@ -1,0 +1,61 @@
+{
+	"name": "SelectableSprite",
+	"plugin-id": "Sprite",
+	"sid": 273531721085345,
+	"instanceVariables": [
+		{
+			"name": "status",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 101548217638966
+		},
+		{
+			"name": "assignedInfoSpriteUID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 384375865690785
+		},
+		{
+			"name": "dataRatios",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 887856040645698
+		},
+		{
+			"name": "dataTitle",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 504409303751330
+		},
+		{
+			"name": "dataDescription",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 255470260380790
+		},
+		{
+			"name": "dataWeight",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 900848245525711
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 831066892480241
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"PersonSprite",
+		"BuildingSprite"
+	]
+}

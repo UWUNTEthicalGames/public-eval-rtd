@@ -34,22 +34,17 @@
 				{
 					"id": "start-timer",
 					"objectClass": "TimerText",
-					"sid": 218470207301464,
+					"sid": 769424021254246,
 					"behaviorType": "Timer",
 					"parameters": {
-						"duration": "10.0",
+						"duration": "30.0",
 						"type": "once",
 						"tag": "\"level-timer\""
 					}
 				},
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 613364276434516,
-					"parameters": {
-						"type": "log",
-						"message": "\"Starting demographics layout and timer\""
-					}
+					"type": "script",
+					"script": "selectAllCustomersForWave(\"loan_applications\");"
 				}
 			],
 			"sid": 808547153589417
@@ -60,7 +55,7 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 250544397605614,
+					"sid": 234855143057582,
 					"parameters": {
 						"interval-seconds": "0.1"
 					}
@@ -70,13 +65,57 @@
 				{
 					"id": "set-text",
 					"objectClass": "TimerText",
-					"sid": 430105130372688,
+					"sid": 585688562107278,
 					"parameters": {
-						"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
+						"text": "30 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
 					}
 				}
 			],
-			"sid": 642108061307577
+			"sid": 601902645079446
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 324887295873891,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 776819869269954,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 147754803163907,
+							"parameters": {
+								"object": "CustomerSprite"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-object",
+							"objectClass": "CustomerSprite",
+							"sid": 281273519901783,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"object": "BuildingSprite",
+								"image-point": "0",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 263691454207148
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -114,6 +153,33 @@
 				}
 			],
 			"sid": 146583786763266
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "CustomerSprite",
+					"sid": 604703697021265,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 760603943937668,
+					"parameters": {
+						"object-to-create": "InfoSprite",
+						"layer": "0",
+						"x": "CustomerSprite.X",
+						"y": "CustomerSprite.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 963883448915629
 		}
 	],
 	"sid": 671659850018770

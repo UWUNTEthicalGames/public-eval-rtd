@@ -126,7 +126,7 @@
 				{
 					"type": "StaticText",
 					"properties": {
-						"text": "Business Name: Loans R' Us\n\nBusiness Type: Bank\n\nInputs:\n* Age\n* Job Title\n* Income\n\nOutputs:\nLoan decision, yes / no",
+						"text": "Business Name: Loans R' Us\n\nBusiness Type: Bank\n\nInputs:\n* Gender\n* Number of Dependents\n* Education level\n* Property density\n\nOutputs:\nLoan decision, yes / no",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 24,

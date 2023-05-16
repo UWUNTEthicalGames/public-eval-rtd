@@ -118,6 +118,24 @@
 							"parameters": {
 								"path": "\"receivedData\""
 							}
+						},
+						{
+							"id": "map-function-default",
+							"objectClass": "Functions",
+							"sid": 423514737306706,
+							"parameters": {
+								"name": "\"OnReceiveDataFunctions\"",
+								"function": "ORD_default"
+							}
+						},
+						{
+							"id": "map-function-default",
+							"objectClass": "Functions",
+							"sid": 646752921359766,
+							"parameters": {
+								"name": "\"OnReceiveRequestFunctions\"",
+								"function": "ORR_default"
+							}
 						}
 					],
 					"sid": 628598483529273
@@ -573,6 +591,32 @@
 									"sid": 260592689231884
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 247961975299448,
+									"parameters": {
+										"type": "log",
+										"message": "\"Trying ORDFunctions for layout \"&LayoutName&\" and parameters \"&type&\", \"&message&\", \"&from_alias"
+									}
+								},
+								{
+									"id": "call-mapped-function",
+									"objectClass": "Functions",
+									"sid": 533426682478382,
+									"parameters": {
+										"name": "\"OnReceiveDataFunctions\"",
+										"string": "LayoutName",
+										"forward-params": "0"
+									}
+								}
+							],
+							"sid": 112182134723835
 						}
 					]
 				},
@@ -863,6 +907,89 @@
 					"sid": 660011489836823
 				}
 			]
+		},
+		{
+			"functionName": "ORD_default",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 748806326248837
+				},
+				{
+					"name": "message",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 355900249586663
+				},
+				{
+					"name": "from_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 789897528717172
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 253740412969969,
+					"parameters": {
+						"type": "log",
+						"message": "\"Calling empty default OnReceiveData function\""
+					}
+				}
+			],
+			"sid": 798812083558923
+		},
+		{
+			"functionName": "ORR_default",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "type",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 149764116239805
+				},
+				{
+					"name": "from_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 144643089918682
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 290031209115776,
+					"parameters": {
+						"type": "log",
+						"message": "\"Calling empty default OnReceiveRequest function\""
+					}
+				}
+			],
+			"sid": 225184028912191
 		}
 	],
 	"sid": 419596889089472
