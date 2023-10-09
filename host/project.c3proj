@@ -151,11 +151,19 @@
 					}
 				},
 				{
-					"name": "importsForEvents.js.js",
+					"name": "importsForEvents.js",
 					"type": "application/javascript",
 					"sid": 998238624844753,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "MultiPlayerHandler.js",
+					"type": "application/javascript",
+					"sid": 779030787224646,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],
