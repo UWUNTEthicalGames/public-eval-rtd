@@ -24,8 +24,13 @@
 					"sid": 770737237838900
 				},
 				{
+					"type": "script",
+					"script": "main(runtime)"
+				},
+				{
 					"callFunction": "InitializeMultiplayer",
-					"sid": 847634073947340
+					"sid": 732952582702173,
+					"disabled": true
 				},
 				{
 					"id": "wait-for-previous-actions",
