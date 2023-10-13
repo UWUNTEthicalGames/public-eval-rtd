@@ -78,8 +78,17 @@
 					}
 				},
 				{
+					"type": "script",
+					"script": "getMsg();"
+				},
+				{
+					"type": "script",
+					"script": "main(runtime);"
+				},
+				{
 					"callFunction": "InitializeMultiplayer",
-					"sid": 476778632592312
+					"sid": 476778632592312,
+					"disabled": true
 				},
 				{
 					"id": "wait-for-previous-actions",
@@ -125,9 +134,9 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 679411462292268,
+					"sid": 864480063220201,
 					"parameters": {
-						"object": "ConnectButton"
+						"object": "StartGameButton"
 					}
 				}
 			],

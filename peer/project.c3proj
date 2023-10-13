@@ -148,7 +148,32 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 874709192053457,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "MultiPlayerHandler.js",
+					"type": "application/javascript",
+					"sid": 674737371903925,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "importsForEvents.js",
+					"type": "application/javascript",
+					"sid": 614444747350553,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {
