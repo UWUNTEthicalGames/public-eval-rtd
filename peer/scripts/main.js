@@ -10,7 +10,6 @@ import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.j
 export function main(runtime)
 {
 	//const gameLobbyLayout = runtime.getLayout("GameLobby");
-	console.log("Start");
 	var multiPlayer = null;
 	multiPlayer = new MultiPlayerHandler(runtime);
 	

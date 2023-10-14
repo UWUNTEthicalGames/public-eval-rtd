@@ -6,14 +6,13 @@ export class MultiPlayerHandler {
 	
 
     constructor (runtime) {
-		console.debug("In constructor of MultiplayerHandler");
         
 		this.runtime = runtime;
         this.multiPlayer = this.runtime.objects.Multiplayer;
 		this.signallingStatus = "";
 		
 		this.connectionUrl = "wss://multiplayer.scirra.com";
-		this.gameHost = "game-host";
+		this.playerAlias = this.playerAlias = (typeof this.runtime.globalVars.PLAYER_ALIAS === "undefined" ) ? "game-host": this.runtime.globalVars.PLAYER_ALIAS;
 		
         // add buttons and text input fields
 		
@@ -35,7 +34,10 @@ export class MultiPlayerHandler {
             if (!signalling.isLoggedIn)
 			{
 				this.SetSignallingStatus("Logging in...");
-				await signalling.login(this.gameHost);
+				
+				await signalling.login(this.playerAlias);
+				
+				
 			}
 
             this.SetSignallingStatus("Joining room...");
@@ -50,14 +52,13 @@ export class MultiPlayerHandler {
             }
 			else
             {
-				this.SetSignallingStatus("Joined room as peer");
+				this.SetSignallingStatus("Player " + this.playerAlias + " Joined room as peer");
             }
 			
 			
         }
         catch (err){
-            this.SetSignallingStatus("Error");
-			console.error(signalling.error);
+            this.SetSignallingStatus("Error at MultiPlayer Handler");
 			console.error("Signalling error: ", err);
 			
         }

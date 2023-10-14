@@ -10,11 +10,9 @@ import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.j
 export function main(runtime)
 {
 	//const gameLobbyLayout = runtime.getLayout("GameLobby");
-	console.log("Start");
 	generateUniqueRandomRoomCode(runtime, runtime.globalVars.NUM_ROOM_CODE_CHARACTERS);
 	var multiPlayer = null;
 	multiPlayer = new MultiPlayerHandler(runtime);
-	console.log("End");
 		
 }
 

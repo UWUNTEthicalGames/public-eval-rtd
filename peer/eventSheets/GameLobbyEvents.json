@@ -79,10 +79,6 @@
 				},
 				{
 					"type": "script",
-					"script": "getMsg();"
-				},
-				{
-					"type": "script",
 					"script": "main(runtime);"
 				},
 				{
@@ -112,7 +108,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 715908396873255,
+					"sid": 940607607131127,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -123,10 +119,10 @@
 			"actions": [
 				{
 					"callFunction": "ConnectButtonPressed",
-					"sid": 539645909011801
+					"sid": 403940401232998
 				}
 			],
-			"sid": 131104914829518
+			"sid": 607030386991060
 		},
 		{
 			"eventType": "block",
