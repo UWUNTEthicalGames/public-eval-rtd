@@ -125,9 +125,9 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 864480063220201,
+					"sid": 679411462292268,
 					"parameters": {
-						"object": "StartGameButton"
+						"object": "ConnectButton"
 					}
 				}
 			],
