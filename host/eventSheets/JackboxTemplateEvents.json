@@ -277,7 +277,8 @@
 							"script": "generateUniqueRandomRoomCode(runtime, runtime.globalVars.NUM_ROOM_CODE_CHARACTERS);"
 						}
 					],
-					"sid": 701659713971047
+					"sid": 701659713971047,
+					"disabled": true
 				},
 				{
 					"functionName": "InitializeMultiplayer",
@@ -516,6 +517,15 @@
 							}
 						},
 						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 427969263780762,
+							"parameters": {
+								"type": "log",
+								"message": "GameDataJSON.ToBeautifiedString"
+							}
+						},
+						{
 							"callFunction": "SetAndSendPlayerRole",
 							"sid": 839348307661525,
 							"parameters": [
@@ -545,12 +555,14 @@
 						}
 					],
 					"sid": 244076657012184,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [],
-							"sid": 924181529243962
+							"sid": 924181529243962,
+							"disabled": true
 						}
 					]
 				},
@@ -575,6 +587,7 @@
 						}
 					],
 					"sid": 453551208877273,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -600,7 +613,8 @@
 									]
 								}
 							],
-							"sid": 128088975093203
+							"sid": 128088975093203,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -622,7 +636,8 @@
 									]
 								}
 							],
-							"sid": 596422096158869
+							"sid": 596422096158869,
+							"disabled": true
 						}
 					]
 				},
@@ -654,7 +669,8 @@
 							"sid": 620875521030553
 						}
 					],
-					"sid": 889207322330953
+					"sid": 889207322330953,
+					"disabled": true
 				},
 				{
 					"functionName": "SendRequestToAllPeers",
