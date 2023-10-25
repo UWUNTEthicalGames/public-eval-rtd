@@ -165,6 +165,22 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Game.js",
+					"type": "application/javascript",
+					"sid": 884901815810998,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player.js",
+					"type": "application/javascript",
+					"sid": 558475616270610,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
