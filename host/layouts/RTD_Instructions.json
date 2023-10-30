@@ -93,7 +93,7 @@
 					}
 				},
 				{
-					"type": "Button",
+					"type": "Button2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

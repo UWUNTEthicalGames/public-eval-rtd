@@ -46,7 +46,7 @@
 					"objectClass": "Touch",
 					"sid": 297532336775690,
 					"parameters": {
-						"object": "Button"
+						"object": "Button2"
 					}
 				}
 			],
@@ -56,7 +56,7 @@
 					"sid": 282906817822089,
 					"parameters": [
 						"\"level_start\"",
-						"Button.levelTarget"
+						"Button2.levelTarget"
 					]
 				},
 				{
@@ -64,7 +64,7 @@
 					"objectClass": "System",
 					"sid": 822956853652132,
 					"parameters": {
-						"layout": "Button.levelTarget"
+						"layout": "Button2.levelTarget"
 					}
 				}
 			],

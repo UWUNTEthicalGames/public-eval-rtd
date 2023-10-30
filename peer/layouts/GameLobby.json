@@ -161,63 +161,24 @@
 				{
 					"type": "ConnectButton",
 					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 9,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 241,
-						"y": 275,
-						"width": 151,
-						"height": 42,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "StaticText",
-					"properties": {
+						"type": "button",
 						"text": "Connect",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 14,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
+						"tooltip": "",
 						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": ""
 					},
-					"uid": 10,
+					"uid": 43,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 172,
-						"y": 259,
-						"width": 134,
-						"height": 32,
+						"x": 160,
+						"y": 265,
+						"width": 152,
+						"height": 41,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -225,9 +186,7 @@
 							1,
 							1,
 							1
-						],
-						"angle": 0,
-						"zElevation": 0
+						]
 					}
 				}
 			],

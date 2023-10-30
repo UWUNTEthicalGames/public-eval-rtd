@@ -44,6 +44,10 @@
 						"property-name": "\"font-size\"",
 						"value": "\"32px\""
 					}
+				},
+				{
+					"type": "script",
+					"script": "main(runtime);"
 				}
 			],
 			"sid": 459888658543785
@@ -79,7 +83,8 @@
 				},
 				{
 					"type": "script",
-					"script": "main(runtime);"
+					"script": "main(runtime);",
+					"disabled": true
 				},
 				{
 					"callFunction": "InitializeMultiplayer",
@@ -114,7 +119,7 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
-						"object-clicked": "ConnectButton"
+						"object-clicked": "ConnectButton2"
 					}
 				}
 			],
