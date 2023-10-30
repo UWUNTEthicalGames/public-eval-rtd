@@ -1,14 +1,39 @@
 
+import { generateUniqueRandomRoomCode } from "./main.js";
+import { MultiPlayerHandler } from "./MultiPlayerHandler.js";
+import { Player } from "./Player.js";
+
 
 export class Game
 {
-	constructor (){
-		this.playerList = [],
+	constructor () {
+		
 		this.players = [],
-		this.roles = {},
-			
 		this.outstandingRequests = {},
 		this.receivedData = {},
-		this.receivedRequests = {}
+		this.receivedRequests = [];
+		
 	}
+	
+	
+	addPlayerToGame ( peerId, peerAlias, role="") {
+		let player = new Player(peerId, peerAlias);
+		player.setRole(role);
+		this.players.push(player);
+	}
+	
+	
+	// 
+	updateReceivedRequests () {
+		
+	}
+		
+	updateReceivedData () {
+	
+	}
+		
+	updateOutstandingRequests() {
+	
+	}	
+	
 }

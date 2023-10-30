@@ -29,13 +29,18 @@ export class MultiPlayerHandler {
 		};
 		
 		
-		// add buttons and text input fields
+		
 		
 
 		this.connectPeer();
 		
 		this.multiPlayer.addEventListener("message", (e) => this.onReceive(e));
 		
+		
+		// add buttons and text input fields
+		
+		const connectBtn = this.runtime.objects.ConnectButton.getFirstInstance();
+		connectBtn.addEventListener("click", () => alert("clicked"));
 		
     }
 	
