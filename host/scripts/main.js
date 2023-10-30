@@ -1,7 +1,8 @@
 
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
-import { MultiPlayerHandler } from "./MultiPlayerHandler.js"
+import { MultiPlayerHandler } from "./MultiPlayerHandler.js";
+import { Game } from "./Game.js";
 
 
 // Import any other script files here
@@ -13,7 +14,7 @@ export function main(runtime)
 	generateUniqueRandomRoomCode(runtime, runtime.globalVars.NUM_ROOM_CODE_CHARACTERS);
 	var multiPlayer = null;
 	multiPlayer = new MultiPlayerHandler(runtime);
-		
+	//var mainGame = new Game(runtime);	
 }
 
 export function addDataAndPopulateChart() 

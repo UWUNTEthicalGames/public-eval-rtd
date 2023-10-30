@@ -38,11 +38,16 @@ export class MultiPlayerHandler {
         // add buttons and text input fields
 		this.playerListText = this.runtime.objects.PlayerListText.getFirstInstance();
 		this.playerCountText = this.runtime.objects.PlayerCountText.getFirstInstance();
+		
+		const startGameBtn = this.runtime.objects.Button.getFirstInstance();
+		startGameBtn.addEventListener("click", () => console.log("button clicked"));
+		
 
         this.ConnectToSignalling();
 		
 		
 		// event binding
+		// //multiplayer events
 		this.multiPlayer.addEventListener("peerconnect", 
 		 (e) => this.onPeerConnected(e));
 		 
@@ -50,7 +55,11 @@ export class MultiPlayerHandler {
 		 
 		this.multiPlayer.addEventListener("peerdisconnect", 
 		(e) => this.leaveRoom(e));
-	
+		
+		
+		// game events
+		
+		
 
     }
 	
@@ -200,9 +209,9 @@ export class MultiPlayerHandler {
 	}
 	
 	
-	sendDataToAllPeers(type){
+	sendDataToAllPeers(type, message){
 		this.SetSignallingStatus("send Data to all peers")
-		const messageToSend = {tag: type};
+		const messageToSend = {tag: TAG_DATA, type: type, message: message};
 		this.multiPlayer.hostBroadcastMessage("", messageToSend, 'r');
 	}
 	
@@ -252,6 +261,15 @@ export class MultiPlayerHandler {
 	onSendRequest(type, toAlias) {
 	// No usage yet
 	//TODO
+	}
+	
+	
+	startGame() {
+		debugger;
+		this.SetSignallingStatus("start game");
+		this.runtime.goToLayout("LevelChooser");
+		
+		this.sendDataToAllPeers("level_start", startGameBtn.instVars['levelTarget']);
 	}
 	
 	

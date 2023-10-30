@@ -2,8 +2,20 @@
 export class Player {
 
 	constructor(peerId, peerAlias){
+		
 		this.peerAlias = peerAlias;
-// 		this.idx =
  		this.peerId = peerId;
+		this.role = "";
+	
+	}
+	
+	
+	set setRole(role) {
+		this.role = role;
+	}
+	
+	
+	get getRole() {
+		return this.role;
 	}
 }
