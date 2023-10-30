@@ -39,6 +39,7 @@ export class MultiPlayerHandler {
 		
 		// add buttons and text input fields
 		
+		
 		const connectBtn = this.runtime.objects.ConnectButton.getFirstInstance();
 		connectBtn.addEventListener("click", () => alert("clicked"));
 		
@@ -113,6 +114,9 @@ export class MultiPlayerHandler {
 	
 	connectPeer() {
 		this.SetSignallingStatus("On connect peer");
+		this.runtime.globalVars.ROOM_CODE = this.runtime.objects.RoomCodeInput.getFirstInstance().text;
+		this.runtime.globalVars.PLAYER_ALIAS = this.runtime.objects.NameInput.getFirstInstance().text;
+		
 		if ( (this.runtime.globalVars.ROOM_CODE && this.runtime.globalVars.PLAYER_ALIAS))
 			this.connectToSignalling();
 		else
