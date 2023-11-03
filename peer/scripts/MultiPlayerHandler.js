@@ -27,23 +27,52 @@ export class MultiPlayerHandler {
 			"receivedData": {},
 			"receivedRequests": []
 		};
-		
-		
-		
-		
-
-		this.connectPeer();
-		
-		this.multiPlayer.addEventListener("message", (e) => this.onReceive(e));
-		
+	
 		
 		// add buttons and text input fields
 		
 		
-		const connectBtn = this.runtime.objects.ConnectButton.getFirstInstance();
-		connectBtn.addEventListener("click", () => alert("clicked"));
+		this.connectBtn = this.runtime.objects.ConnectButton.getFirstInstance();
+		//connectBtn.addEventListener("click", () => this.connectPeer());
+		
+		
+		// Multiplayer Events
+		this.multiPlayer.addEventListener("message", (e) => this.onReceive(e));
+		
+		
+		
+		
+		// Game Events
+		
+		this.runtime.addEventListener("mousedown", (e) => this.mouseDown(e));
 		
     }
+	
+	
+	mouseDown(e){
+	if (this.runtime.layout === this.runtime.getLayout("GameLobby"))
+		this.buttonClicked((this.connectBtn !== null ? this.connectBtn : null), e);
+	}
+	
+	
+	buttonClicked(object, e) {
+		
+		//const button = this.startGameBtn;
+		if (object !== null){
+			const [layerX, layerY] = this.CssPxLayer(this.runtime.layout,  e.clientX, e.clientY);
+			
+			if (object.containsPoint(layerX, layerY)){
+				this.connectPeer();
+			}
+		}
+	}
+	
+	CssPxLayer(layout, clientX, clientY){
+		const layer = layout.getLayer(0);
+		return layer.cssPxToLayer(clientX, clientY);
+	}
+	
+	
 	
 	sendDataToHost(messageToSend) {
 		this.SetSignallingStatus("Send Data to Host");
@@ -99,11 +128,12 @@ export class MultiPlayerHandler {
 			this.runtime.goToLayout("GameWait");
 		
 		}
-// 		else if (receivedMessage["tag"] === TAG_LEVEL_START){
-// 			this.runtime.goToLayout(receivedMessage["message"]);
-// 		}
+		else if (receivedMessage["tag"] === TAG_LEVEL_START){
+			this.runtime.goToLayout(receivedMessage["message"]);
+		}
 		
-		else{			
+		else{
+			console.error(receivedMessage);
 			this.runtime.goToLayout("ErrorMenu");
 		}
 			
@@ -116,6 +146,7 @@ export class MultiPlayerHandler {
 		this.SetSignallingStatus("On connect peer");
 		this.runtime.globalVars.ROOM_CODE = this.runtime.objects.RoomCodeInput.getFirstInstance().text;
 		this.runtime.globalVars.PLAYER_ALIAS = this.runtime.objects.NameInput.getFirstInstance().text;
+		this.playerAlias = this.runtime.objects.NameInput.getFirstInstance().text;
 		
 		if ( (this.runtime.globalVars.ROOM_CODE && this.runtime.globalVars.PLAYER_ALIAS))
 			this.connectToSignalling();

@@ -119,7 +119,7 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
-						"object-clicked": "ConnectButton2"
+						"object-clicked": "ConnectButton"
 					}
 				}
 			],

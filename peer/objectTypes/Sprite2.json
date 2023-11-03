@@ -1,17 +1,9 @@
 {
-	"name": "Button",
+	"name": "Sprite2",
 	"plugin-id": "Sprite",
-	"sid": 335962931415492,
+	"sid": 568844315269846,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "levelTarget",
-			"type": "string",
-			"desc": "",
-			"show": true,
-			"sid": 328340341211528
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -19,19 +11,19 @@
 			{
 				"frames": [
 					{
-						"width": 10,
-						"height": 10,
+						"width": 250,
+						"height": 250,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3252357,
+						"imageSpriteId": 2886517,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 864392347830952,
+				"sid": 853215420264052,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

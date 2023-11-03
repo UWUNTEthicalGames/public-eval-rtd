@@ -39,10 +39,11 @@ export class MultiPlayerHandler {
 		this.playerListText = this.runtime.objects.PlayerListText.getFirstInstance();
 		this.playerCountText = this.runtime.objects.PlayerCountText.getFirstInstance();
 		
-		const startGameBtn = this.runtime.objects.Button.getFirstInstance();
-		startGameBtn.addEventListener("click", () => console.log("button clicked"));
+		this.startGameBtn = this.runtime.objects.Button.getFirstInstance();
 		
-
+		
+		
+		// login using multiplayer
         this.ConnectToSignalling();
 		
 		
@@ -58,12 +59,36 @@ export class MultiPlayerHandler {
 		
 		
 		// game events
+		this.runtime.addEventListener("mousedown", (e) => this.mouseDown(e));
 		
 		
-		
-		//debugger;
+	
 
     }
+	
+	mouseDown(e){
+	if (this.runtime.layout === this.runtime.getLayout("GameLobby"))
+		this.buttonClicked((this.startGameBtn !== null ? this.startGameBtn : null), e);
+	}
+	
+	
+	buttonClicked(object, e) {
+		
+		//const button = this.startGameBtn;
+		if (object !== null){
+			const [layerX, layerY] = this.CssPxLayer(this.runtime.layout,  e.clientX, e.clientY);
+			
+			if (object.containsPoint(layerX, layerY)){
+				this.startGame();
+			}
+		}
+	}
+	
+	CssPxLayer(layout, clientX, clientY){
+		const layer = layout.getLayer(0);
+		return layer.cssPxToLayer(clientX, clientY);
+	}
+	
 	
 
 	// this method handles all the APIs for connecting, login and joining the room.
@@ -267,11 +292,11 @@ export class MultiPlayerHandler {
 	
 	
 	startGame() {
-		debugger;
+		
 		this.SetSignallingStatus("start game");
 		this.runtime.goToLayout("LevelChooser");
 		
-		this.sendDataToAllPeers("level_start", startGameBtn.instVars['levelTarget']);
+		this.sendDataToAllPeers("level_start", this.startGameBtn.instVars['levelTarget']);
 	}
 	
 	
