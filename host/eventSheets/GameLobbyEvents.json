@@ -161,11 +161,15 @@
 			"actions": [
 				{
 					"callFunction": "StartGame",
-					"sid": 594827100273485
+					"sid": 594827100273485,
+					"disabled": true
+				},
+				{
+					"type": "script",
+					"script": "Globals.GameObj.startGame();"
 				}
 			],
-			"sid": 886365062366881,
-			"disabled": true
+			"sid": 886365062366881
 		}
 	],
 	"sid": 579820060356929

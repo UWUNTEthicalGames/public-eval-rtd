@@ -22,6 +22,7 @@
 				{
 					"callFunction": "SendDataToAllPeers",
 					"sid": 571117476301661,
+					"disabled": true,
 					"parameters": [
 						"\"go_to_peer_layout\"",
 						"\"RTD_Empty\""
@@ -42,7 +43,7 @@
 					"objectClass": "Touch",
 					"sid": 699441981572174,
 					"parameters": {
-						"object": "Button2"
+						"object": "Button"
 					}
 				}
 			],
@@ -50,9 +51,10 @@
 				{
 					"callFunction": "SendDataToAllPeers",
 					"sid": 643180533327805,
+					"disabled": true,
 					"parameters": [
 						"\"level_start\"",
-						"Button2.levelTarget"
+						"Button.levelTarget"
 					]
 				},
 				{
@@ -60,8 +62,12 @@
 					"objectClass": "System",
 					"sid": 659318110675256,
 					"parameters": {
-						"layout": "Button2.levelTarget"
+						"layout": "Button.levelTarget"
 					}
+				},
+				{
+					"type": "script",
+					"script": "Globals.GameObj.instructionsLayout();"
 				}
 			],
 			"sid": 473771176777997

@@ -1,8 +1,37 @@
 {
 	"name": "ConnectButton",
-	"plugin-id": "Button",
-	"sid": 550747016936810,
+	"plugin-id": "Sprite",
+	"sid": 269439129622358,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": []
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1365671,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 346862837786308,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
 }

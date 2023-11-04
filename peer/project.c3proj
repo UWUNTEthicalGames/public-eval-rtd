@@ -115,7 +115,7 @@
 			"MapManager",
 			"PlayerSprite",
 			"Sprite",
-			"Sprite2"
+			"Button"
 		],
 		"subfolders": []
 	},
@@ -172,6 +172,30 @@
 					"sid": 614444747350553,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "Player.js",
+					"type": "application/javascript",
+					"sid": 263633096788095,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "globals.js",
+					"type": "application/javascript",
+					"sid": 163524257543807,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game.js",
+					"type": "application/javascript",
+					"sid": 509835527215757,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],

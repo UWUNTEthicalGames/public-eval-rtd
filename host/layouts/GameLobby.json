@@ -275,7 +275,7 @@
 					},
 					"uid": 15,
 					"instanceVariables": {
-						"levelTarget": "LevelChooser"
+						"levelTarget": "levelChooser"
 					},
 					"behaviors": {},
 					"world": {

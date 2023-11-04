@@ -181,6 +181,22 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "GameLobby.js",
+					"type": "application/javascript",
+					"sid": 510868922868440,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "globals.js",
+					"type": "application/javascript",
+					"sid": 433218073829546,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
