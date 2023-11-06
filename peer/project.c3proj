@@ -294,5 +294,5 @@
 	},
 	"viewportWidth": 480,
 	"viewportHeight": 854,
-	"firstLayout": "RTD_MapSelection"
+	"firstLayout": "GameLobby"
 }
