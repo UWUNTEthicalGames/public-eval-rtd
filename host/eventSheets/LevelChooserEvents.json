@@ -17,6 +17,7 @@
 				{
 					"callFunction": "SendDataToAllPeers",
 					"sid": 841930946648126,
+					"disabled": true,
 					"parameters": [
 						"\"level_start\"",
 						"Button.levelTarget"
@@ -29,6 +30,10 @@
 					"parameters": {
 						"layout": "Button.levelTarget"
 					}
+				},
+				{
+					"type": "script",
+					"script": "Globals.GameObj.levelChooserLayout();"
 				}
 			],
 			"sid": 162199367851195

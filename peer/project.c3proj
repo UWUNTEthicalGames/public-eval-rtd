@@ -101,7 +101,6 @@
 			"Multiplayer",
 			"ConnectButton",
 			"Mouse",
-			"StartGameButton",
 			"TimerText",
 			"LevelTextInput",
 			"Browser",
@@ -148,7 +147,56 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "main.js",
+					"type": "application/javascript",
+					"sid": 874709192053457,
+					"script-info": {
+						"purpose": "main"
+					}
+				},
+				{
+					"name": "MultiPlayerHandler.js",
+					"type": "application/javascript",
+					"sid": 674737371903925,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "importsForEvents.js",
+					"type": "application/javascript",
+					"sid": 614444747350553,
+					"script-info": {
+						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "Game.js",
+					"type": "application/javascript",
+					"sid": 422614455270165,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player.js",
+					"type": "application/javascript",
+					"sid": 146230913551756,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "globals.js",
+					"type": "application/javascript",
+					"sid": 693333014023333,
+					"script-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {

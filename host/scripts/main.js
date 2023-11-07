@@ -1,10 +1,33 @@
 
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
+import { MultiPlayerHandler } from "./MultiPlayerHandler.js";
+import { Game } from "./Game.js";
+import  Globals  from "./globals.js";
 
 
+var game = null;
 // Import any other script files here
 import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js'
+
+export function main(runtime)
+{
+	//const gameLobbyLayout = runtime.getLayout("GameLobby");
+	generateUniqueRandomRoomCode(runtime, runtime.globalVars.NUM_ROOM_CODE_CHARACTERS);
+	
+	
+	game = new Game(runtime);
+	Globals.GameObj = game;
+	
+	
+	
+}
+
+
+
+// export function startGame (){
+// 	game.startGame();
+// }
 
 export function addDataAndPopulateChart() 
 {
@@ -88,4 +111,3 @@ export function generateUniqueRandomRoomCode(runtime, characters) {
 	}
 	runtime.globalVars.ROOM_CODE = proposed_room_code;
 }
-
