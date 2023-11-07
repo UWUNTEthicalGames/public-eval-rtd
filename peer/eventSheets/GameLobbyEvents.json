@@ -82,6 +82,7 @@
 					}
 				},
 				{
+
 					"type": "script",
 					"script": "main(runtime);",
 					"disabled": true
