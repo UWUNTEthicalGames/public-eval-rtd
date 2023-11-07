@@ -181,6 +181,14 @@
 					"script-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "globals.js",
+					"type": "application/javascript",
+					"sid": 512204961977067,
+					"script-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []

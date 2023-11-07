@@ -44,6 +44,10 @@
 						"property-name": "\"font-size\"",
 						"value": "\"32px\""
 					}
+				},
+				{
+					"type": "script",
+					"script": "main(runtime);"
 				}
 			],
 			"sid": 459888658543785
@@ -79,7 +83,8 @@
 				},
 				{
 					"type": "script",
-					"script": "main(runtime);"
+					"script": "main(runtime);",
+					"disabled": true
 				},
 				{
 					"callFunction": "InitializeMultiplayer",
@@ -132,16 +137,21 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 864480063220201,
+					"sid": 541994365886802,
 					"parameters": {
-						"object": "StartGameButton"
+						"object": "ConnectButton"
 					}
 				}
 			],
 			"actions": [
 				{
 					"callFunction": "ConnectButtonPressed",
-					"sid": 342647591387546
+					"sid": 342647591387546,
+					"disabled": true
+				},
+				{
+					"type": "script",
+					"script": "Globals.gameObj.connectPeer()"
 				}
 			],
 			"sid": 741775431698694

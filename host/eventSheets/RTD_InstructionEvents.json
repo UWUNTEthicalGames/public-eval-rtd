@@ -22,6 +22,7 @@
 				{
 					"callFunction": "SendDataToAllPeers",
 					"sid": 571117476301661,
+					"disabled": true,
 					"parameters": [
 						"\"go_to_peer_layout\"",
 						"\"RTD_Empty\""
@@ -50,6 +51,7 @@
 				{
 					"callFunction": "SendDataToAllPeers",
 					"sid": 643180533327805,
+					"disabled": true,
 					"parameters": [
 						"\"level_start\"",
 						"Button.levelTarget"
@@ -62,6 +64,10 @@
 					"parameters": {
 						"layout": "Button.levelTarget"
 					}
+				},
+				{
+					"type": "script",
+					"script": "Globals.GameObj.instructionsLayout();"
 				}
 			],
 			"sid": 473771176777997

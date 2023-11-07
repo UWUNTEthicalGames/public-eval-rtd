@@ -1,10 +1,11 @@
 
-
-const PLAYER_DATA = "__player_data";
 const TAG_REQUEST_DATA = "__request_data";
 const TAG_DATA = "data";
-const TAG_LEVEL_START = "level_start";
+const PLAYER_DATA = "__player_data";
+const LEVEL_START = "level_start";
+const GO_TO_PEER_LAYOUT = "go_to_peer_layout";
 const CONNECTION_DATA = "__connection_data";
+
 
 export class MultiPlayerHandler {
 
@@ -27,28 +28,31 @@ export class MultiPlayerHandler {
 			"receivedData": {},
 			"receivedRequests": []
 		};
-		
-		
-		
-		
-
-		this.connectPeer();
-		
-		this.multiPlayer.addEventListener("message", (e) => this.onReceive(e));
-		
+	
 		
 		// add buttons and text input fields
 		
-		const connectBtn = this.runtime.objects.ConnectButton.getFirstInstance();
-		connectBtn.addEventListener("click", () => alert("clicked"));
+		
+		//this.connectBtn = this.runtime.objects.ConnectButton.getFirstInstance();
+		//connectBtn.addEventListener("click", () => this.connectPeer());
+		
+		
+		// Multiplayer Events
+		this.multiPlayer.addEventListener("message", (e) => this.onReceive(e));
+		
+		
+		// Game Events
 		
     }
 	
+	
+	
+	
 	sendDataToHost(messageToSend) {
-		this.SetSignallingStatus("Send Data to Host");
-		console.log(messageToSend);
-		const myself = this.multiPlayer.getPeerById(this.multiPlayer.myId);
-		console.log(JSON.stringify(messageToSend));
+		
+		const messageContainer = {tag:  TAG_DATA, type: CONNECTION_DATA, message:messageToSend};	
+		this.SetSignallingStatus("sending data: " + JSON.stringify(messageContainer) + " to host");
+		// const myself = this.multiPlayer.getPeerById(this.multiPlayer.myId);
 		this.multiPlayer.sendPeerMessage("",messageToSend, 'o')
 		
 		this.SetSignallingStatus("Data sent to Host");
@@ -63,7 +67,7 @@ export class MultiPlayerHandler {
 		
 		console.log(receivedMessage);
 		if (receivedMessage["tag"] === TAG_REQUEST_DATA){
-			this.gameDataJson.receivedRequests.push({"fromAlias": event.fromAlias, "type": receivedMessage.type});
+			this.gameDataJson.receivedRequests.push({fromAlias: event.fromAlias, type : receivedMessage.type});
 			this.onReceiveRequest(receivedMessage);
 		}
 		else {
@@ -84,25 +88,29 @@ export class MultiPlayerHandler {
 		this.SetSignallingStatus("received Request");
 		console.log(receivedMessage);
 		
-		this.sendDataToHost({"tag": TAG_DATA, "type": CONNECTION_DATA, "status": "ready_to_start"});
+		this.sendDataToHost({ "status": "ready_to_start"});
 	}
 	
 	
 	onReceiveData(receivedMessage) {
 		
-		this.SetSignallingStatus("received Data");
+		this.SetSignallingStatus("received Data" + receivedMessage["message"]);
 		
-		if (receivedMessage["type"] === PLAYER_DATA){
+		
+		if (receivedMessage["type"] === GO_TO_PEER_LAYOUT){
+			this.runtime.goToLayout(receivedMessage["message"]);
+		}
+		else if (receivedMessage["type"] === LEVEL_START){
+			this.SetSignallingStatus("Host is at " + receivedMessage["message"]);
+		}
+		else if (receivedMessage["type"] === PLAYER_DATA){
 		
 			this.gameDataJson["roles"] = receivedMessage["message"]["roles"];
 			this.runtime.goToLayout("GameWait");
 		
 		}
-// 		else if (receivedMessage["tag"] === TAG_LEVEL_START){
-// 			this.runtime.goToLayout(receivedMessage["message"]);
-// 		}
-		
-		else{			
+		else{
+			console.error(receivedMessage);
 			this.runtime.goToLayout("ErrorMenu");
 		}
 			
@@ -110,16 +118,6 @@ export class MultiPlayerHandler {
 
 	}
 	
-	
-	connectPeer() {
-		this.SetSignallingStatus("On connect peer");
-		if ( (this.runtime.globalVars.ROOM_CODE && this.runtime.globalVars.PLAYER_ALIAS))
-			this.connectToSignalling();
-		else
-		{
-			this.SetSignallingStatus("Please provide ROOM CODE and ALIAS");
-		}
-	}
 	
 	
 	
@@ -139,7 +137,7 @@ export class MultiPlayerHandler {
             if (!signalling.isLoggedIn)
 			{
 				this.SetSignallingStatus("Logging in...");
-				await signalling.login(this.playerAlias);
+				await signalling.login(this.runtime.globalVars.PLAYER_ALIAS);
 			}
 
             this.SetSignallingStatus("Joining room...");

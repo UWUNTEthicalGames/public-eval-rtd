@@ -2,6 +2,8 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 import { MultiPlayerHandler } from "./MultiPlayerHandler.js";
+import { Game } from "./Game.js";
+import Globals from "./globals.js";
 
 
 // Import any other script files here
@@ -10,8 +12,11 @@ import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.j
 export function main(runtime)
 {
 	//const gameLobbyLayout = runtime.getLayout("GameLobby");
-	var multiPlayer = null;
-	multiPlayer = new MultiPlayerHandler(runtime);
+	
+	var game = new Game(runtime);
+	Globals.gameObj = game;
+	debugger;
+	
 	
 };
 
@@ -70,5 +75,4 @@ export function addDataAndPopulateChart()
 	});
 	
 }
-
 

@@ -1,6 +1,7 @@
 import { generateUniqueRandomRoomCode } from "./main.js";
 import { Player } from "./Player.js";
 import { Game } from "./Game.js";
+import  Globals  from "./globals.js";
 
 const PLAYER_DATA = "__player_data";
 const TAG_REQUEST_DATA = "__request_data";
@@ -8,8 +9,6 @@ const TAG_DATA = "data";
 const CONNECTION_DATA = "__connection_data";
 
 export class MultiPlayerHandler {
-
-	
 
     constructor (runtime) {
         
@@ -34,15 +33,7 @@ export class MultiPlayerHandler {
 		};
 		
 		
-		
-        // add buttons and text input fields
-		this.playerListText = this.runtime.objects.PlayerListText.getFirstInstance();
-		this.playerCountText = this.runtime.objects.PlayerCountText.getFirstInstance();
-		
-		const startGameBtn = this.runtime.objects.Button.getFirstInstance();
-		startGameBtn.addEventListener("click", () => console.log("button clicked"));
-		
-
+		// login using multiplayer
         this.ConnectToSignalling();
 		
 		
@@ -55,12 +46,7 @@ export class MultiPlayerHandler {
 		 
 		this.multiPlayer.addEventListener("peerdisconnect", 
 		(e) => this.leaveRoom(e));
-		
-		
-		// game events
-		
-		
-
+	
     }
 	
 
@@ -109,58 +95,24 @@ export class MultiPlayerHandler {
         }
     }
 
-    // This method can be used to show status of game on layout/console
-    SetSignallingStatus(str)
-	{
-		this.signallingStatus = "MultiPlayer : " + str
-		console.log(this.signallingStatus);
-	}
-	
-	
-	
+
+    	
 	onPeerConnected(e){
 		this.SetSignallingStatus("onPeerConnected");
+	
+		Globals.GameObj.addPlayerToGame(e.peerId ,e.peerAlias);
 		
-		const playerJoined = new Player(e.peerId ,e.peerAlias);
-		const player = {};
+		//const player = {};
+// 		player["playerIdx"]= this.gameDataJson.playerList.length+1;
+// 		player["ID"] = playerJoined.peerId;
+// 		player["status"] = "";
+// 		this.gameDataJson.players[playerJoined.peerAlias] = player;
 		
-		this.numOfPlayers += 1;
-		this.playerCountText.text = this.numOfPlayers.toString();
-		
-		player["playerIdx"]= this.gameDataJson.playerList.length+1;
-		player["ID"] = playerJoined.peerId;
-		player["status"] = "";
-		this.gameDataJson.players[playerJoined.peerAlias] = player;
-		
-		this.refreshPlayerListToDisplay();
-		//this.gameDataJson.playerList.push(playerJoined.peerAlias);
-		console.log(this.gameDataJson);
-		
-		this.setAndSendPlayerRole(playerJoined);
-		this.sendRequestToSpecificPeer(CONNECTION_DATA, playerJoined);
-		
-		//this.sendDataToPeersWithRole(CONNECTION_DATA, {"test": "test"}, 'A')
 	
 	}
 	
-	refreshPlayerListToDisplay() {
-		this.SetSignallingStatus("Refreshing players list to display");
-		
-		let playersToDisplay = "";	
-			
-		for (let player of Object.keys(this.gameDataJson.players)){
-			this.gameDataJson.playerList.push(player);
-			
-			playersToDisplay += player + "\n"
-		}
-		
-		console.log(playersToDisplay);
-		this.playerListText.text = playersToDisplay;
-	}
 	
-	
-	
-	// role can be separte
+	// Roles logic need to be updated
 	setAndSendPlayerRole(player) {
 		this.SetSignallingStatus("setAndSendPlayerRole");
 		let role = "";
@@ -169,81 +121,104 @@ export class MultiPlayerHandler {
 // 		else
 // 			role = "B";
 		
-		this.gameDataJson.roles[role] = [];
-		this.gameDataJson.roles[role].push(player);
-		const messageToSend = {"tag": TAG_DATA, "type": PLAYER_DATA, "message":{"roles":[role]}};
-		this.sendDataToSpecificPeer(messageToSend, player); // TODO: Convert GameDataJSON TO class
+// 		this.gameDataJson.roles[role] = [];
+// 		this.gameDataJson.roles[role].push(player);
+		
+		this.sendDataToSpecificPeer({"roles":[role]}, player); 
 			
 	}
 	
+	
+	// Sending Handlers
+	
+	// Structure of the message	 
+	// message = {
+	// 		tag: REQUEST_DATA,
+	// 		type: connection data, player data etc
+	// 		message: <any message>
+	// 	}
 	sendDataToSpecificPeer(message, player){
 
-		this.SetSignallingStatus("sending data to peer: " + player.peerAlias);
-		console.log(message);
-		this.multiPlayer.sendPeerMessage(player.peerId, message, 'o');
+		const messageContainer = {tag: TAG_DATA, type: PLAYER_DATA, message:message};	
+		this.SetSignallingStatus("sending data: " + JSON.stringify(messageContainer) +" to peer: " + player.peerAlias);
+		this.multiPlayer.sendPeerMessage(player.peerId, messageContainer, 'o');
 		this.SetSignallingStatus("Message Sent to Peer");
 	}
 	
 	
 	sendRequestToSpecificPeer(message, player){
-		this.SetSignallingStatus("sending request to peer: " + player.peerAlias);
-		const messageToSend = {"tag": TAG_REQUEST_DATA, "message" :message };
-		this.multiPlayer.sendPeerMessage(player.peerId, messageToSend, 'o');
+		
+		const messageContainer = {tag: TAG_REQUEST_DATA, type: "", message:message};
+		this.SetSignallingStatus("sending request: " + JSON.stringify(messageContainer) +" to peer: " + player.peerAlias);
+		this.multiPlayer.sendPeerMessage(player.peerId, messageContainer, 'o');
 		this.gameDataJson.outstandingRequests = {};
 	}
 	
 	sendDataToPeersWithRole(type, message, toRole) {
+	
 		this.SetSignallingStatus("send data to peers with Role");
-		const playersWithRole = this.gameDataJson.roles[toRole];
-		for (let player of playersWithRole) {
-			this.multiPlayer.sendPeerMessage(player.peerId, message, 'o');
+	
+		for (const player of Globals.GameObj.players) {
+			if (player.getRole === toRole){
+				const messageContainer = {tag: TAG_REQUEST_DATA, type: type, message:message};
+				this.SetSignallingStatus("sending data: " + JSON.stringify(messageContainer) +" to peer: " + player.peerAlias);
+				this.multiPlayer.sendPeerMessage(player.peerId, message, 'o');
+			}
 		}
 	}
 	
 	
 	sendRequestToAllPeers(type){
-		this.SetSignallingStatus("send Request to all peers")
-		const messageToSend = {tag: type};
-		this.multiPlayer.hostBroadcastMessage("", messageToSend, 'r');
+	
+		const messageContainer = {tag: TAG_REQUEST_DATA, type: type, message:""};
+		this.SetSignallingStatus("sending request: " + JSON.stringify(messageContainer) +" to all");
+		this.multiPlayer.hostBroadcastMessage("", messageContainer, 'r');
 		
 	}
 	
 	
 	sendDataToAllPeers(type, message){
-		this.SetSignallingStatus("send Data to all peers")
-		const messageToSend = {tag: TAG_DATA, type: type, message: message};
-		this.multiPlayer.hostBroadcastMessage("", messageToSend, 'r');
+	
+		const messageContainer = {tag: TAG_DATA, type: type, message: message};
+		this.SetSignallingStatus("sending data: " + JSON.stringify(messageContainer) +" to all");
+		this.multiPlayer.hostBroadcastMessage("", messageContainer, 'r');
 	}
 	
-	
+
+	// Receiving Handlers
 	onReceive(event) {
-		this.SetSignallingStatus("On Receive any Message");
 	
 		const messageReceived = event.message;
-		console.log(messageReceived);
+		
 		if (messageReceived["tag"] === TAG_REQUEST_DATA){
+			this.SetSignallingStatus("Received request message " + JSON.stringify(messageReceived) + " from " + event.fromAlias);
 			this.onReceiveRequest(messageReceived["type"], event.fromAlias);
-		} else {
+		} 
+		
+		else {
+			this.SetSignallingStatus("Received data message " + JSON.stringify(messageReceived) + " from " + event.fromAlias);
 			this.onReceiveData(messageReceived["type"], messageReceived, event.fromAlias)
 		}
-		
 	}
 	
+	
 	onReceiveRequest (type, fromAlias){
+	
 		this.SetSignallingStatus("On receive Request");
 		this.gameDataJson.receivedRequests.push({"fromAlias": fromAlias, "type": type});
 		console.log(this.gameDataJson)
 	}
+	
 	
 	onReceiveData(type, messageReceived, fromAlias) {
 		this.SetSignallingStatus("On Receive Data Message");
 	
 		if (type === CONNECTION_DATA) {
 			if (messageReceived.hasOwnProperty("status"))
-				this.gameDataJson.players[fromAlias]["status"] = messageReceived["status"];	
+				Globals.GameObj.players[fromAlias].setStatus = messageReceived["status"];	
 		}
 		else {
-			let temp={};
+			let temp = {};
 			temp[fromAlias] = messageReceived;
 			this.gameDataJson.receivedData[type] = temp;
 		}
@@ -252,38 +227,17 @@ export class MultiPlayerHandler {
 	}
 	
 	
-	onSendData (type, message, toAlias) {
-	//No usage yet
-	//TODO
-	}
-	
-	
-	onSendRequest(type, toAlias) {
-	// No usage yet
-	//TODO
-	}
-	
-	
-	startGame() {
-		debugger;
-		this.SetSignallingStatus("start game");
-		this.runtime.goToLayout("LevelChooser");
-		
-		this.sendDataToAllPeers("level_start", startGameBtn.instVars['levelTarget']);
-	}
-	
-	
 	leaveRoom(e) {
-		this.SetSignallingStatus("on peer leave room");
-		console.log(this.numOfPlayers);
-		this.numOfPlayers -= 1;
-		this.playerCountText.text = this.numOfPlayers.toString();
-		
-		delete this.gameDataJson.players[e.peerAlias];
-		this.gameDataJson.playerList.splice(this.gameDataJson.playerList.indexOf(e.peerAlias), 1);
-		console.log(this.gameDataJson);
-		this.refreshPlayerListToDisplay();
+	
+		this.SetSignallingStatus("leave room");
+		Globals.GameObj.leaveRoom(e);
 	}
 	
+	
+	// This method can be used to show status of game on layout/console
+    SetSignallingStatus(str)
+	{
+		this.signallingStatus = "MultiPlayer : " + str
+		console.log(this.signallingStatus);
+	}	
 }
-
