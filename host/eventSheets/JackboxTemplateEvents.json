@@ -277,7 +277,8 @@
 							"script": "generateUniqueRandomRoomCode(runtime, runtime.globalVars.NUM_ROOM_CODE_CHARACTERS);"
 						}
 					],
-					"sid": 701659713971047
+					"sid": 701659713971047,
+					"disabled": true
 				},
 				{
 					"functionName": "InitializeMultiplayer",
@@ -291,6 +292,7 @@
 					"conditions": [],
 					"actions": [],
 					"sid": 833330283353146,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -323,7 +325,8 @@
 									}
 								}
 							],
-							"sid": 288866195236155
+							"sid": 288866195236155,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -352,7 +355,8 @@
 									}
 								}
 							],
-							"sid": 378146657205346
+							"sid": 378146657205346,
+							"disabled": true
 						}
 					]
 				},
@@ -379,7 +383,8 @@
 							}
 						}
 					],
-					"sid": 673334336689779
+					"sid": 673334336689779,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -411,7 +416,8 @@
 							}
 						}
 					],
-					"sid": 826268305631335
+					"sid": 826268305631335,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -444,7 +450,8 @@
 							}
 						}
 					],
-					"sid": 649121793901918
+					"sid": 649121793901918,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -477,7 +484,8 @@
 							}
 						}
 					],
-					"sid": 254360972392307
+					"sid": 254360972392307,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -506,6 +514,15 @@
 							"parameters": {
 								"path": "\"players.\"&Multiplayer.PeerAlias",
 								"json": "\"{\"\"playerIdx\"\": \"&GameDataJSON.ArraySize(\"playerList\")&\", \"\"ID\"\": \"\"\"&Multiplayer.PeerID&\"\"\"}\""
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 427969263780762,
+							"parameters": {
+								"type": "log",
+								"message": "GameDataJSON.ToBeautifiedString"
 							}
 						},
 						{
@@ -538,12 +555,14 @@
 						}
 					],
 					"sid": 244076657012184,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [],
-							"sid": 924181529243962
+							"sid": 924181529243962,
+							"disabled": true
 						}
 					]
 				},
@@ -568,6 +587,7 @@
 						}
 					],
 					"sid": 453551208877273,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -593,7 +613,8 @@
 									]
 								}
 							],
-							"sid": 128088975093203
+							"sid": 128088975093203,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -615,7 +636,8 @@
 									]
 								}
 							],
-							"sid": 596422096158869
+							"sid": 596422096158869,
+							"disabled": true
 						}
 					]
 				},
@@ -647,7 +669,8 @@
 							"sid": 620875521030553
 						}
 					],
-					"sid": 889207322330953
+					"sid": 889207322330953,
+					"disabled": true
 				},
 				{
 					"functionName": "SendRequestToAllPeers",

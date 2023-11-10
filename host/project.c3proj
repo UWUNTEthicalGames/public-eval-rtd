@@ -151,11 +151,43 @@
 					}
 				},
 				{
-					"name": "importsForEvents.js.js",
+					"name": "importsForEvents.js",
 					"type": "application/javascript",
 					"sid": 998238624844753,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "MultiPlayerHandler.js",
+					"type": "application/javascript",
+					"sid": 779030787224646,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game.js",
+					"type": "application/javascript",
+					"sid": 884901815810998,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player.js",
+					"type": "application/javascript",
+					"sid": 558475616270610,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "globals.js",
+					"type": "application/javascript",
+					"sid": 512204961977067,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],

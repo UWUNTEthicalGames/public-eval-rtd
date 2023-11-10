@@ -44,6 +44,10 @@
 						"property-name": "\"font-size\"",
 						"value": "\"32px\""
 					}
+				},
+				{
+					"type": "script",
+					"script": "main(runtime);"
 				}
 			],
 			"sid": 459888658543785
@@ -78,8 +82,15 @@
 					}
 				},
 				{
+
+					"type": "script",
+					"script": "main(runtime);",
+					"disabled": true
+				},
+				{
 					"callFunction": "InitializeMultiplayer",
-					"sid": 476778632592312
+					"sid": 476778632592312,
+					"disabled": true
 				},
 				{
 					"id": "wait-for-previous-actions",
@@ -90,12 +101,14 @@
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 208823271206877,
+					"disabled": true,
 					"parameters": {
 						"layout": "GameWait"
 					}
 				}
 			],
-			"sid": 795534884261570
+			"sid": 795534884261570,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -103,7 +116,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 715908396873255,
+					"sid": 940607607131127,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -114,10 +127,10 @@
 			"actions": [
 				{
 					"callFunction": "ConnectButtonPressed",
-					"sid": 539645909011801
+					"sid": 403940401232998
 				}
 			],
-			"sid": 131104914829518
+			"sid": 607030386991060
 		},
 		{
 			"eventType": "block",
@@ -125,7 +138,7 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 679411462292268,
+					"sid": 541994365886802,
 					"parameters": {
 						"object": "ConnectButton"
 					}
@@ -134,7 +147,12 @@
 			"actions": [
 				{
 					"callFunction": "ConnectButtonPressed",
-					"sid": 342647591387546
+					"sid": 342647591387546,
+					"disabled": true
+				},
+				{
+					"type": "script",
+					"script": "Globals.gameObj.connectPeer()"
 				}
 			],
 			"sid": 741775431698694

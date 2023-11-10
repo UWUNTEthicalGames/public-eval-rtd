@@ -24,8 +24,13 @@
 					"sid": 770737237838900
 				},
 				{
+					"type": "script",
+					"script": "main(runtime)"
+				},
+				{
 					"callFunction": "InitializeMultiplayer",
-					"sid": 847634073947340
+					"sid": 732952582702173,
+					"disabled": true
 				},
 				{
 					"id": "wait-for-previous-actions",
@@ -76,6 +81,7 @@
 				}
 			],
 			"sid": 657573474437934,
+			"disabled": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -99,7 +105,8 @@
 							}
 						}
 					],
-					"sid": 662252262293889
+					"sid": 662252262293889,
+					"disabled": true
 				}
 			]
 		},
@@ -136,7 +143,8 @@
 					}
 				}
 			],
-			"sid": 768132577469095
+			"sid": 768132577469095,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -153,7 +161,12 @@
 			"actions": [
 				{
 					"callFunction": "StartGame",
-					"sid": 594827100273485
+					"sid": 594827100273485,
+					"disabled": true
+				},
+				{
+					"type": "script",
+					"script": "Globals.GameObj.startGame();"
 				}
 			],
 			"sid": 886365062366881
