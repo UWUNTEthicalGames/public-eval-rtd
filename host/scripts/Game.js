@@ -39,9 +39,7 @@ export class Game {
 	
 	startGame () {
 		this.SetSignallingStatus("start game", "Game.js");
-		
 		this.runtime.goToLayout(this.startGameBtn.instVars['levelTarget']);
-		//this.multiPlayer.sendDataToAllPeers("level_start", this.startGameBtn.instVars['levelTarget']);
 	
 	}
 	

@@ -464,10 +464,6 @@
 					],
 					"actions": [
 						{
-							"type": "script",
-							"script": "console.log(\"Multiplayer networking error.\")"
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 568680554506539,

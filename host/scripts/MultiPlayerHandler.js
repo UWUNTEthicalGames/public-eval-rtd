@@ -48,7 +48,6 @@ export class MultiPlayerHandler {
 		(e) => this.leaveRoom(e));
 	
     }
-	
 
 	// this method handles all the APIs for connecting, login and joining the room.
     async ConnectToSignalling() {
@@ -94,8 +93,6 @@ export class MultiPlayerHandler {
 			
         }
     }
-
-
     	
 	onPeerConnected(e){
 		this.SetSignallingStatus("onPeerConnected");
@@ -110,7 +107,6 @@ export class MultiPlayerHandler {
 		
 	
 	}
-	
 	
 	// Roles logic need to be updated
 	setAndSendPlayerRole(player) {

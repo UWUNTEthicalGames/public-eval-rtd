@@ -20,10 +20,6 @@
 					"text": "Initialize game and multiplayer process with this instance as host"
 				},
 				{
-					"callFunction": "InitializeGame",
-					"sid": 770737237838900
-				},
-				{
 					"type": "script",
 					"script": "main(runtime)"
 				},

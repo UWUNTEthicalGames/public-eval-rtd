@@ -15,12 +15,8 @@ export function main(runtime)
 	//const gameLobbyLayout = runtime.getLayout("GameLobby");
 	generateUniqueRandomRoomCode(runtime, runtime.globalVars.NUM_ROOM_CODE_CHARACTERS);
 	
-	
 	game = new Game(runtime);
 	Globals.GameObj = game;
-	
-	
-	
 }
 
 
