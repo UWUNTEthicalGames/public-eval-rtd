@@ -33,7 +33,7 @@
 				},
 				{
 					"type": "script",
-					"script": "addDataAndPopulateChart();"
+					"script": "// addDataAndPopulateChart();"
 				}
 			],
 			"sid": 820160771602121

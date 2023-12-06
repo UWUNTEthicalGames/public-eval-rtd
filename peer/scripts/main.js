@@ -12,12 +12,8 @@ import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.j
 export function main(runtime)
 {
 	//const gameLobbyLayout = runtime.getLayout("GameLobby");
-	
 	var game = new Game(runtime);
-	Globals.gameObj = game;
-	debugger;
-	
-	
+	Globals.gameObj = game;	
 };
 
 

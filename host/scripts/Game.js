@@ -1,7 +1,9 @@
 import * as Utils from "./utils.js";
 import { MultiPlayerHandler } from "./MultiPlayerHandler.js";
 import { Player } from "./Player.js";
-
+import { loadBarChart } from "./grouped_barchart.js";
+import { loadConfusionMatrix } from "./confusionMatrix.js";
+import { loadScatterPlot } from "./scatterPlot.js";
 
 
 const CONNECTION_DATA = "__connection_data";
@@ -87,11 +89,12 @@ export class Game {
 	
 	
 	startDemographicsLayout() {
+		this.multiPlayer.sendDataToAllPeers( GO_TO_PEER_LAYOUT, "RTD_MapSelection");
 		const mapSeconds = 10;
 		let mapSecondsRemaining = mapSeconds;
 		this.runtime.objects.TimerText.getFirstInstance().text = mapSeconds.toFixed(1).toString();
-		this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.addDataAndPopulateChart();
-		
+		//this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.addDataAndPopulateChart();
+		loadBarChart();
 		const intervalId = setInterval(
 			() => {
 				mapSecondsRemaining -= 0.05;
@@ -103,7 +106,7 @@ export class Game {
 		setTimeout(
 			() => {
 				console.log("Switching chart!");
-				this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.addDataAndPopulateChart2();
+				//this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.addDataAndPopulateChart2();
 			},
 			4000
 		);
@@ -113,10 +116,19 @@ export class Game {
 				console.log("Finished map timer!");
 				this.completeTimedMapSelection();
 				clearInterval(intervalId);
+				this.runtime.goToLayout("RTD_Evaluation");
 			},
 			mapSeconds * 1000
 		);
-		
+	}
+	
+	
+	startEvaluationLayout() {
+		loadScatterPlot();
+	}
+	
+	startScoreLayout() {
+		loadConfusionMatrix();
 	}
 	
 	

@@ -127,7 +127,7 @@
 					"type": "HTMLElement",
 					"properties": {
 						"tag": "div",
-						"content": "<p id=valueTest></p>\n<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>",
+						"content": "<div id=\"scatter-plot\"></div>",
 						"content-type": "html",
 						"initially-visible": true,
 						"id": "",

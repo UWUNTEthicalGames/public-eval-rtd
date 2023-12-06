@@ -199,7 +199,38 @@
 					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "confusionMatrix.js",
+							"type": "application/javascript",
+							"sid": 243251294310341,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "scatterPlot.js",
+							"type": "application/javascript",
+							"sid": 465622888840661,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "grouped_barchart.js",
+							"type": "application/javascript",
+							"sid": 248741731830248,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "charts"
+				}
+			]
 		},
 		"sound": {
 			"items": [],
