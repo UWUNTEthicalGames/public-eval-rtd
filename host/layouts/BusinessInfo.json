@@ -1,5 +1,5 @@
 {
-	"name": "RTD_BusinessInfo",
+	"name": "BusinessInfo",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -60,7 +60,7 @@
 					},
 					"uid": 43,
 					"instanceVariables": {
-						"levelTarget": "RTD_Demographics"
+						"levelTarget": "Demographics"
 					},
 					"behaviors": {},
 					"world": {
@@ -205,5 +205,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "RTD_BusinessInfoEvents"
+	"eventSheet": "BusinessInfoEvents"
 }

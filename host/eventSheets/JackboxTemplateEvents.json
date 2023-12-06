@@ -544,10 +544,6 @@
 								"variable": "NUM_PLAYERS",
 								"value": "1"
 							}
-						},
-						{
-							"callFunction": "RefreshPlayerListDisplay",
-							"sid": 710490765621076
 						}
 					],
 					"sid": 244076657012184,
@@ -659,10 +655,6 @@
 								"variable": "NUM_PLAYERS",
 								"value": "1"
 							}
-						},
-						{
-							"callFunction": "RefreshPlayerListDisplay",
-							"sid": 620875521030553
 						}
 					],
 					"sid": 889207322330953,

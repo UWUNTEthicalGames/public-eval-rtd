@@ -208,7 +208,7 @@
 					},
 					"uid": 35,
 					"instanceVariables": {
-						"levelTarget": "RTD_Instructions"
+						"levelTarget": "Instructions"
 					},
 					"behaviors": {},
 					"world": {

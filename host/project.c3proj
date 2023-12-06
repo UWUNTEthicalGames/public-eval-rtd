@@ -114,10 +114,10 @@
 			"Level_AlphaCharCount",
 			"LevelChooser",
 			"Level_AlphaClosestToForty",
-			"RTD_Instructions",
-			"RTD_BusinessInfo",
-			"RTD_Demographics",
-			"RTD_WatchCustomers",
+			"Instructions",
+			"BusinessInfo",
+			"Demographics",
+			"Operations",
 			"RTD_Score",
 			"RTD_Evaluation"
 		],
@@ -130,10 +130,10 @@
 			"Level_AlphaCharCountEvents",
 			"LevelChooserEvents",
 			"Level_AlphaClosestToFortyEvents",
-			"RTD_InstructionEvents",
-			"RTD_BusinessInfoEvents",
-			"RTD_DemographicsEvents",
-			"RTD_WatchCustomersEvents",
+			"InstructionEvents",
+			"BusinessInfoEvents",
+			"DemographicsEvents",
+			"OperationsEvents",
 			"RTD_ScoreEvents",
 			"RTD_EvaluationEvents"
 		],
@@ -186,6 +186,14 @@
 					"name": "globals.js",
 					"type": "application/javascript",
 					"sid": 512204961977067,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "utils.js",
+					"type": "application/javascript",
+					"sid": 707325132913312,
 					"script-info": {
 						"purpose": "none"
 					}

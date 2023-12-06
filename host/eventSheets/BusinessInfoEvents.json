@@ -1,5 +1,5 @@
 {
-	"name": "GameLobbyEvents",
+	"name": "BusinessInfoEvents",
 	"events": [
 		{
 			"eventType": "include",
@@ -11,7 +11,7 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 629824961616592,
+					"sid": 143952772296689,
 					"parameters": {
 						"object": "Button"
 					}
@@ -19,16 +19,16 @@
 			],
 			"actions": [
 				{
-					"id": "go-to-layout",
+					"id": "go-to-layout-by-name",
 					"objectClass": "System",
-					"sid": 345198083450730,
+					"sid": 306023932655815,
 					"parameters": {
-						"layout": "LevelChooser"
+						"layout": "Button.levelTarget"
 					}
 				}
 			],
-			"sid": 886365062366881
+			"sid": 952096846544643
 		}
 	],
-	"sid": 579820060356929
+	"sid": 989382036022778
 }

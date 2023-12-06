@@ -1,0 +1,10 @@
+{
+	"name": "DemographicsEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		}
+	],
+	"sid": 473333717313514
+}
