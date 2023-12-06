@@ -1,9 +1,31 @@
 {
-	"name": "Sprite",
+	"name": "PersonSprite",
 	"plugin-id": "Sprite",
 	"sid": 189803550420299,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "dataId",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 361670571165969
+		},
+		{
+			"name": "selected",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 578912203446974
+		},
+		{
+			"name": "selectedBy",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 454143814703016
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

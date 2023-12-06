@@ -1,5 +1,5 @@
 {
-	"name": "Operations",
+	"name": "RTD_Instructions",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -9,7 +9,50 @@
 				{
 					"type": "StaticText",
 					"properties": {
-						"text": "Watch Customers",
+						"text": "Let's add some basic instructions here.\n\nThe scene could have animations, pictures, etc.\n\nWe can either have a button or advance automatically.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 24,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 38,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 214,
+						"y": 248,
+						"width": 1413,
+						"height": 656,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Game Instructions",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 32,
@@ -29,7 +72,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 48,
+					"uid": 41,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -50,19 +93,50 @@
 					}
 				},
 				{
-					"type": "TimerText",
+					"type": "Button",
 					"properties": {
-						"text": "0 s",
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 37,
+					"instanceVariables": {
+						"levelTarget": "RTD_BusinessInfo"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1661,
+						"y": 945,
+						"width": 270,
+						"height": 68,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Go to business info",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 36,
+						"size": 20,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
 						"color": [
-							0,
-							0,
-							0,
+							1,
+							1,
+							1,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -72,18 +146,14 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 51,
+					"uid": 39,
 					"instanceVariables": {},
-					"behaviors": {
-						"Timer": {
-							"properties": {}
-						}
-					},
+					"behaviors": {},
 					"world": {
-						"x": 74,
-						"y": 94,
-						"width": 237,
-						"height": 65,
+						"x": 1544,
+						"y": 926,
+						"width": 286,
+						"height": 43,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -97,7 +167,7 @@
 					}
 				}
 			],
-			"sid": 681353508139366,
+			"sid": 120079973185767,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -126,7 +196,7 @@
 			"global": false
 		}
 	],
-	"sid": 563044751671385,
+	"sid": 239228177236843,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1920,
@@ -135,5 +205,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "OperationsEvents"
+	"eventSheet": "RTD_InstructionEvents"
 }

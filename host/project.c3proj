@@ -295,6 +295,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "customer_info.csv",
+					"type": "text/csv",
+					"sid": 220176771898442,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []

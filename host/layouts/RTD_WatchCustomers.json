@@ -1,5 +1,5 @@
 {
-	"name": "Demographics",
+	"name": "RTD_WatchCustomers",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -9,7 +9,7 @@
 				{
 					"type": "StaticText",
 					"properties": {
-						"text": "Demographics",
+						"text": "Watch Customers",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 32,
@@ -29,7 +29,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 47,
+					"uid": 48,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -37,49 +37,6 @@
 						"y": 107,
 						"width": 962,
 						"height": 121,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "StaticText",
-					"properties": {
-						"text": "Time remaining\nfor selection:",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 18,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 45,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 45,
-						"y": 56,
-						"width": 268,
-						"height": 64,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -115,7 +72,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 52,
+					"uid": 51,
 					"instanceVariables": {},
 					"behaviors": {
 						"Timer": {
@@ -123,8 +80,8 @@
 						}
 					},
 					"world": {
-						"x": 45,
-						"y": 124,
+						"x": 74,
+						"y": 94,
 						"width": 237,
 						"height": 65,
 						"originX": 0,
@@ -138,57 +95,9 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "HTMLElement",
-					"properties": {
-						"tag": "div",
-						"content": "<p id=valueTest></p>\n<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>",
-						"content-type": "html",
-						"initially-visible": true,
-						"id": "",
-						"class": "",
-						"allow-context-menu": false,
-						"stop-input-events": "no",
-						"origin": "top-left",
-						"set-color": true,
-						"default-color": [
-							0,
-							0,
-							0,
-							0
-						],
-						"set-background-color": false,
-						"default-background-color": [
-							1,
-							1,
-							1,
-							0
-						],
-						"auto-font-size": true,
-						"allow-text-selection": false,
-						"style-attribute": ""
-					},
-					"uid": 49,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 295,
-						"y": 258,
-						"width": 1446,
-						"height": 625,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
 				}
 			],
-			"sid": 994153449909304,
+			"sid": 681353508139366,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -217,7 +126,7 @@
 			"global": false
 		}
 	],
-	"sid": 875138255633325,
+	"sid": 563044751671385,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1920,
@@ -226,5 +135,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "DemographicsEvents"
+	"eventSheet": "RTD_WatchCustomersEvents"
 }

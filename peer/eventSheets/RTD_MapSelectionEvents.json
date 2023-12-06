@@ -4,6 +4,26 @@
 		{
 			"eventType": "include",
 			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 435710532471013,
+					"parameters": {
+						"object": "PersonSprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "Globals.gameObj.selectPerson(runtime.objects.PersonSprite.getFirstPickedInstance());"
+				}
+			],
+			"sid": 998794707696511
 		}
 	],
 	"sid": 335751246439773

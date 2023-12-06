@@ -31,13 +31,24 @@ export class Game {
 		this.multiPlayer = new MultiPlayerHandler(runtime);
 		this.roomCode = Utils.generateUniqueRandomRoomCode(runtime, NUM_ROOM_CODE_CHARACTERS);
 		this.runtime.globalVars.ROOM_CODE = this.roomCode;
+		
+		this.demographicsValues = [0,0,0,0,0,0,0,0];
+		
+		this.loadCustomerInfoData();
+	}
+	
+	
+	async loadCustomerInfoData() {
+		const response = await fetch("customer_info.csv");
+		const fetchedText = await response.text();
+		this.customerInfo = Utils.parseCSVTextToKeyedObj(fetchedText, "Loan_ID");
 	}
 	
 	
 	addPlayerToGame ( peerId, peerAlias, role="") {
 		this.SetSignallingStatus("start game", "Game.js");
 		
-		let player = new Player(peerId, peerAlias);
+		const player = new Player(peerId, peerAlias);
 		player.setRole = role;
 		this.players.push(player);
 		
@@ -59,7 +70,7 @@ export class Game {
 		
 		let playersToDisplay = "";	
 			
-		for (let player of this.players){
+		for (const player of this.players){
 			playersToDisplay += player.peerAlias + "\n";
 		}
 		
@@ -87,10 +98,13 @@ export class Game {
 	
 	
 	startDemographicsLayout() {
+		this.SetSignallingStatus("demographics method");
+		this.multiPlayer.sendDataToAllPeers( GO_TO_PEER_LAYOUT, "RTD_MapSelection");
+	
 		const mapSeconds = 10;
 		let mapSecondsRemaining = mapSeconds;
 		this.runtime.objects.TimerText.getFirstInstance().text = mapSeconds.toFixed(1).toString();
-		this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.addDataAndPopulateChart();
+		this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.populateDemographicsChart();
 		
 		const intervalId = setInterval(
 			() => {
@@ -102,119 +116,105 @@ export class Game {
 		
 		setTimeout(
 			() => {
-				console.log("Switching chart!");
-				this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.addDataAndPopulateChart2();
-			},
-			4000
-		);
-		
-		setTimeout(
-			() => {
 				console.log("Finished map timer!");
 				this.completeTimedMapSelection();
 				clearInterval(intervalId);
 			},
 			mapSeconds * 1000
 		);
+	}
+	
+	
+	populateDemographicsChart(values=this.demographicsValues) 
+	{
+		console.log("Preparing chart");
+
+		const labels = ["Credit history", "No credit history", "Rural", "Suburban", "Urban", "$", "$$", "$$$"];
+		const data = {
+		  labels: labels,
+		  datasets: [{
+			label: 'Selected Demographics',
+			data: [...values],
+			backgroundColor: [
+			  'rgba(255, 99, 132, 0.2)',
+			  'rgba(255, 99, 132, 0.2)',
+			  'rgba(75, 192, 192, 0.2)',
+			  'rgba(75, 192, 192, 0.2)',
+			  'rgba(75, 192, 192, 0.2)',
+			  'rgba(201, 203, 207, 0.2)',
+			  'rgba(201, 203, 207, 0.2)',
+			  'rgba(201, 203, 207, 0.2)'
+			],
+			borderColor: [
+			  'rgb(255, 99, 132)',
+			  'rgb(255, 99, 132)',
+			  'rgb(75, 192, 192)',
+			  'rgb(75, 192, 192)',
+			  'rgb(75, 192, 192)',
+			  'rgb(201, 203, 207)',
+			  'rgb(201, 203, 207)',
+			  'rgb(201, 203, 207)'
+			],
+			borderWidth: 2
+		  }]
+		};
+
+		return new Chart("myChart", {
+		  type: "bar",
+		  data: data,
+		  options: {
+			legend: {
+				display: true
+			},
+			scales: { 
+				y: { 
+					beginAtZero: true
+				}
+			}
+		  }
+		});
+	}
+	
+	
+	selectionUpdate(messageObj) {
+		const selectionId = messageObj.message;
+		if (messageObj.type === SELECTION_ADDED) {
+			this.registerSelectionChanged(selectionId, 1);
+			this.multiPlayer.sendDataToAllPeers(SELECTION_ADDED, selectionId);
+		} else if (messageObj.type === SELECTION_REMOVED) {
+			this.registerSelectionChanged(selectionId, -1);
+			this.multiPlayer.sendDataToAllPeers(SELECTION_REMOVED, selectionId);
+		}
+	}
+	
+	
+	registerSelectionChanged(dataId, addRemoveMultiplier=1) {
+		const vals = this.customerInfo[dataId];
+		if (vals.Credit_History == 1.0) {
+			this.demographicsValues[0] += addRemoveMultiplier;
+		} else {
+			this.demographicsValues[1] += addRemoveMultiplier;
+		}
 		
-	}
-	
-	
-	addDataAndPopulateChart() 
-	{
-		console.log("Preparing chart");
-
-		const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
-		const data = {
-		  labels: labels,
-		  datasets: [{
-			label: 'My First Dataset',
-			data: [65, 59, 80, 81, 56, 55, 40],
-			backgroundColor: [
-			  'rgba(255, 99, 132, 0.2)',
-			  'rgba(255, 159, 64, 0.2)',
-			  'rgba(255, 205, 86, 0.2)',
-			  'rgba(75, 192, 192, 0.2)',
-			  'rgba(54, 162, 235, 0.2)',
-			  'rgba(153, 102, 255, 0.2)',
-			  'rgba(201, 203, 207, 0.2)'
-			],
-			borderColor: [
-			  'rgb(255, 99, 132)',
-			  'rgb(255, 159, 64)',
-			  'rgb(255, 205, 86)',
-			  'rgb(75, 192, 192)',
-			  'rgb(54, 162, 235)',
-			  'rgb(153, 102, 255)',
-			  'rgb(201, 203, 207)'
-			],
-			borderWidth: 1
-		  }]
-		};
-
-		return new Chart("myChart", {
-		  type: "bar",
-		  data: data,
-		  options: {
-			legend: {
-				display: true
-			},
-			scales: { 
-				y: { 
-					beginAtZero: true
-				}
-			}
-		  }
-		});
-	}
-	
-	
-	addDataAndPopulateChart2() 
-	{
-		console.log("Preparing chart");
-
-		const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
-		const data = {
-		  labels: labels,
-		  datasets: [{
-			label: 'My First Dataset',
-			data: [65, 56, 55, 40, 59, 80, 81,],
-			backgroundColor: [
-			  'rgba(75, 192, 192, 0.2)',
-			  'rgba(54, 162, 235, 0.2)',
-			  'rgba(153, 102, 255, 0.2)',
-			  'rgba(255, 99, 132, 0.2)',
-			  'rgba(255, 159, 64, 0.2)',
-			  'rgba(255, 205, 86, 0.2)',
-			  'rgba(201, 203, 207, 0.2)'
-			],
-			borderColor: [
-			  'rgb(255, 99, 132)',
-			  'rgb(255, 159, 64)',
-			  'rgb(255, 205, 86)',
-			  'rgb(75, 192, 192)',
-			  'rgb(54, 162, 235)',
-			  'rgb(153, 102, 255)',
-			  'rgb(201, 203, 207)'
-			],
-			borderWidth: 1
-		  }]
-		};
-
-		return new Chart("myChart", {
-		  type: "bar",
-		  data: data,
-		  options: {
-			legend: {
-				display: true
-			},
-			scales: { 
-				y: { 
-					beginAtZero: true
-				}
-			}
-		  }
-		});
+		if (vals.Property_Area == "Rural") {
+			this.demographicsValues[2] += addRemoveMultiplier;
+		} else if (vals.Property_Area == "Semiurban") {
+			this.demographicsValues[3] += addRemoveMultiplier;
+		} else if (vals.Property_Area == "Urban") {
+			this.demographicsValues[4] += addRemoveMultiplier;
+		} else {
+			console.warn("Unknown property area value: " + vals.Property_Area);
+		}
+		
+		if (vals.ApplicantIncome < 2875) {
+			this.demographicsValues[5] += addRemoveMultiplier;
+		} else if (vals.ApplicantIncome < 5795) {
+			this.demographicsValues[6] += addRemoveMultiplier;
+		} else {
+			this.demographicsValues[7] += addRemoveMultiplier;
+		}
+		
+		this.populateDemographicsChart();
 	}
 	
 	

@@ -239,7 +239,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Person1",
@@ -248,7 +248,11 @@
 						"live-preview": false
 					},
 					"uid": 33,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"dataId": "LP002139",
+						"selected": false,
+						"selectedBy": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 338.5,
@@ -268,7 +272,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Person2",
@@ -277,7 +281,11 @@
 						"live-preview": false
 					},
 					"uid": 37,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"dataId": "LP001005",
+						"selected": false,
+						"selectedBy": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 113,
@@ -297,7 +305,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Person3",
@@ -306,7 +314,11 @@
 						"live-preview": false
 					},
 					"uid": 38,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"dataId": "LP002978",
+						"selected": false,
+						"selectedBy": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 711,
@@ -326,7 +338,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Person1",
@@ -335,7 +347,11 @@
 						"live-preview": false
 					},
 					"uid": 39,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 386,
@@ -355,7 +371,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Person2",
@@ -364,7 +380,11 @@
 						"live-preview": false
 					},
 					"uid": 40,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 909,
@@ -384,7 +404,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Person3",
@@ -393,7 +413,11 @@
 						"live-preview": false
 					},
 					"uid": 41,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 834,

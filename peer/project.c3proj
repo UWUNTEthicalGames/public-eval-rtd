@@ -113,7 +113,7 @@
 			"ArrowSprite",
 			"MapManager",
 			"PlayerSprite",
-			"Sprite"
+			"PersonSprite"
 		],
 		"subfolders": []
 	},

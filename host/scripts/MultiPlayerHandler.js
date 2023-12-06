@@ -7,6 +7,12 @@ const TAG_REQUEST_DATA = "__request_data";
 const TAG_DATA = "data";
 const CONNECTION_DATA = "__connection_data";
 
+const GO_TO_PEER_LAYOUT = "go_to_peer_layout";
+const LEVEL_START = "level_start";
+const SELECTION_ADDED = "selection_added";
+const SELECTION_REMOVED = "selection_removed";
+const END_SELECTION_TIME = "end_selection_time";
+
 export class MultiPlayerHandler {
 
     constructor (runtime) {
@@ -188,7 +194,7 @@ export class MultiPlayerHandler {
 		if (messageReceived["tag"] === TAG_REQUEST_DATA){
 			this.SetSignallingStatus("Received request message " + JSON.stringify(messageReceived) + " from " + event.fromAlias);
 			this.onReceiveRequest(messageReceived["type"], event.fromAlias);
-		} 
+		}
 		
 		else {
 			this.SetSignallingStatus("Received data message " + JSON.stringify(messageReceived) + " from " + event.fromAlias);
@@ -212,7 +218,11 @@ export class MultiPlayerHandler {
 			if (messageReceived.hasOwnProperty("status"))
 				Globals.GameObj.players[fromAlias].setStatus = messageReceived["status"];	
 		}
-		else {
+		else if (type === SELECTION_ADDED) {
+			Globals.GameObj.selectionUpdate(messageReceived);
+		} else if (type === SELECTION_REMOVED) {
+			Globals.GameObj.selectionUpdate(messageReceived);
+		} else {
 			let temp = {};
 			temp[fromAlias] = messageReceived;
 			this.gameDataJson.receivedData[type] = temp;
