@@ -1,0 +1,34 @@
+{
+	"name": "InstructionEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 699441981572174,
+					"parameters": {
+						"object": "Button"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 659318110675256,
+					"parameters": {
+						"layout": "Button.levelTarget"
+					}
+				}
+			],
+			"sid": 473771176777997
+		}
+	],
+	"sid": 448781031468265
+}

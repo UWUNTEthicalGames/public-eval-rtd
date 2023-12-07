@@ -1,0 +1,183 @@
+{
+	"name": "Level_AlphaClosestToFortyEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 560873562049861
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "You'll often want to tell the peer devices which layout to start."
+				},
+				{
+					"callFunction": "SendDataToAllPeers",
+					"sid": 465991059482511,
+					"parameters": [
+						"\"go_to_peer_layout\"",
+						"\"Level_GenericTyping\""
+					]
+				},
+				{
+					"type": "comment",
+					"text": "You're free to start gameplay below."
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "TimerText",
+					"sid": 751316774233034,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "10.0",
+						"type": "once",
+						"tag": "\"level-timer\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 129986183028962,
+					"parameters": {
+						"type": "log",
+						"message": "\"Starting layout for closest to 40 level\""
+					}
+				}
+			],
+			"sid": 368920485631343
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 782948144178166,
+					"parameters": {
+						"interval-seconds": "0.25"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TimerText",
+					"sid": 374336866155690,
+					"parameters": {
+						"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
+					}
+				}
+			],
+			"sid": 274637774063074
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "TimerText",
+					"sid": 734384137266926,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"level-timer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Setting timer just to clean up the text, sometimes the timer can get fractional or negative."
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TimerText",
+					"sid": 515677881193891,
+					"parameters": {
+						"text": "0"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Request results from the player. We could have designed to voluntarily send the results, but this ensures that everyone gets the request at the same time."
+				},
+				{
+					"callFunction": "SendRequestToAllPeers",
+					"sid": 824029180696657,
+					"parameters": [
+						"\"level_results\""
+					]
+				},
+				{
+					"callFunction": "SendRequestToAllPeers",
+					"sid": 862930019955000,
+					"parameters": [
+						"\"end_level\""
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 308661379810137,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"callFunction": "ApplyFunctionToAllReceivedData",
+					"sid": 493775033979569,
+					"parameters": [
+						"\"level_results\"",
+						"\"DoPlayerCountFromFortyResults\""
+					]
+				}
+			],
+			"sid": 362123190577942
+		},
+		{
+			"functionName": "DoPlayerCountFromFortyResults",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "player_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 516872218787897
+				},
+				{
+					"name": "data",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 810302703433511
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "ResultsText",
+					"sid": 352633261635236,
+					"parameters": {
+						"text": "player_alias&\": \"&abs(40 - len(data))&\" (distance from 40)\""
+					}
+				}
+			],
+			"sid": 885043594180291
+		}
+	],
+	"sid": 479883169577126
+}

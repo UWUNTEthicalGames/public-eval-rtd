@@ -1,5 +1,5 @@
 {
-	"name": "RTD_BusinessInfoEvents",
+	"name": "RTD_ScoreEvents",
 	"events": [
 		{
 			"eventType": "include",
@@ -11,7 +11,7 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 448822185174396
+					"sid": 147596936523027
 				}
 			],
 			"actions": [
@@ -21,8 +21,7 @@
 				},
 				{
 					"callFunction": "SendDataToAllPeers",
-					"sid": 494805375258793,
-					"disabled": true,
+					"sid": 291149182778794,
 					"parameters": [
 						"\"go_to_peer_layout\"",
 						"\"RTD_Empty\""
@@ -33,7 +32,7 @@
 					"text": "You're free to start gameplay below."
 				}
 			],
-			"sid": 550521749959364
+			"sid": 756963322517128
 		},
 		{
 			"eventType": "block",
@@ -41,7 +40,7 @@
 				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
-					"sid": 143952772296689,
+					"sid": 277936770126219,
 					"parameters": {
 						"object": "Button"
 					}
@@ -50,8 +49,7 @@
 			"actions": [
 				{
 					"callFunction": "SendDataToAllPeers",
-					"sid": 118113413266295,
-					"disabled": true,
+					"sid": 379220094985257,
 					"parameters": [
 						"\"level_start\"",
 						"Button.levelTarget"
@@ -60,18 +58,14 @@
 				{
 					"id": "go-to-layout-by-name",
 					"objectClass": "System",
-					"sid": 306023932655815,
+					"sid": 371885374619765,
 					"parameters": {
 						"layout": "Button.levelTarget"
 					}
-				},
-				{
-					"type": "script",
-					"script": "Globals.GameObj.businessInfoLayout();"
 				}
 			],
-			"sid": 952096846544643
+			"sid": 279753485653744
 		}
 	],
-	"sid": 989382036022778
+	"sid": 731117350919625
 }

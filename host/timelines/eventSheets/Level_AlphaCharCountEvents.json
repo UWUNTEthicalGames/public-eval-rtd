@@ -1,0 +1,174 @@
+{
+	"name": "Level_AlphaCharCountEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "JackboxTemplateEvents"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 892551444213727
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "You'll often want to tell the peer devices which layout to start."
+				},
+				{
+					"callFunction": "SendDataToAllPeers",
+					"sid": 636230234229040,
+					"parameters": [
+						"\"go_to_peer_layout\"",
+						"\"Level_GenericTyping\""
+					]
+				},
+				{
+					"type": "comment",
+					"text": "You're free to start gameplay below."
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "TimerText",
+					"sid": 212756480723531,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "10.0",
+						"type": "once",
+						"tag": "\"level-timer\""
+					}
+				}
+			],
+			"sid": 976603227568846
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 229830542716721,
+					"parameters": {
+						"interval-seconds": "0.25"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "TimerText",
+					"sid": 987173707675553,
+					"parameters": {
+						"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
+					}
+				}
+			],
+			"sid": 830634602132976
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "TimerText",
+					"sid": 464843167642224,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"level-timer\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Setting timer just to clean up the text, sometimes the timer can get fractional or negative."
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TimerText",
+					"sid": 445149200425679,
+					"parameters": {
+						"text": "0"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Request results from the player. We could have designed to voluntarily send the results, but this ensures that everyone gets the request at the same time."
+				},
+				{
+					"callFunction": "SendRequestToAllPeers",
+					"sid": 684959631704049,
+					"parameters": [
+						"\"level_results\""
+					]
+				},
+				{
+					"callFunction": "SendRequestToAllPeers",
+					"sid": 960074449474681,
+					"parameters": [
+						"\"end_level\""
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 902375802516650,
+					"parameters": {
+						"seconds": "5"
+					}
+				},
+				{
+					"callFunction": "ApplyFunctionToAllReceivedData",
+					"sid": 682894701587401,
+					"parameters": [
+						"\"level_results\"",
+						"\"DoPlayerCountResults\""
+					]
+				}
+			],
+			"sid": 644388221105945
+		},
+		{
+			"functionName": "DoPlayerCountResults",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "player_alias",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 262522766745300
+				},
+				{
+					"name": "data",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 244864838139303
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "ResultsText",
+					"sid": 438446553068544,
+					"parameters": {
+						"text": "player_alias&\": \"&len(data)"
+					}
+				}
+			],
+			"sid": 148166275517028
+		}
+	],
+	"sid": 740432742886503
+}

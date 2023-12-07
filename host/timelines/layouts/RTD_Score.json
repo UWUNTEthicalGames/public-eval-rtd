@@ -1,5 +1,5 @@
 {
-	"name": "RTD_Instructions",
+	"name": "RTD_Score",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -9,50 +9,7 @@
 				{
 					"type": "StaticText",
 					"properties": {
-						"text": "Let's add some basic instructions here.\n\nThe scene could have animations, pictures, etc.\n\nWe can either have a button or advance automatically.",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 24,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 38,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 214,
-						"y": 248,
-						"width": 1413,
-						"height": 656,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "StaticText",
-					"properties": {
-						"text": "Game Instructions",
+						"text": "Score",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 32,
@@ -72,7 +29,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 41,
+					"uid": 53,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -101,9 +58,9 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 37,
+					"uid": 54,
 					"instanceVariables": {
-						"levelTarget": "RTD_BusinessInfo"
+						"levelTarget": "LevelChooser"
 					},
 					"behaviors": {},
 					"world": {
@@ -126,7 +83,7 @@
 				{
 					"type": "StaticText",
 					"properties": {
-						"text": "Go to business info",
+						"text": "End Round",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 20,
@@ -146,7 +103,7 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 39,
+					"uid": 55,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -167,7 +124,7 @@
 					}
 				}
 			],
-			"sid": 120079973185767,
+			"sid": 718898190304913,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -196,7 +153,7 @@
 			"global": false
 		}
 	],
-	"sid": 239228177236843,
+	"sid": 130066491975648,
 	"nonworld-instances": [],
 	"effectTypes": [],
 	"width": 1920,
@@ -205,5 +162,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "RTD_InstructionEvents"
+	"eventSheet": "RTD_ScoreEvents"
 }

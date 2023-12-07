@@ -1,5 +1,5 @@
 {
-	"name": "RTD_WatchCustomers",
+	"name": "ErrorMenu",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -7,55 +7,12 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "StaticText",
+					"type": "ErrorText",
 					"properties": {
-						"text": "Watch Customers",
+						"text": "Text",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 32,
-						"line-height": 0,
-						"bold": true,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 48,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 872,
-						"y": 107,
-						"width": 962,
-						"height": 121,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "TimerText",
-					"properties": {
-						"text": "0 s",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 36,
+						"size": 22,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -72,18 +29,14 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 51,
+					"uid": 5,
 					"instanceVariables": {},
-					"behaviors": {
-						"Timer": {
-							"properties": {}
-						}
-					},
+					"behaviors": {},
 					"world": {
-						"x": 74,
-						"y": 94,
-						"width": 237,
-						"height": 65,
+						"x": 166,
+						"y": 144,
+						"width": 1202,
+						"height": 535,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -97,7 +50,7 @@
 					}
 				}
 			],
-			"sid": 681353508139366,
+			"sid": 939730968251226,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -126,14 +79,14 @@
 			"global": false
 		}
 	],
-	"sid": 563044751671385,
+	"sid": 796788225268393,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1920,
-	"height": 1080,
+	"width": 3840,
+	"height": 2160,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "RTD_WatchCustomersEvents"
+	"eventSheet": null
 }

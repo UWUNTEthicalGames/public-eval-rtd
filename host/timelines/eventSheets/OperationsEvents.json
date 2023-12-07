@@ -1,5 +1,5 @@
 {
-	"name": "RTD_DemographicsEvents",
+	"name": "OperationsEvents",
 	"events": [
 		{
 			"eventType": "include",
@@ -11,7 +11,7 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 270260900479716
+					"sid": 874539071253571
 				}
 			],
 			"actions": [
@@ -21,10 +21,10 @@
 				},
 				{
 					"callFunction": "SendDataToAllPeers",
-					"sid": 356180971519720,
+					"sid": 563307090052151,
 					"parameters": [
 						"\"go_to_peer_layout\"",
-						"\"RTD_MapSelection\""
+						"\"RTD_Empty\""
 					]
 				},
 				{
@@ -34,7 +34,7 @@
 				{
 					"id": "start-timer",
 					"objectClass": "TimerText",
-					"sid": 359785211807507,
+					"sid": 218470207301464,
 					"behaviorType": "Timer",
 					"parameters": {
 						"duration": "10.0",
@@ -45,18 +45,14 @@
 				{
 					"id": "log",
 					"objectClass": "Browser",
-					"sid": 860540065887003,
+					"sid": 613364276434516,
 					"parameters": {
 						"type": "log",
 						"message": "\"Starting demographics layout and timer\""
 					}
-				},
-				{
-					"type": "script",
-					"script": "addDataAndPopulateChart();"
 				}
 			],
-			"sid": 490788545066952
+			"sid": 808547153589417
 		},
 		{
 			"eventType": "block",
@@ -64,7 +60,7 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 163977805477990,
+					"sid": 250544397605614,
 					"parameters": {
 						"interval-seconds": "0.1"
 					}
@@ -74,13 +70,13 @@
 				{
 					"id": "set-text",
 					"objectClass": "TimerText",
-					"sid": 337735994609503,
+					"sid": 430105130372688,
 					"parameters": {
 						"text": "10 - round(TimerText.Timer.CurrentTime(\"level-timer\"))"
 					}
 				}
 			],
-			"sid": 769403205114538
+			"sid": 642108061307577
 		},
 		{
 			"eventType": "block",
@@ -88,7 +84,7 @@
 				{
 					"id": "on-timer",
 					"objectClass": "TimerText",
-					"sid": 477607179641913,
+					"sid": 957207397762205,
 					"behaviorType": "Timer",
 					"parameters": {
 						"tag": "\"level-timer\""
@@ -103,7 +99,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "TimerText",
-					"sid": 924685712416885,
+					"sid": 864925960904840,
 					"parameters": {
 						"text": "\"0s\""
 					}
@@ -111,14 +107,14 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 458811858164648,
+					"sid": 937515700673226,
 					"parameters": {
-						"layout": "RTD_WatchCustomers"
+						"layout": "RTD_Evaluation"
 					}
 				}
 			],
-			"sid": 649957600919535
+			"sid": 146583786763266
 		}
 	],
-	"sid": 473333717313514
+	"sid": 671659850018770
 }
