@@ -218,9 +218,7 @@ export class MultiPlayerHandler {
 			if (messageReceived.hasOwnProperty("status"))
 				Globals.GameObj.players[fromAlias].setStatus = messageReceived["status"];	
 		}
-		else if (type === SELECTION_ADDED) {
-			Globals.GameObj.selectionUpdate(messageReceived);
-		} else if (type === SELECTION_REMOVED) {
+		else if (type === SELECTION_ADDED || type === SELECTION_REMOVED) {
 			Globals.GameObj.selectionUpdate(messageReceived);
 		} else {
 			let temp = {};

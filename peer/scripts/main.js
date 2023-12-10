@@ -15,9 +15,6 @@ export function main(runtime)
 	
 	var game = new Game(runtime);
 	Globals.gameObj = game;
-	debugger;
-	
-	
 };
 
 

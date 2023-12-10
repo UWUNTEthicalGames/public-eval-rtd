@@ -9,6 +9,23 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 341644126040491
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "Globals.gameObj.initializeTestingSession();"
+				}
+			],
+			"sid": 182747777309528
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-tap-object",
 					"objectClass": "Touch",
 					"sid": 435710532471013,
@@ -20,10 +37,31 @@
 			"actions": [
 				{
 					"type": "script",
-					"script": "Globals.gameObj.selectPerson(runtime.objects.PersonSprite.getFirstPickedInstance());"
+					"script": "console.log(\"Tap gesture.\");\nGlobals.gameObj.togglePersonInfoUI(runtime.objects.PersonSprite.getFirstPickedInstance());"
 				}
 			],
 			"sid": 998794707696511
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 956906485028000,
+					"parameters": {
+						"object": "UIButtonSprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "console.log(\"Clicked showing UI button.\")\nGlobals.gameObj.triggerShowingUIButton(runtime.objects.UIButtonSprite.getFirstPickedInstance());"
+				}
+			],
+			"sid": 834502715213541,
+			"isOrBlock": true
 		}
 	],
 	"sid": 335751246439773

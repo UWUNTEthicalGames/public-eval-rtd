@@ -36,6 +36,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
@@ -113,7 +120,10 @@
 			"ArrowSprite",
 			"MapManager",
 			"PlayerSprite",
-			"PersonSprite"
+			"PersonSprite",
+			"UIBox9Patch",
+			"UIButtonSprite",
+			"SelectionUIText"
 		],
 		"subfolders": []
 	},
@@ -192,6 +202,14 @@
 					"name": "globals.js",
 					"type": "application/javascript",
 					"sid": 693333014023333,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "utils.js",
+					"type": "application/javascript",
+					"sid": 409794660593142,
 					"script-info": {
 						"purpose": "none"
 					}
@@ -277,7 +295,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "customer_info.csv",
+					"type": "text/csv",
+					"sid": 144700197913365,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

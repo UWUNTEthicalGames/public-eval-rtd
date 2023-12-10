@@ -12,11 +12,7 @@ const SELECTION_REMOVED = "selection_removed";
 
 export class MultiPlayerHandler {
 
-	
-
     constructor (runtime) {
-		
-        
 		this.runtime = runtime;
         this.multiPlayer = this.runtime.objects.Multiplayer;
 		this.signallingStatus = "";
@@ -31,33 +27,17 @@ export class MultiPlayerHandler {
 			"receivedData": {},
 			"receivedRequests": []
 		};
-	
-		
-		// add buttons and text input fields
-		
-		
-		//this.connectBtn = this.runtime.objects.ConnectButton.getFirstInstance();
-		//connectBtn.addEventListener("click", () => this.connectPeer());
-		
 		
 		// Multiplayer Events
 		this.multiPlayer.addEventListener("message", (e) => this.onReceive(e));
-		
-		
-		// Game Events
-		
     }
 	
 	
-	
-	
 	sendDataToHost(type, message) {
-		
 		const messageContainer = {tag:  TAG_DATA, type: type, message: message};	
 		this.SetSignallingStatus("sending data: " + JSON.stringify(messageContainer) + " to host");
 		this.multiPlayer.sendPeerMessage("", messageContainer, 'o')
 		this.SetSignallingStatus("data sent to Host");
-		
 	}
 	
 	
@@ -93,7 +73,6 @@ export class MultiPlayerHandler {
 	
 	
 	onReceiveData(receivedMessage) {
-		
 		this.SetSignallingStatus("received Data" + receivedMessage.message);
 		
 		
@@ -107,8 +86,8 @@ export class MultiPlayerHandler {
 		} else if (receivedMessage.type === SELECTION_ADDED) {
 			Globals.gameObj.registerPeerSelectPerson(receivedMessage);
 		} else if (receivedMessage.type === SELECTION_REMOVED) {
-			Globals.gameObj.registerPeerSelectPerson(receivedMessage);
-		} else{
+			Globals.gameObj.registerPeerDeselectPerson(receivedMessage);
+		} else {
 			console.error(receivedMessage);
 			this.runtime.goToLayout("ErrorMenu");
 		}
@@ -118,7 +97,7 @@ export class MultiPlayerHandler {
 
 	// this method handles all the APIs for connecting, login and joining the room.
     async connectToSignalling() {
-	this.SetSignallingStatus("signalling");
+		this.SetSignallingStatus("signalling");
         try {
             var signalling = this.multiPlayer.signalling;
 
@@ -150,17 +129,16 @@ export class MultiPlayerHandler {
             }
 			
         }
-        catch (err){
+        catch (err) {
             this.SetSignallingStatus("Error at MultiPlayer Handler");
 			console.error("Signalling error: ", err);
-			
         }
     }
 
     // This method can be used to show status of game on layout/console
     SetSignallingStatus(str)
 	{
-		this.signallingStatus = "MultiPlayer : " + str
+		this.signallingStatus = "MultiPlayer : " + str;
 		console.log(this.signallingStatus);
 	}
 	

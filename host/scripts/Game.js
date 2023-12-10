@@ -27,6 +27,7 @@ export class Game {
 		this.runtime = runtime;
 		this.numOfPlayers = 0;
 		this.players = [];
+		this.selectedTesters = [];
 		
 		this.multiPlayer = new MultiPlayerHandler(runtime);
 		this.roomCode = Utils.generateUniqueRandomRoomCode(runtime, NUM_ROOM_CODE_CHARACTERS);
@@ -101,7 +102,7 @@ export class Game {
 		this.SetSignallingStatus("demographics method");
 		this.multiPlayer.sendDataToAllPeers( GO_TO_PEER_LAYOUT, "RTD_MapSelection");
 	
-		const mapSeconds = 10;
+		const mapSeconds = 60;
 		let mapSecondsRemaining = mapSeconds;
 		this.runtime.objects.TimerText.getFirstInstance().text = mapSeconds.toFixed(1).toString();
 		this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.populateDemographicsChart();
@@ -177,19 +178,19 @@ export class Game {
 	
 	
 	selectionUpdate(messageObj) {
-		const selectionId = messageObj.message;
+		const selectionId = messageObj.message.dataId;
 		if (messageObj.type === SELECTION_ADDED) {
 			this.registerSelectionChanged(selectionId, 1);
-			this.multiPlayer.sendDataToAllPeers(SELECTION_ADDED, selectionId);
 		} else if (messageObj.type === SELECTION_REMOVED) {
 			this.registerSelectionChanged(selectionId, -1);
-			this.multiPlayer.sendDataToAllPeers(SELECTION_REMOVED, selectionId);
 		}
+		this.multiPlayer.sendDataToAllPeers(messageObj.type, messageObj.message);
 	}
 	
 	
 	registerSelectionChanged(dataId, addRemoveMultiplier=1) {
 		const vals = this.customerInfo[dataId];
+		console.log(vals);
 		if (vals.Credit_History == 1.0) {
 			this.demographicsValues[0] += addRemoveMultiplier;
 		} else {

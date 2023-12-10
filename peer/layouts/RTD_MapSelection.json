@@ -251,7 +251,8 @@
 					"instanceVariables": {
 						"dataId": "LP002139",
 						"selected": false,
-						"selectedBy": ""
+						"selectedBy": "",
+						"purpose": "map"
 					},
 					"behaviors": {},
 					"world": {
@@ -284,7 +285,8 @@
 					"instanceVariables": {
 						"dataId": "LP001005",
 						"selected": false,
-						"selectedBy": ""
+						"selectedBy": "",
+						"purpose": "map"
 					},
 					"behaviors": {},
 					"world": {
@@ -317,7 +319,8 @@
 					"instanceVariables": {
 						"dataId": "LP002978",
 						"selected": false,
-						"selectedBy": ""
+						"selectedBy": "",
+						"purpose": "map"
 					},
 					"behaviors": {},
 					"world": {
@@ -350,7 +353,8 @@
 					"instanceVariables": {
 						"dataId": "",
 						"selected": false,
-						"selectedBy": ""
+						"selectedBy": "",
+						"purpose": "map"
 					},
 					"behaviors": {},
 					"world": {
@@ -383,7 +387,8 @@
 					"instanceVariables": {
 						"dataId": "",
 						"selected": false,
-						"selectedBy": ""
+						"selectedBy": "",
+						"purpose": "map"
 					},
 					"behaviors": {},
 					"world": {
@@ -416,7 +421,8 @@
 					"instanceVariables": {
 						"dataId": "",
 						"selected": false,
-						"selectedBy": ""
+						"selectedBy": "",
+						"purpose": "map"
 					},
 					"behaviors": {},
 					"world": {
@@ -758,6 +764,243 @@
 			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Selection UI",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "UIBox9Patch",
+					"properties": {
+						"left-margin": 17,
+						"right-margin": 17,
+						"top-margin": 21,
+						"bottom-margin": 18,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 43,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 31,
+						"y": 617,
+						"width": 423.9437910139286,
+						"height": 216.2539654659529,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Person1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 44,
+					"instanceVariables": {
+						"dataId": "LP002139",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "showingUI"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 108.11639927323768,
+						"y": 728.9396791278853,
+						"width": 113.23279854647534,
+						"height": 135.8793582557704,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "plus_colored",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 47,
+					"instanceVariables": {
+						"purpose": "select"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 407,
+						"y": 667,
+						"width": 48,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "minus_red",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 48,
+					"instanceVariables": {
+						"purpose": "deselect"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 407,
+						"y": 727,
+						"width": 48,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIButtonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "cross",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 46,
+					"instanceVariables": {
+						"purpose": "hide"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 407,
+						"y": 787,
+						"width": 48,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SelectionUIText",
+					"properties": {
+						"text": "[b]Name[/b]\n[size=2] [/size]\nTrait #1\nTrait #2\nTrait #3\nTrait #4\nTrait #5",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": true
+					},
+					"uid": 45,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 172,
+						"y": 644,
+						"width": 130,
+						"height": 165,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 725351193130246,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"isInitiallyInteractive": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
