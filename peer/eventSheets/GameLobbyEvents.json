@@ -53,85 +53,6 @@
 			"sid": 459888658543785
 		},
 		{
-			"functionName": "ConnectButtonPressed",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 243516109802395,
-					"parameters": {
-						"variable": "ROOM_CODE",
-						"value": "RoomCodeInput.Text"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 439371010056051,
-					"parameters": {
-						"variable": "PLAYER_ALIAS",
-						"value": "NameInput.Text"
-					}
-				},
-				{
-					"type": "script",
-					"script": "main(runtime);",
-					"disabled": true
-				},
-				{
-					"callFunction": "InitializeMultiplayer",
-					"sid": 476778632592312,
-					"disabled": true
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 138045110545498
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 208823271206877,
-					"disabled": true,
-					"parameters": {
-						"layout": "GameWait"
-					}
-				}
-			],
-			"sid": 795534884261570,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 940607607131127,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "ConnectButton"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "ConnectButtonPressed",
-					"sid": 403940401232998
-				}
-			],
-			"sid": 607030386991060
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -144,11 +65,6 @@
 				}
 			],
 			"actions": [
-				{
-					"callFunction": "ConnectButtonPressed",
-					"sid": 342647591387546,
-					"disabled": true
-				},
 				{
 					"type": "script",
 					"script": "Globals.gameObj.connectPeer()"

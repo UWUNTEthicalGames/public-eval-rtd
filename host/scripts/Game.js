@@ -18,7 +18,7 @@ const NUM_ROOM_CODE_CHARACTERS = 4;
 export class Game {
 
 	constructor(runtime) {
-		this.initializeGame(runtime);	
+		this.initializeGame(runtime);
 	}
 
 	initializeGame (runtime) {
@@ -36,6 +36,7 @@ export class Game {
 		this.demographicsValues = [0,0,0,0,0,0,0,0];
 		
 		this.loadCustomerInfoData();
+		this.selectedIds = [];
 	}
 	
 	
@@ -180,10 +181,16 @@ export class Game {
 	selectionUpdate(messageObj) {
 		const selectionId = messageObj.message.dataId;
 		if (messageObj.type === SELECTION_ADDED) {
+			this.selectedIds.push(messageObj.message.dataId);
 			this.registerSelectionChanged(selectionId, 1);
 		} else if (messageObj.type === SELECTION_REMOVED) {
+			this.selectedIds = this.selectedIds.filter(
+				function(e) { return e !== messageObj.message.dataId }
+			);
 			this.registerSelectionChanged(selectionId, -1);
 		}
+		
+		console.log(this.selectedIds);
 		this.multiPlayer.sendDataToAllPeers(messageObj.type, messageObj.message);
 	}
 	

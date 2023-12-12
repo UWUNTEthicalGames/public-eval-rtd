@@ -17,7 +17,7 @@ export class MultiPlayerHandler {
         this.multiPlayer = this.runtime.objects.Multiplayer;
 		this.signallingStatus = "";
 		
-		this.connectionUrl = "wss://multiplayer.scirra.com";
+		this.connectionUrl = "ws://localhost:80"; //"wss://multiplayer.scirra.com";
 	
 		// playerAlias is set dynamically based on 
 		this.playerAlias = (typeof this.runtime.globalVars.PLAYER_ALIAS === "undefined" ) ? "game-host": this.runtime.globalVars.PLAYER_ALIAS;
