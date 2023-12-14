@@ -1,6 +1,7 @@
 import * as Utils from "./utils.js";
 import { MultiPlayerHandler } from "./MultiPlayerHandler.js";
 import { Player } from "./Player.js";
+import { loadBarChart } from "./grouped_barchart.js";
 
 
 
@@ -33,10 +34,17 @@ export class Game {
 		this.roomCode = Utils.generateUniqueRandomRoomCode(runtime, NUM_ROOM_CODE_CHARACTERS);
 		this.runtime.globalVars.ROOM_CODE = this.roomCode;
 		
-		this.demographicsValues = [0,0,0,0,0,0,0,0];
+		this.demographicsValues = {
+			"ourbusiness": [0,0,0,0,0,0,0,0],
+			"competitor1": [0,0,0,0,0,0,0,0],
+			"competitor2": [0,0,0,0,0,0,0,0]
+		};
 		
 		this.loadCustomerInfoData();
-		this.selectedIds = [];
+		this.selectionLists = {};
+		this.selectionLists["ourbusiness"] = [];
+		this.selectionLists["competitor1"] = [];
+		this.selectionLists["competitor2"] = [];
 	}
 	
 	
@@ -106,12 +114,13 @@ export class Game {
 		const mapSeconds = 60;
 		let mapSecondsRemaining = mapSeconds;
 		this.runtime.objects.TimerText.getFirstInstance().text = mapSeconds.toFixed(1).toString();
-		this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.populateDemographicsChart();
+		//this.runtime.objects.HTMLElement.getFirstInstance().htmlContent = this.populateDemographicsChart();
+		this.refreshDemographicsCharts();
 		
 		const intervalId = setInterval(
 			() => {
 				mapSecondsRemaining -= 0.05;
-				this.runtime.objects.TimerText.getFirstInstance().text = mapSecondsRemaining.toFixed(1).toString();
+				// this.runtime.objects.TimerText.getFirstInstance().text = mapSecondsRemaining.toFixed(1).toString();
 			},
 			50
 		);
@@ -119,7 +128,7 @@ export class Game {
 		setTimeout(
 			() => {
 				console.log("Finished map timer!");
-				this.completeTimedMapSelection();
+				//this.completeTimedMapSelection();
 				clearInterval(intervalId);
 			},
 			mapSeconds * 1000
@@ -127,6 +136,83 @@ export class Game {
 	}
 	
 	
+	startOperationsLayout() {
+		this.SetSignallingStatus("operations method");
+		this.multiPlayer.sendDataToAllPeers( GO_TO_PEER_LAYOUT, "RTD_Empty");
+		
+		this.bldg_entrances = {};
+		for (const bldgSprite of this.runtime.objects.BuildingSprite.instances()) {
+			this.bldg_entrances[bldgSprite.instVars.listName] = [bldgSprite.getImagePointX(0), bldgSprite.getImagePointY(0)];
+		}
+		console.log("bldg_entrances: " + this.bldg_entrances.toString());
+	
+		this.opPersonSprites = {};
+		this.opPersonSprites["ourbusiness"] = [
+			null,null,null,null,null,null,null,null,null,null,
+			null,null,null,null,null,null,null,null,null,null];
+		this.opPersonSprites["competitor1"] = [
+			null,null,null,null,null,null,null,null,null,null,
+			null,null,null,null,null,null,null,null,null,null];
+		this.opPersonSprites["competitor2"] = [
+			null,null,null,null,null,null,null,null,null,null,
+			null,null,null,null,null,null,null,null,null,null];
+			
+		
+		for (const opPersonSprite of this.runtime.objects.PersonSprite.instances()) {
+			if (opPersonSprite.instVars.purpose == "queue") {
+				opPersonSprite.setAnimation(
+					Math.floor(Math.random()*20 + 1).toString().padStart(2, '0') + "_still", 
+					"current-frame"
+				);
+				opPersonSprite.animationFrame = 2;
+				console.log(opPersonSprite);
+				this.opPersonSprites[opPersonSprite.instVars.selectedListName][opPersonSprite.instVars.queueNum] = opPersonSprite;
+			}
+		}
+		console.log(this.opPersonSprites);
+	
+		let currentIndex = 0;
+		const intervalId = setInterval(
+			() => {
+				for (const key of Object.keys(this.opPersonSprites)) {
+					if (this.opPersonSprites[key][currentIndex]) {
+						this.opPersonSprites[key][currentIndex].behaviors.MoveTo.moveToPosition(
+						this.bldg_entrances[key][0], this.bldg_entrances[key][1]);
+					}
+				}
+				currentIndex += 1;
+			},
+			500
+		);
+		
+		setTimeout(
+			() => {
+				console.log("Finished movement timer!");
+				clearInterval(intervalId);
+			},
+			500 * 20
+		);
+	}
+	
+	
+	refreshDemographicsCharts() {
+		for (const htmlElement of this.runtime.objects.HTMLElement.instances()) {
+			const data = [
+				['column', 'category', 'count'],
+				['Credit history', 'No', this.demographicsValues[htmlElement.instVars.listName][0]],
+				['Credit history', 'Yes', this.demographicsValues[htmlElement.instVars.listName][1]],
+				['Environment', 'Rural', this.demographicsValues[htmlElement.instVars.listName][2]],
+				['Environment', 'Suburban', this.demographicsValues[htmlElement.instVars.listName][3]],
+				['Environment', 'Urban',  this.demographicsValues[htmlElement.instVars.listName][4]],
+				['Income', '$', this.demographicsValues[htmlElement.instVars.listName][5]],
+				['Income', '$$', this.demographicsValues[htmlElement.instVars.listName][6]],
+				['Income', '$$$', this.demographicsValues[htmlElement.instVars.listName][7]]
+			];
+			loadBarChart(htmlElement, data, "_" +htmlElement.instVars.listName);
+		}
+	}
+	
+	/*
 	populateDemographicsChart(values=this.demographicsValues) 
 	{
 		console.log("Preparing chart");
@@ -176,53 +262,59 @@ export class Game {
 		  }
 		});
 	}
-	
+	*/
 	
 	selectionUpdate(messageObj) {
 		const selectionId = messageObj.message.dataId;
+		const listName = messageObj.message.listName;
 		if (messageObj.type === SELECTION_ADDED) {
-			this.selectedIds.push(messageObj.message.dataId);
-			this.registerSelectionChanged(selectionId, 1);
+			this.selectionLists[listName].push(selectionId);
+			this.registerSelectionChanged(selectionId, listName, 1);
 		} else if (messageObj.type === SELECTION_REMOVED) {
-			this.selectedIds = this.selectedIds.filter(
-				function(e) { return e !== messageObj.message.dataId }
-			);
-			this.registerSelectionChanged(selectionId, -1);
+			console.log(Object.keys(this.selectionLists));
+			for (const listName of Object.keys(this.selectionLists)) {
+				this.selectionLists[listName] = this.selectionLists[listName].filter(
+					function(e) { return e !== selectionId }
+				);
+			}
+			this.registerSelectionChanged(selectionId, listName, -1);
 		}
 		
-		console.log(this.selectedIds);
+		console.log(this.selectionLists);
 		this.multiPlayer.sendDataToAllPeers(messageObj.type, messageObj.message);
 	}
 	
 	
-	registerSelectionChanged(dataId, addRemoveMultiplier=1) {
+	registerSelectionChanged(dataId, listName, addRemoveMultiplier=1) {
 		const vals = this.customerInfo[dataId];
-		console.log(vals);
 		if (vals.Credit_History == 1.0) {
-			this.demographicsValues[0] += addRemoveMultiplier;
+			this.demographicsValues[listName][0] += addRemoveMultiplier;
 		} else {
-			this.demographicsValues[1] += addRemoveMultiplier;
+			this.demographicsValues[listName][1] += addRemoveMultiplier;
 		}
 		
 		if (vals.Property_Area == "Rural") {
-			this.demographicsValues[2] += addRemoveMultiplier;
+			this.demographicsValues[listName][2] += addRemoveMultiplier;
 		} else if (vals.Property_Area == "Semiurban") {
-			this.demographicsValues[3] += addRemoveMultiplier;
+			this.demographicsValues[listName][3] += addRemoveMultiplier;
 		} else if (vals.Property_Area == "Urban") {
-			this.demographicsValues[4] += addRemoveMultiplier;
+			this.demographicsValues[listName][4] += addRemoveMultiplier;
 		} else {
 			console.warn("Unknown property area value: " + vals.Property_Area);
 		}
 		
 		if (vals.ApplicantIncome < 2875) {
-			this.demographicsValues[5] += addRemoveMultiplier;
+			this.demographicsValues[listName][5] += addRemoveMultiplier;
 		} else if (vals.ApplicantIncome < 5795) {
-			this.demographicsValues[6] += addRemoveMultiplier;
+			this.demographicsValues[listName][6] += addRemoveMultiplier;
 		} else {
-			this.demographicsValues[7] += addRemoveMultiplier;
+			this.demographicsValues[listName][7] += addRemoveMultiplier;
 		}
 		
-		this.populateDemographicsChart();
+		this.refreshDemographicsCharts();
+		for (const listCountText of this.runtime.objects.ListCountText.instances()) {
+			listCountText.text = "x " + this.selectionLists[listCountText.instVars.listName].length;
+		}
 	}
 	
 	

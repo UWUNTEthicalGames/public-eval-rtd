@@ -9,10 +9,10 @@
 				{
 					"type": "StaticText",
 					"properties": {
-						"text": "Demographics",
+						"text": "Test Shopper Selection",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 32,
+						"size": 60,
 						"line-height": 0,
 						"bold": true,
 						"italic": false,
@@ -22,7 +22,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -33,10 +33,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 872,
-						"y": 107,
-						"width": 962,
-						"height": 121,
+						"x": 467,
+						"y": 70,
+						"width": 1115,
+						"height": 95,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -60,9 +60,9 @@
 						"bold": false,
 						"italic": false,
 						"color": [
-							0,
-							0,
-							0,
+							1,
+							1,
+							1,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -103,9 +103,9 @@
 						"bold": false,
 						"italic": false,
 						"color": [
-							0,
-							0,
-							0,
+							1,
+							1,
+							1,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -138,12 +138,46 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
+				}
+			],
+			"sid": 994153449909304,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "HTMLObjects",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
 				{
 					"type": "HTMLElement",
 					"properties": {
 						"tag": "div",
-						"content": "<p id=valueTest></p>\n<canvas id=\"myChart\" style=\"width:100%;max-width:700px\"></canvas>",
+						"content": "<div id=barchart_ourbusiness></div>",
 						"content-type": "html",
 						"initially-visible": true,
 						"id": "",
@@ -170,13 +204,15 @@
 						"style-attribute": ""
 					},
 					"uid": 49,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"listName": "ourbusiness"
+					},
 					"behaviors": {},
 					"world": {
-						"x": 295,
-						"y": 258,
-						"width": 1446,
-						"height": 625,
+						"x": 142,
+						"y": 283,
+						"width": 520,
+						"height": 542,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -186,9 +222,591 @@
 							1
 						]
 					}
+				},
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<div id=barchart_competitor1></div>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							0,
+							0,
+							0,
+							0
+						],
+						"set-background-color": false,
+						"default-background-color": [
+							1,
+							1,
+							1,
+							0
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 46,
+					"instanceVariables": {
+						"listName": "competitor1"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 701,
+						"y": 284,
+						"width": 520,
+						"height": 542,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "HTMLElement",
+					"properties": {
+						"tag": "div",
+						"content": "<div id=barchart_competitor2></div>",
+						"content-type": "html",
+						"initially-visible": true,
+						"id": "",
+						"class": "",
+						"allow-context-menu": false,
+						"stop-input-events": "no",
+						"origin": "top-left",
+						"set-color": true,
+						"default-color": [
+							0,
+							0,
+							0,
+							0
+						],
+						"set-background-color": false,
+						"default-background-color": [
+							1,
+							1,
+							1,
+							0
+						],
+						"auto-font-size": true,
+						"allow-text-selection": false,
+						"style-attribute": ""
+					},
+					"uid": 56,
+					"instanceVariables": {
+						"listName": "competitor2"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1255,
+						"y": 285,
+						"width": 520,
+						"height": 542,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 63,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "static",
+						"selectedListName": "",
+						"queueNum": 0
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 333.5,
+						"y": 983,
+						"width": 96.33624704172072,
+						"height": 190.67249408344142,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ListCountText",
+					"properties": {
+						"text": "x 0",
+						"enable-bbcode": true,
+						"font": "PixelifySans-VariableFont_wght",
+						"size": 60,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left",
+						"read-aloud": false
+					},
+					"uid": 66,
+					"instanceVariables": {
+						"listName": "ourbusiness"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 403,
+						"y": 923,
+						"width": 153,
+						"height": 103,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "01_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 64,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "static",
+						"selectedListName": "",
+						"queueNum": 0
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 904,
+						"y": 983,
+						"width": 95.33624704172071,
+						"height": 190.67249408344142,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ListCountText",
+					"properties": {
+						"text": "x 0",
+						"enable-bbcode": true,
+						"font": "PixelifySans-VariableFont_wght",
+						"size": 60,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left",
+						"read-aloud": false
+					},
+					"uid": 65,
+					"instanceVariables": {
+						"listName": "competitor1"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 973,
+						"y": 923,
+						"width": 153,
+						"height": 103,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "14_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 67,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "static",
+						"selectedListName": "",
+						"queueNum": 0
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1464,
+						"y": 985,
+						"width": 95.33624704172071,
+						"height": 190.67249408344142,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ListCountText",
+					"properties": {
+						"text": "x 0",
+						"enable-bbcode": true,
+						"font": "PixelifySans-VariableFont_wght",
+						"size": 60,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left",
+						"read-aloud": false
+					},
+					"uid": 68,
+					"instanceVariables": {
+						"listName": "competitor2"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1533,
+						"y": 925,
+						"width": 153,
+						"height": 103,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Our Business",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 28,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 69,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 410,
+						"y": 246,
+						"width": 445.0303360446341,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Competitor A",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 28,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 70,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 963,
+						"y": 253,
+						"width": 445.0303360446341,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Competitor B",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 28,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 71,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1511,
+						"y": 250,
+						"width": 445.0303360446341,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 72,
+					"instanceVariables": {
+						"levelTarget": "Operations"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1731,
+						"y": 76,
+						"width": 270,
+						"height": 68,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Send Shoppers",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 24,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 73,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1617,
+						"y": 57,
+						"width": 233,
+						"height": 38,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
-			"sid": 994153449909304,
+			"sid": 939203406872997,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -199,12 +817,12 @@
 				1
 			],
 			"backgroundColor": [
-				1,
-				1,
-				1,
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,

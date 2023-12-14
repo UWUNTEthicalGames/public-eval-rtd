@@ -1,0 +1,65 @@
+{
+	"name": "UIBusButtonSprite",
+	"plugin-id": "Sprite",
+	"sid": 330355028912124,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "purpose",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 116382606095502
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 72,
+						"height": 48,
+						"originX": 0.6666666666666666,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1593031,
+						"collisionPoly": {
+							"points": [
+								0.041666666666666664,
+								0.0625,
+								0.3333333333333333,
+								0,
+								0.625,
+								0.0625,
+								0.6666666666666666,
+								0.5,
+								0.625,
+								0.9375,
+								0.3333333333333333,
+								1,
+								0.041666666666666664,
+								0.9375,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 664071321899348,
+				"name": "blank_1.5rect",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "ListCountText",
+	"plugin-id": "Text",
+	"sid": 983008725984230,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "listName",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 666540514171357
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

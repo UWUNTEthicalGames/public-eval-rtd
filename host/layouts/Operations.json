@@ -7,12 +7,108 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "BuildingSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "bldg3",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 62,
+					"instanceVariables": {
+						"purpose": "moveto",
+						"listName": "competitor1"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 641,
+						"width": 225.50794686029383,
+						"height": 403.64588121443137,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BuildingSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "bldg4",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 74,
+					"instanceVariables": {
+						"purpose": "moveto",
+						"listName": "ourbusiness"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 407.94921306625264,
+						"y": 642,
+						"width": 208.0828552127565,
+						"height": 370.7022294546587,
+						"originX": 0.484593837535014,
+						"originY": 0.9968553459119497,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BuildingSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "bldg2",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 75,
+					"instanceVariables": {
+						"purpose": "moveto",
+						"listName": "competitor2"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1470,
+						"y": 630,
+						"width": 175.48314967303318,
+						"height": 297.5807885978721,
+						"originX": 0.2517241379310345,
+						"originY": 0.9895615866388309,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "StaticText",
 					"properties": {
-						"text": "Watch Customers",
+						"text": "Shopping",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 32,
+						"size": 60,
 						"line-height": 0,
 						"bold": true,
 						"italic": false,
@@ -22,7 +118,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -33,10 +129,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 872,
-						"y": 107,
-						"width": 962,
-						"height": 121,
+						"x": 464,
+						"y": 33,
+						"width": 1115,
+						"height": 95,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -50,14 +146,14 @@
 					}
 				},
 				{
-					"type": "TimerText",
+					"type": "StaticText",
 					"properties": {
-						"text": "0 s",
+						"text": "Our Business",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 36,
+						"size": 28,
 						"line-height": 0,
-						"bold": false,
+						"bold": true,
 						"italic": false,
 						"color": [
 							0,
@@ -65,27 +161,3037 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "top-left",
+						"origin": "center",
 						"read-aloud": false
 					},
-					"uid": 51,
+					"uid": 76,
 					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 407,
+						"y": 179,
+						"width": 445.0303360446341,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Competitor A",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 28,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 77,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 186,
+						"width": 445.0303360446341,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "StaticText",
+					"properties": {
+						"text": "Competitor B",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 28,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 78,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1508,
+						"y": 185,
+						"width": 445.0303360446341,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 79,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 7
+					},
 					"behaviors": {
-						"Timer": {
-							"properties": {}
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
 						}
 					},
 					"world": {
-						"x": 74,
-						"y": 94,
-						"width": 237,
-						"height": 65,
-						"originX": 0,
-						"originY": 0,
+						"x": 216.3410379358291,
+						"y": 854,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 80,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 4
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 440,
+						"y": 782,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 81,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 6
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 309,
+						"y": 784,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 82,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 10
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 397,
+						"y": 880,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 83,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 8
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 290,
+						"y": 912,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 84,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 17
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 484,
+						"y": 945,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 85,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 3
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 584,
+						"y": 759,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 86,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 16
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 389,
+						"y": 985,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 87,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 14
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 524,
+						"y": 833,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 88,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 19
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 569,
+						"y": 977,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 89,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 12
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 456,
+						"y": 842,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 90,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 9
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 327,
+						"y": 836,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 91,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 18
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 444,
+						"y": 984,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 92,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 15
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 306,
+						"y": 958,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 93,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 13
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 535,
+						"y": 879,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 94,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 1
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 281,
+						"y": 716,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 95,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 2
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 499,
+						"y": 735,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 96,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 5
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 374,
+						"y": 804,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 97,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 11
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 353,
+						"y": 895,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 100,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 0
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 404,
+						"y": 716,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 98,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 7
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1118,
+						"y": 697,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 99,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 4
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 988,
+						"y": 795,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 101,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 6
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 875,
+						"y": 720,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 102,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 10
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 945,
+						"y": 893,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 103,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 8
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 838,
+						"y": 925,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 104,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 17
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1139,
+						"y": 912,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 105,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 3
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1127,
+						"y": 817,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 106,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 16
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 937,
+						"y": 998,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 107,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 14
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1019,
+						"y": 929,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 108,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 19
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1117,
+						"y": 990,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 109,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 12
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1004,
+						"y": 855,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 110,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 9
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 825,
+						"y": 811,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 111,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 18
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 992,
+						"y": 997,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 112,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 15
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1018,
+						"y": 1055,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 113,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 13
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1083,
+						"y": 892,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 114,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 1
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 878,
+						"y": 795,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 115,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 2
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1047,
+						"y": 748,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 116,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 5
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 922,
+						"y": 817,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 117,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 11
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 901,
+						"y": 908,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 118,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor1",
+						"queueNum": 0
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 934,
+						"y": 701,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 119,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 7
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1439,
+						"y": 735,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 120,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 4
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1605,
+						"y": 804,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 121,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 6
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1441,
+						"y": 805,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 122,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 10
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1715,
+						"y": 857,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 123,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 8
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1422,
+						"y": 933,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 124,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 17
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1616,
+						"y": 966,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 125,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 3
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1716,
+						"y": 780,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 126,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 16
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1389,
+						"y": 831,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 127,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 14
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1656,
+						"y": 854,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 128,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 19
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1491,
+						"y": 1042,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 129,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 12
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1588,
+						"y": 863,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 130,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 9
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1459,
+						"y": 857,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 131,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 18
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1576,
+						"y": 1005,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 132,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 15
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1546,
+						"y": 936,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 133,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 13
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1667,
+						"y": 900,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 134,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 1
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1512,
+						"y": 768,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 135,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 2
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1686,
+						"y": 712,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 136,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 5
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1626,
+						"y": 741,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 137,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 11
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1485,
+						"y": 916,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 138,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "competitor2",
+						"queueNum": 0
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 1556,
+						"y": 709,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "07_still",
+						"initial-frame": 2,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"instanceVariables": {
+						"dataId": "",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "queue",
+						"selectedListName": "ourbusiness",
+						"queueNum": 7
+					},
+					"behaviors": {
+						"MoveTo": {
+							"properties": {
+								"max-speed": 20,
+								"acceleration": 200,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 592,
+						"y": 846,
+						"width": 43.018322913378896,
+						"height": 85.14355886864224,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,

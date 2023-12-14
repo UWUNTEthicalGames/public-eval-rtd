@@ -2,8 +2,28 @@
 	"name": "DemographicsEvents",
 	"events": [
 		{
-			"eventType": "include",
-			"includeSheet": "JackboxTemplateEvents"
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 168013249447151,
+					"parameters": {
+						"object": "Button"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 663905819347305,
+					"parameters": {
+						"layout": "Button.levelTarget"
+					}
+				}
+			],
+			"sid": 267035826087879
 		}
 	],
 	"sid": 473333717313514

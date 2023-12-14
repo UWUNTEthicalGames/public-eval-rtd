@@ -7,227 +7,30 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "BuildingSprite",
+					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Bldg1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 23,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 165,
-						"y": 276,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BuildingSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Bldg1",
+						"initial-animation": "01_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 24,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 731,
-						"y": 199,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BuildingSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Bldg2",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+					"instanceVariables": {
+						"dataId": "LP002139",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
 					},
-					"uid": 25,
-					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 372,
-						"y": 689,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BuildingSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Bldg1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 26,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 777,
-						"y": 859,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BuildingSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Bldg1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 27,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 275,
-						"y": 1330,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BuildingSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Bldg1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 28,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 733,
-						"y": 1386,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BuildingSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Bldg2",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 29,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 449,
-						"y": 1010,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BuildingSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Bldg2",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 30,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 149,
-						"y": 1727,
-						"width": 157.53094934012174,
-						"height": 157.53094934012174,
-						"originX": 0.54,
-						"originY": 0.856,
+						"x": 178,
+						"y": 275,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -242,26 +45,237 @@
 					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Person1",
+						"initial-animation": "08_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 25,
+					"instanceVariables": {
+						"dataId": "LP002877",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 594,
+						"y": 206,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "19_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 26,
+					"instanceVariables": {
+						"dataId": "LP002035",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 886,
+						"y": 524,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "16_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 27,
+					"instanceVariables": {
+						"dataId": "LP001732",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1336,
+						"y": 457,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "16_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 28,
+					"instanceVariables": {
+						"dataId": "LP001570",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 393,
+						"y": 509,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "06_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 29,
+					"instanceVariables": {
+						"dataId": "LP002223",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 219,
+						"y": 737,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "17_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 30,
+					"instanceVariables": {
+						"dataId": "LP002487",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1289,
+						"y": 692,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "04_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 33,
 					"instanceVariables": {
-						"dataId": "LP002139",
+						"dataId": "LP001384",
 						"selected": false,
 						"selectedBy": "",
-						"purpose": "map"
+						"purpose": "map",
+						"selectedListName": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 338.5,
-						"y": 305,
-						"width": 45,
-						"height": 54,
+						"x": 849,
+						"y": 990,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -276,26 +290,27 @@
 					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Person2",
+						"initial-animation": "03_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 37,
 					"instanceVariables": {
-						"dataId": "LP001005",
+						"dataId": "LP001478",
 						"selected": false,
 						"selectedBy": "",
-						"purpose": "map"
+						"purpose": "map",
+						"selectedListName": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 113,
-						"y": 753,
-						"width": 45,
-						"height": 54,
+						"x": 97,
+						"y": 1217,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -310,7 +325,7 @@
 					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Person3",
+						"initial-animation": "20_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -320,16 +335,17 @@
 						"dataId": "LP002978",
 						"selected": false,
 						"selectedBy": "",
-						"purpose": "map"
+						"purpose": "map",
+						"selectedListName": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 711,
-						"y": 372,
-						"width": 45,
-						"height": 54,
+						"x": 359,
+						"y": 819,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -344,26 +360,27 @@
 					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Person1",
+						"initial-animation": "01_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 39,
 					"instanceVariables": {
-						"dataId": "",
+						"dataId": "LP001349",
 						"selected": false,
 						"selectedBy": "",
-						"purpose": "map"
+						"purpose": "map",
+						"selectedListName": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 386,
-						"y": 1201,
-						"width": 45,
-						"height": 54,
+						"x": 856,
+						"y": 1478,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -378,26 +395,27 @@
 					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Person2",
+						"initial-animation": "05_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 40,
 					"instanceVariables": {
-						"dataId": "",
+						"dataId": "LP001636",
 						"selected": false,
 						"selectedBy": "",
-						"purpose": "map"
+						"purpose": "map",
+						"selectedListName": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 909,
-						"y": 875,
-						"width": 45,
-						"height": 54,
+						"x": 203,
+						"y": 1585,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -412,26 +430,272 @@
 					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Person3",
+						"initial-animation": "19_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
 					"uid": 41,
 					"instanceVariables": {
-						"dataId": "",
+						"dataId": "LP001778",
 						"selected": false,
 						"selectedBy": "",
-						"purpose": "map"
+						"purpose": "map",
+						"selectedListName": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 834,
-						"y": 1529,
-						"width": 45,
-						"height": 54,
+						"x": 797,
+						"y": 1616,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "15_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 42,
+					"instanceVariables": {
+						"dataId": "LP002115",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1211,
+						"y": 320,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "13_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 57,
+					"instanceVariables": {
+						"dataId": "LP001005",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1356,
+						"y": 267,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "01_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 58,
+					"instanceVariables": {
+						"dataId": "LP001259",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1237,
+						"y": 460,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "13_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 59,
+					"instanceVariables": {
+						"dataId": "LP001491",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1384,
+						"y": 1238,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "11_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 60,
+					"instanceVariables": {
+						"dataId": "LP002178",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1253,
+						"y": 1521,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "08_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 61,
+					"instanceVariables": {
+						"dataId": "LP002054",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 944,
+						"y": 965,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PersonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "02_still",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 62,
+					"instanceVariables": {
+						"dataId": "LP001699",
+						"selected": false,
+						"selectedBy": "",
+						"purpose": "map",
+						"selectedListName": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1362,
+						"y": 1606,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
+						"originX": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -454,9 +718,9 @@
 				1
 			],
 			"backgroundColor": [
-				1,
-				1,
-				1,
+				0.19607843137254902,
+				0.5882352941176471,
+				0.19607843137254902,
 				1
 			],
 			"isTransparent": false,
@@ -521,35 +785,6 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				},
-				{
-					"type": "InfoSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 42,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 722,
-						"y": 370,
-						"width": 145.94519519326425,
-						"height": 145.94519519326425,
-						"originX": 0.024,
-						"originY": 0.952,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
 				}
 			],
 			"sid": 456492714533292,
@@ -588,10 +823,10 @@
 				{
 					"type": "ArrowSprite",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 31,
@@ -617,10 +852,10 @@
 				{
 					"type": "ArrowSprite",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 32,
@@ -646,10 +881,10 @@
 				{
 					"type": "ArrowSprite",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 34,
@@ -675,10 +910,10 @@
 				{
 					"type": "ArrowSprite",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 35,
@@ -796,9 +1031,9 @@
 					"behaviors": {},
 					"world": {
 						"x": 31,
-						"y": 617,
+						"y": 625.1930832806548,
 						"width": 423.9437910139286,
-						"height": 216.2539654659529,
+						"height": 214.89974271072083,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -815,7 +1050,7 @@
 					"type": "PersonSprite",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Person1",
+						"initial-animation": "01_still",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -825,16 +1060,17 @@
 						"dataId": "LP002139",
 						"selected": false,
 						"selectedBy": "",
-						"purpose": "showingUI"
+						"purpose": "showingUI",
+						"selectedListName": ""
 					},
 					"behaviors": {},
 					"world": {
-						"x": 108.11639927323768,
-						"y": 728.9396791278853,
-						"width": 113.23279854647535,
-						"height": 135.8793582557704,
+						"x": 103,
+						"y": 785,
+						"width": 67.68677862034801,
+						"height": 135.37355724069602,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 1,
 						"color": [
 							1,
 							1,
@@ -860,8 +1096,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 407,
-						"y": 667,
+						"x": 413,
+						"y": 670,
 						"width": 48,
 						"height": 48,
 						"originX": 0.5,
@@ -891,8 +1127,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 407,
-						"y": 727,
+						"x": 413,
+						"y": 725,
 						"width": 48,
 						"height": 48,
 						"originX": 0.5,
@@ -922,8 +1158,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 407,
-						"y": 787,
+						"x": 413,
+						"y": 798,
 						"width": 48,
 						"height": 48,
 						"originX": 0.5,
@@ -941,7 +1177,7 @@
 				{
 					"type": "SelectionUIText",
 					"properties": {
-						"text": "[b]Name[/b]\n[size=2] [/size]\nTrait #1\nTrait #2\nTrait #3\nTrait #4\nTrait #5",
+						"text": "[b]Name[/b]\n[size=2] [/size]\nTrait #1\nTrait #2\nTrait #3\nTrait #4",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 16,
@@ -965,12 +1201,429 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 172,
-						"y": 644,
-						"width": 130,
-						"height": 165,
+						"x": 163.836341059552,
+						"y": 659.9754279319022,
+						"width": 162.96787760765267,
+						"height": 137.47049046997995,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIBusButtonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "blank_1.5rect",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 49,
+					"instanceVariables": {
+						"purpose": "ourbusiness"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 49,
+						"children": [
+							{
+								"uid": 50,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 356,
+						"y": 670,
+						"width": 72,
+						"height": 48,
+						"originX": 0.6666666666666666,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIBusShortNameText",
+					"properties": {
+						"text": "0",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 50,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 49,
+						"uid": 50,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 344.24550380034754,
+						"y": 672.8135586765513,
+						"width": 48.22993842001762,
+						"height": 27.799664145942188,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIBusButtonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "blank_1.5rect",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"instanceVariables": {
+						"purpose": "competitor1"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 51,
+						"children": [
+							{
+								"uid": 52,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 357.0119722871852,
+						"y": 725.7367325985579,
+						"width": 72,
+						"height": 48,
+						"originX": 0.6666666666666666,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIBusShortNameText",
+					"properties": {
+						"text": "1",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 52,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 51,
+						"uid": 52,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 345.2574760875327,
+						"y": 728.5502912751092,
+						"width": 48.22993842001762,
+						"height": 27.799664145942188,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIBusButtonSprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "blank_1.5rect",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 53,
+					"instanceVariables": {
+						"purpose": "competitor2"
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 53,
+						"children": [
+							{
+								"uid": 54,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 357.5883217051338,
+						"y": 780.5727309660361,
+						"width": 72,
+						"height": 48,
+						"originX": 0.6666666666666666,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UIBusShortNameText",
+					"properties": {
+						"text": "2",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 54,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 53,
+						"uid": 54,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 345.83382550548134,
+						"y": 783.3862896425875,
+						"width": 48.22993842001762,
+						"height": 27.799664145942188,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -1014,7 +1667,7 @@
 	"sid": 229547609832305,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1000,
+	"width": 1500,
 	"height": 1800,
 	"unboundedScrolling": false,
 	"vpX": 0.5,

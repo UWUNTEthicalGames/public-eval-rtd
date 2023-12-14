@@ -154,7 +154,9 @@
 						"style-attribute": ""
 					},
 					"uid": 50,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"listName": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 234,

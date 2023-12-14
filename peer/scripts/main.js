@@ -5,9 +5,9 @@ import { MultiPlayerHandler } from "./MultiPlayerHandler.js";
 import { Game } from "./Game.js";
 import Globals from "./globals.js";
 
-
 // Import any other script files here
 import 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js';
+
 
 export function main(runtime)
 {

@@ -71,6 +71,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
@@ -97,7 +104,10 @@
 			"ResultsText",
 			"Touch",
 			"RequestDataParser",
-			"HTMLElement"
+			"HTMLElement",
+			"BuildingSprite",
+			"PersonSprite",
+			"ListCountText"
 		],
 		"subfolders": []
 	},
@@ -119,7 +129,8 @@
 			"Demographics",
 			"Operations",
 			"RTD_Score",
-			"RTD_Evaluation"
+			"RTD_Evaluation",
+			"Evaluation"
 		],
 		"subfolders": []
 	},
@@ -199,7 +210,38 @@
 					}
 				}
 			],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [
+						{
+							"name": "grouped_barchart.js",
+							"type": "text/javascript",
+							"sid": 648528127197618,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "confusionmatrix.js",
+							"type": "text/javascript",
+							"sid": 254054398603758,
+							"script-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "scatterplot.js",
+							"type": "text/javascript",
+							"sid": 761482430545407,
+							"script-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "charts"
+				}
+			]
 		},
 		"sound": {
 			"items": [],
@@ -214,7 +256,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "PixelifySans-VariableFont_wght.ttf",
+					"type": "application/font-sfnt",
+					"sid": 827728315028777,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

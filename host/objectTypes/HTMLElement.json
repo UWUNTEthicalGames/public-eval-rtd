@@ -3,6 +3,14 @@
 	"plugin-id": "HTMLElement",
 	"sid": 583162015745015,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "listName",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 586167239637245
+		}
+	],
 	"behaviorTypes": []
 }

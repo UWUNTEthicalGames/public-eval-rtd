@@ -31,6 +31,7 @@
 					"id": "set-css-style",
 					"objectClass": "RoomCodeInput",
 					"sid": 316493794446765,
+					"disabled": true,
 					"parameters": {
 						"property-name": "\"font-size\"",
 						"value": "\"32px\""
@@ -40,6 +41,7 @@
 					"id": "set-css-style",
 					"objectClass": "NameInput",
 					"sid": 893579302473199,
+					"disabled": true,
 					"parameters": {
 						"property-name": "\"font-size\"",
 						"value": "\"32px\""

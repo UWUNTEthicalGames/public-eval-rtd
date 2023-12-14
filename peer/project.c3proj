@@ -123,7 +123,11 @@
 			"PersonSprite",
 			"UIBox9Patch",
 			"UIButtonSprite",
-			"SelectionUIText"
+			"SelectionUIText",
+			"UIBusButtonSprite",
+			"UIBusShortNameText",
+			"BuildingSprite2",
+			"Sprite"
 		],
 		"subfolders": []
 	},
@@ -230,7 +234,16 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "PixelifySans-VariableFont_wght.ttf",
+					"type": "application/font-sfnt",
+					"sid": 677595282473390,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

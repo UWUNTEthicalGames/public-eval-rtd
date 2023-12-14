@@ -62,6 +62,27 @@
 			],
 			"sid": 834502715213541,
 			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 594176251046535,
+					"parameters": {
+						"object": "UIBusButtonSprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "console.log(\"Clicked showing UI business button.\")\nGlobals.gameObj.triggerShowingUIBusinessButton(runtime.objects.UIBusButtonSprite.getFirstPickedInstance());"
+				}
+			],
+			"sid": 558788988577374,
+			"isOrBlock": true
 		}
 	],
 	"sid": 335751246439773
